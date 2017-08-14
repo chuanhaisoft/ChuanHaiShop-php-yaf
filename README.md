@@ -1,4 +1,4 @@
-川海商城，使用yaf开发
+川海商城，使用php的yaf框架开发
 
 1.数据库信息修改：protected\config\application.ini
 
@@ -14,3 +14,7 @@
 
 代码下载地址：http://pan.baidu.com/s/1kVDps2N
 
+
+
+
+川海商城 内封装了orm，数据库操作基于sql预处理，从根本上杜绝了sql注入。

@@ -1,0 +1,26 @@
+{
+	"name": "flypanels",
+	"version": "2.0.5",
+	"homepage": "http://www.andreasnorman.com/flypanels/",
+	"authors": [
+		"Andreas Norman <an@andreasnorman.se>"
+	],
+	"description": "Responsive off canvas menu panels",
+	"main": "dist/flyPanels.min.js",
+	"keywords": [
+		"navigation",
+		"mobile",
+		"responsive",
+		"off canvas"
+	],
+	"license": "MIT",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"src/dependencies",
+		"test",
+		"tests"
+	],
+	"title": "flypanels"
+}

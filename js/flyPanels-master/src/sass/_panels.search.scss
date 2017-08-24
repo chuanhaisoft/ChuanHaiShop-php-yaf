@@ -1,0 +1,182 @@
+.panelcontent .flypanels-searchresult {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  ul,
+  ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  ul {
+    li {
+      a {
+        color: $flypanels_link_color;
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        font-weight: 400;
+        font-size: 13px;
+        display: inline-block;
+        width: #{$flypanels_panel_width}px;
+        position: relative;
+        span.link {
+          padding-top: 11px;
+          padding-bottom: 13px;
+          display: inline-block;
+          padding-left: 15px;
+          padding-right: 15px;
+          width: #{$flypanels_panel_width - 50}px;
+        }
+        span.type {
+          width: 50px;
+          float: right;
+          display: inline-block;
+          height: 100%;
+          padding-left: 15px;
+          padding-top: 11px;
+          padding-bottom: 13px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          i.page {
+            font-size: 14px;
+            margin-left: 10px;
+            &::before {
+              content: "\f105";
+            }
+          }
+          i.doc {
+            font-size: 12px;
+            margin-left: 10px;
+            &::before {
+              content: "\f016";
+            }
+          }
+        }
+      }
+    }
+  }
+  li a:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    color: $flypanels_primary_color;
+  }
+  ul li a:focus,
+  .panelcontent nav ul li a:visited,
+  .panelcontent nav ul li a:link {
+    text-decoration: none;
+  }
+}
+/* Touch devices :hover fix */
+.panelcontent .flypanels-searchresult.touch li a:hover {
+  background-color: inherit !important;
+  color: $flypanels_link_color;
+}
+.panelcontent .flypanels-searchresult.touch li a:active {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  color: $flypanels_primary_color;
+}
+.flypanels-container .offcanvas .panelcontent[data-panel="search"] {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  .loading {
+    margin-top: 50px;
+    span {
+      text-align: center;
+      color: #fff;
+      display: block;
+      margin-top: 15px;
+    }
+    .loader {
+      position: relative;
+      width: $flypanels_loader_size;
+      height: $flypanels_loader_size;
+      margin-left: 70px;
+    }
+    .loader,
+    .loader:before,
+    .loader:after {
+      border-radius: 50%;
+      border: $flypanels_loader_size/12 solid rgba(0,61,88,.0);
+      border-top-color: $flypanels_loader_color;
+      -webkit-animation: spin 4s infinite;
+    }
+    .loader:before,
+    .loader:after {
+      position: absolute;
+      content: '';
+      left: $flypanels_loader_size/12;
+      right: $flypanels_loader_size/12;
+      bottom: $flypanels_loader_size/12;
+      top: $flypanels_loader_size/12;
+    }
+    .loader:after {
+      left: $flypanels_loader_size/4;
+      right: $flypanels_loader_size/4;
+      bottom: $flypanels_loader_size/4;
+      top: $flypanels_loader_size/4;
+      -webkit-animation: spin2 4s infinite;
+    }
+  }
+
+  @-webkit-keyframes spin {
+    0% {
+
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes spin2 {
+    0% {
+
+    }
+    100% {
+      -webkit-transform: rotate(720deg);
+    }
+  }
+  .resultinfo {
+    color: $flypanels_text_color;
+    font-size: 13px;
+    padding: 20px 15px;
+  }
+  .searchbox {
+    background-color: #fff;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: #{$flypanels_panel_width - 20}px;
+    input {
+      height: 100%;
+      width: #{$flypanels_panel_width - 50}px;
+      border: none;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 16px;
+      &:focus {
+        outline: none;
+        font-size: 16px;
+        box-shadow: none;
+      }
+    }
+    .searchbutton {
+      width: #{$flypanels_panel_width - 230}px;
+      float: right;
+      color: $flypanels_primary_color;
+      &::before {
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        text-decoration: inherit;
+        -webkit-font-smoothing: antialiased;
+        content: "\f002";
+        font-size: 16px;
+        position: relative;
+        top: 9px;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

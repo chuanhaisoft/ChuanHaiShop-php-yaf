@@ -1,0 +1,64 @@
+
+/*------------------------------------------------*/
+/*-----------------[RESET]------------------------*/
+/*------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q {	quotes: none; }
+blockquote:before, blockquote:after,q:before, q:after { content: ''; content: none; }
+:focus { outline: 0; }
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+
+/*------------------------------------------------*/
+/*-----------------[BASIC STYLES]-----------------*/
+/*------------------------------------------------*/
+
+@font-face {
+    font-family: 'ColaborateThinRegular';
+    src: url('fonts/ColabThi-webfont.eot');
+    src: url('fonts/ColabThi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/ColabThi-webfont.woff') format('woff'),
+         url('fonts/ColabThi-webfont.ttf') format('truetype'),
+         url('fonts/ColabThi-webfont.svg#ColaborateThinRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {  font-family: Georgia; font-size: 12px; line-height: 19px; }
+a, a:hover { text-decoration: none; color: #000; }
+.clear { padding: 0; margin: 0; clear: both; }
+.wrapper { width: 960px; margin: auto;}
+	
+/*------------------------------------------------*/
+/*----------------[FEATURED SLIDER]---------------*/
+/*------------------------------------------------*/
+#featured { margin-top: 23px; }
+	#featured #slides, #featured ul.slides { background-color: #e5e5e5; border-bottom: 1px solid #fff; padding: 3px; }
+	#featured #slides { width: 954px; height: 375px; }
+		#slides .slide { position: relative; }
+		#featured .slider_shadow { background-image: url(images/slider-shadow.png); width: 960px; height: 14px; display: block; }
+			.slide .banner { position: absolute; width: 303px; height: 319px; background: url(images/slider-banner.png) no-repeat; top: 0px; padding: 30px 20px 0 96px;font-style: italic; color: #525252; text-shadow: 1px 1px 0px #fff; }
+			.slide .active { top: 90px; }
+				.banner h2 { color: #a4a4a4; font-size: 38px; padding-bottom: 20px; line-height: 40px; display: block; height: 100px; }
+				.banner span { top: 318px; left: 200px; height: 40px; display: block; background-image: url(images/slider-readmore-left.png); position: absolute; }
+				.banner span a { background: url(images/slider-readmore-right.png) no-repeat right; height: 24px; font-family: Georgia; font-size: 12px; color: #fff; text-transform: uppercase; float: left; margin-right: -17px; padding: 8px 15px; text-shadow: 1px 1px 0px #6c6c6c; }
+#switcher { width: 444px; float: right; margin-top: -65px; }
+	#switcher .item { margin-right: 17px; float: left; height: 98px; width: 93px; background: url(images/slider-thumb-shadow.png) no-repeat bottom; position: relative; }
+		.item div.wrap { cursor: pointer; background: #e4e4e4; border-bottom: 1px solid #7f7f7f; border-top: 1px solid #fff; border-left: 1px solid #fff; border-right: 1px solid #fff; padding: 4px; width: 83px; height: 83px; position: absolute; }
+		.item div.active { margin-top: -15px; }
+		.item div span.image { width: 83px; height: 83px; display: block; }
+		.item .hover { z-index: 10; background-image: url(images/slider-hover.png);  display: none; position: absolute; top: -160px; left: -55px; width: 182px; height: 123px; padding: 15px; font-style: italic; color: #525252; text-shadow: 1px 1px 0px #fff; }
+		.item .hover span { color: #a4a4a4; font-size: 21px; margin: 0 0 10px 0; padding: 0; float: left; }
+
+.flexslider .slide .banner { top: 90px; }

@@ -1,0 +1,102 @@
+.flypanels-topbar a.flypanels-button-left.icon-hamburger {
+  padding: 0;
+  margin-left: 20px;
+  margin-top: 16px;
+  width: 22px;
+  height: 22px;
+  position: relative;
+  @include rotate(0);
+  transition: $flypanels_transition_time ease-in-out;
+  cursor: pointer;
+  span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 50%;
+    background: $flypanels_text_color;
+    opacity: 1;
+    @include rotate(0);
+    transition: $flypanels_transition_time ease-in-out;
+    &:nth-child(even) {
+      left: 50%;
+    }
+    &:nth-child(odd) {
+      left:0px;
+    }
+    &:nth-child(1), &:nth-child(2) {
+      top: 0px;
+    }
+    &:nth-child(3), &:nth-child(4) {
+      top: 7px;
+    }
+    &:nth-child(5), &:nth-child(6) {
+      top: 14px;
+    }
+  }
+}
+
+.openleft {
+  .flypanels-topbar a.flypanels-button-left.icon-hamburger {
+    span {
+      &:nth-child(1), &:nth-child(6) {
+        @include rotate(45);
+      }
+      &:nth-child(2), &:nth-child(5) {
+        @include rotate(-45);
+      }
+      &:nth-child(1) {
+        left: 3px;
+        top: 7px;
+      }
+      &:nth-child(2) {
+        left: calc(50% - 3px);
+        top: 7px;
+      }
+      &:nth-child(3) {
+        left: -50%;
+        opacity: 0;
+      }
+      &:nth-child(4) {
+        left: 100%;
+        opacity: 0;
+      }
+      &:nth-child(5) {
+        left: 3px;
+        top: 12px;
+      }
+      &:nth-child(6) {
+        left: calc(50% - 3px);
+        top: 12px;
+      }
+    }
+  }
+  &.closing {
+    .flypanels-topbar a.flypanels-button-left.icon-hamburger {
+      span {
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 50%;
+        background: $flypanels_text_color;
+        opacity: 1;
+        @include rotate(0);
+        transition: $flypanels_transition_time ease-in-out;
+        &:nth-child(even) {
+          left: 50%;
+        }
+        &:nth-child(odd) {
+          left:0px;
+        }
+        &:nth-child(1), &:nth-child(2) {
+          top: 0px;
+        }
+        &:nth-child(3), &:nth-child(4) {
+          top: 7px;
+        }
+        &:nth-child(5), &:nth-child(6) {
+          top: 14px;
+        }
+      }
+    }
+  }
+}

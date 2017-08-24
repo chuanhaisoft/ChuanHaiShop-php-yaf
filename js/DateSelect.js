@@ -1,0 +1,1 @@
+﻿document.writeln('<script language="JavaScript" type="text/javascript" src="/css/js/My97DatePicker/WdatePicker.js"></script>');

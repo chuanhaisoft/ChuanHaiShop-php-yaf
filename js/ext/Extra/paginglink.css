@@ -1,0 +1,104 @@
+﻿.modern-paginglink li {
+  border:1px solid #fff;
+  padding:.1em .4em;
+  margin:0;
+}
+.modern-paginglink li.hover {
+  border-color:#03c;
+}
+.modern-paginglink a {
+  text-decoration:none;
+  color:#03c;
+}
+.modern-paginglink li.selected a {
+  color:#000;
+}
+.modern-paginglink li.disabled a {
+  color:silver;
+}
+.modern-paginglink .x-prev-page {
+  background:url("../../widget/image/paginglink/al.gif") 3% 45% no-repeat;
+  padding-left:1em;
+}
+.modern-paginglink .x-next-page {
+  background:url("../../widget/image/paginglink/ar.gif") 97% 45% no-repeat;
+  padding-right:1em;
+}
+
+.yahoo-paginglink {
+  margin-top:1em;
+  font-size:12px;
+  height:25px;
+}
+.yahoo-paginglink li {
+  border:1px solid #e6e6e6;
+  padding: .3em .5em;
+  margin: .25em;
+  text-align: center;
+}
+.yahoo-paginglink li.x-prev-page, #pg4 li.x-next-page {
+  font-weight:bold;
+  border-color:#aaa;
+}
+.yahoo-paginglink li.x-prev-page {
+  margin-right:1.5em;
+}
+.yahoo-paginglink li.x-next-page {
+  margin-left:1.5em;
+}
+.yahoo-paginglink li.hover {
+  background-color:#d2eaf6;
+  border:1px solid #b7d8ee;
+}
+.yahoo-paginglink li.selected {
+  background-color:#d2eaf6;
+  border:1px solid #b7d8ee;
+}
+.yahoo-paginglink li.disabled {
+  background-color:#fff;
+  color:#e6e6e6;
+  border:1px solid #e6e6e6;
+  cursor:default;
+  display:inherit;
+}
+.yahoo-paginglink a {
+  color:#0066a7;
+  text-decoration:none;
+}
+.yahoo-paginglink li.selected a {
+  color:#444;
+  font-weight:bold;
+}
+.yahoo-paginglink li.disabled a {
+  color:#e6e6e6;
+  cursor:default;
+}
+
+.google-paginglink {
+  height:55px;
+}
+
+.google-paginglink li {
+  display:block;
+  float:left;
+  padding:28px 0 0 0;
+  margin:0;
+}
+.google-paginglink li.x-prev-page {
+  background:url(../../widget/image/paginglink/g.gif) top right no-repeat;
+  width:75px;
+}
+.google-paginglink li.x-next-page {
+  background:url(../../widget/image/paginglink/gle.gif) top left no-repeat;
+  width:75px;
+}
+.google-paginglink li.x-page-number {
+  background:url(../../widget/image/paginglink/o.gif) 0 0 no-repeat;
+  font-size:13px;
+  width:16px;
+  white-space:nowrap;
+  overflow:hidden;
+}
+.google-paginglink li.selected {
+  background:url(../../widget/image/paginglink/ao.gif) 0 0 no-repeat;
+}

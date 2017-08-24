@@ -1,0 +1,355 @@
+﻿/*
+ * $Id: ext-extra.css,v 1.4 2008/03/07 00:46:42 chuan Exp $
+ *
+ * Copyright (c) 2006 Operamasks Community.
+ * Copyright (c) 2000-2006 Apusic Systems, Inc.
+ */
+.x-menu-bar {
+    display:table;
+}
+.x-menu-bar .x-menu-list {
+    display:table-row;
+}
+.x-menu-bar .x-menu-list-item {
+    display:table-cell;
+}
+.x-menu-bar .x-menu-item-arrow {
+    background:transparent;
+}
+.x-menu-bar .x-menu-item {
+    padding:3px 10px;
+}
+
+a.x-menu-item {display:block;line-height:16px;padding:3px 21px 3px 3px;white-space:nowrap;text-decoration:none;color:#222;-moz-outline:0 none;outline:0 none;cursor:pointer;}
+
+.x-menu-bar .x-menu-sep {
+    display:none;
+}
+.x-menu-bar .x-menu-item-icon {
+    display:none;
+}
+
+.x-menu-bar, .x-menu, .x-menu-plain {
+	background:#F0F0F0 url(../images/menu/menu-bg.gif) repeat scroll 0%;
+}
+
+.x-menu,x-menu-plain {
+    border:1px solid #aaa;
+    opacity:0.92;
+    -moz-opacity:0.92;
+    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=92);
+}
+
+.x-progress {
+    position:relative;
+    height:14px;
+    overflow:hidden;
+    border:1px solid #6593cf;
+    background:#e0e8f3 url(../images/qtip/bg.gif) repeat-x;
+}
+.x-progress-thumb {
+    position:relative;
+    height:14px;
+    overflow:hidden;
+    background:#8bb8f3;
+    border-top:1px solid #b2d0f7;
+    border-bottom:1px solid #65a1ef;
+    border-right:1px solid #65a1ef;
+}
+
+
+.x-slider-wrap {
+    position:relative;
+    overflow:hidden;
+    border:0;
+    cursor:default;
+}
+.x-slider-horizontal {
+    height:28px;
+}
+.x-slider-vertical {
+    width:28px;
+}
+.x-slider-track {
+    position:absolute;
+    overflow:hidden;
+    background:#8bb8f3;
+    border:1px solid;
+    border-top-color:#65a1ef;
+    border-right-color:#b2d0f7;
+    border-bottom-color:#b2d0f7;
+    border-left-color:#65a1ef;
+}
+.x-slider-horizontal .x-slider-track {
+    width:100%; height:1px;
+    _height:"3px"; /*IE hack*/
+}
+.x-slider-vertical .x-slider-track {
+    width:1px; height:100%;
+    _width:"3px"; /*IE hack*/
+}
+.x-slider-thumb {
+    position:absolute;
+    overflow:hidden;
+    background:#8bb8f3;
+    border:1px solid;
+    border-top-color:#b2d0f7;
+    border-right-color:#65a1ef;
+    border-bottom-color:#65a1ef;
+    border-left-color:#b2d0f7;
+}
+.x-slider-horizontal .x-slider-thumb {
+    width:7px; height:18px;
+    _width:"9px"; _height:"20px"; /*IE hack*/
+}
+.x-slider-vertical .x-slider-thumb {
+    width:18px; height:7px;
+    _width:"20px"; _height:"9px"; /*IE hack*/
+}
+
+.x-paging-list {
+    display:inline;
+}
+.x-paging-list li {
+    display:inline;
+    margin:.25em;
+    text-align:center;
+    cursor:pointer;
+    font-size:12px;
+}
+.x-paging-list .x-total-page {
+    cursor:default;
+}
+.x-paging-list .x-first-page a,.x-paging-list .x-last-page a,.x-paging-list .x-prev-page a,.x-paging-list .x-next-page a{
+    font-weight:bold;
+    color:#00c;
+}
+.x-paging-list .x-prev-page {
+    margin-right:0.5em;
+}
+.x-paging-list .x-next-page {
+    margin-left:0.5em;
+}
+.x-paging-list .x-page-number a {
+    color:black;
+}
+.x-paging-list li.selected a {
+    font-weight:bold;
+    color:#a90a08;
+    text-decoration:none;
+}
+.x-paging-list li.disabled,.x-paging-list li.disabled a {
+    color:silver;
+    cursor:default;
+    text-decoration:none;
+}
+
+
+.x-calc-inner, .x-calc-inner td, .x-calc-inner th{
+    border-collapse:separate;
+}
+table.x-calc-inner {
+    width:100%;
+    table-layout:fixed;
+}
+.x-calc-inner th {
+    width:25px;
+}
+.x-calc-inner th {
+    background: #c3daf9;
+    text-align:right !important;
+    border-bottom: 1px solid #a3bad9;
+    font:normal 10px arial, helvetica,tahoma,sans-serif;
+    color:#233d6d;
+    cursor:default;
+    padding:0;
+    border-collapse:separate;
+}
+.x-calc-inner th span {
+    display:block;
+    padding:2px;
+    padding-right:7px;
+}
+.x-calc-inner td {
+    border: 1px solid #fff;
+    text-align:right;
+    padding:0;
+}
+.x-calc-inner .x-calc-key, .x-calc-inner .x-calc-memory {
+    padding:2px 5px;
+    display:block;
+    font:normal 11px arial, helvetica,tahoma,sans-serif;
+    text-decoration:none;
+    color:black;
+    zoom:1;
+    background: #ddecfe;
+    border: 1px solid #a3bad9;
+}
+.x-calc-inner .x-calc-key {
+    cursor: pointer;
+}
+.x-calc-inner .x-calc-memory {
+    text-align:center
+}
+.x-calc-opr {
+    color:red !important;
+}
+.x-calc-inner span.hover {
+    text-decoration:none;
+    color:black;
+    border: 1px solid #00F;
+}
+.ext-safari .x-form-field-wrap .x-form-calc-trigger{
+    right:0;
+}
+.x-form-field-wrap .x-form-calc-trigger{
+    background:transparent url(../images/form/calc-trigger.gif) no-repeat 0 0;
+    cursor:pointer;
+}
+
+.x-btn button {
+    font-size:12px;
+}
+
+.x-toolbar td, .x-toolbar span, .x-toolbar input, .x-toolbar div, .x-toolbar select, .x-toolbar label {
+    font-size:12px;
+}
+
+.x-grid-hd-row td, .x-grid-row td {
+    font-size:12px;
+}
+
+.x-menu-list-item {
+    font-size:12px;
+}
+
+.x-layout-panel-hd-text {
+    font-size:12px;
+}
+
+.x-form fieldset legend {
+    font-size:12px;
+}
+
+.loading-mask {
+    width:100%;height:100%;background:#c3daf9;position:absolute;z-index:20000;left:0;top:0;
+}
+.loading{
+    position:absolute;
+    left:45%;
+    top:40%;
+    border:1px solid #6593cf;
+    padding:2px;
+    background:#c3daf9;
+    width:150px;
+    text-align:center;
+    z-index:20001;
+}
+.loading .loading-indicator{
+    border:1px solid #a3bad9;
+    background:white url('../images/block-bg.gif') repeat-x;
+    color:#003366;
+    font:bold 13px tahoma,arial,helvetica;
+    padding:10px;
+    margin:0;
+}
+.loading-indicator {
+    font-size:8pt;
+    background-image:url('../images/grid/loading.gif');
+    background-repeat: no-repeat;
+    background-position:top left;
+    padding-left:20px;
+    height:18px;
+    text-align:left;
+}
+
+.x-info-message,.x-warn-message,.x-error-message,.x-fatal-message {
+    background-repeat:no-repeat;
+    background-position:center left;
+    padding-left:20px;
+    font:normal 14px;
+}
+.x-error-message,.x-fatal-message {
+    background-image:url('../images/message/error.gif');
+    color:red;
+}
+.x-warn-message {
+    background-image:url('../images/message/warn.gif');
+    color:black;
+}
+.x-info-message {
+    background-image:url('../images/message/info.gif');
+    color:black;
+}
+
+.tree-node-checked {
+    background-image:url('../images/tree/tree_node_checked.gif');
+    width:13px;
+    height:13px;
+    vertical-align:middle;
+}
+
+.tree-node-partlyChecked {
+    background-image:url('../images/tree/tree_node_partlyChecked.gif');
+    width:13px;
+    height:13px;
+    vertical-align:middle;
+}
+
+.tree-node-unchecked {
+    background-image:url('../images/tree/tree_node_unchecked.gif');
+    width:13px;
+    height:13px;
+    vertical-align:middle;
+}
+
+.x-btn-text-icon .x-btn-center .x-btn-text {
+	background-position: 0 2px;
+	background-repeat: no-repeat;
+	padding-left:18px;
+	padding-top:1px;
+	padding-bottom:2px;
+    padding-right:0;
+}
+
+.x-combo-list-item {
+	height:15px !important;
+	height:20px;
+}
+
+.x-panel-header {
+	font-size:12px;
+}
+
+.x-tab-strip span.x-tab-strip-text {
+	font-size:12px;
+}
+
+.x-grid3-hd-row td, .x-grid3-row td, .x-grid3-summary-row td{
+	font-size:12px;
+}
+
+.x-window-mc{
+	font-size:12px;
+}
+
+.x-grid3-header-offset{
+	width:100%;
+}
+
+.x-tree-node a span{
+	font-size:12px;
+}
+
+.x-window-header-text{
+	font-size:12px;	
+}
+
+.x-form-check-wrap{
+	float:left;
+	margin-left:5px;
+	line-height:17px;
+}
+.x-hidden{
+	display:none;
+}

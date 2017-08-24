@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight:400;
+}
+
+h1 {
+  font-size: 21px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.version {
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.github {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.github iframe {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.download {
+  margin-bottom: 60px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.btn {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.codepanel {
+  background-color: #efefef;
+  padding: 20px;
+  line-height: 30px;
+}
+
+.bower {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  text-align: center;
+  font-size: 18px;
+}
+
+a.btn-primary {
+  background-color: transparent;
+  border: solid 2px #c0392b;
+  color: #c0392b;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+.btn i {
+  margin-right: 5px;
+}
+a.btn-primary:link,
+a.btn-primary:visited {
+  background-color: transparent;
+  border: solid 2px #c0392b;
+  color: #c0392b;
+}
+a.btn-primary:active {
+  background-color: #c0392b;
+  color: #fff;
+  .box-shadow(none);
+}
+a.btn-primary:hover {
+  background-color: #c0392b;
+  color: #fff;
+}
+
+/* footer */
+footer {
+  margin-top: 40px;
+}
+
+footer h3 {
+  font-weight: 600;
+border-bottom: 1px solid #efefef;
+padding-bottom: 10px;
+font-size: 30px;
+margin-bottom: 30px;
+}
+
+footer h4 {
+  font-size: 28px;
+  position: relative;
+  top: -6px;
+  padding: 0;
+  margin: 0px;
+  margin-bottom: 5px;
+}
+
+footer a img.img-responsive {
+  border: 3px solid #efefef;
+}
+footer p {
+  margin-bottom: 25px;
+}
+footer .project {
+  margin-bottom: 40px;
+}

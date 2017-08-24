@@ -1,0 +1,34 @@
+.flypanels-topbar {
+  transition: all 0.2s cubic-bezier(.53,.54,.54,.54);
+  transform: translate3d(0, 0, 0);
+  width: 100%;
+  height: $flypanels_top_bar_height;
+  background-color: $flypanels_top_bar_bgcolor;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  a {
+    color: $flypanels_text_color;
+    text-decoration: none;
+    font-size: 24px;
+    &.flypanels-button-left,
+    &.flypanels-button-right {
+      padding: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: center;
+      padding-top: 13px;
+      display: block;
+      float: left;
+    }
+    &.flypanels-button-right {
+      float: right;
+    }
+    i.fa-search:before {
+      font-size: 20px;
+      position: relative;
+      top: -3px;
+    }
+  }
+}

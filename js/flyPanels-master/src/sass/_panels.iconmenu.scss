@@ -1,0 +1,38 @@
+nav.flypanels-iconmenu {
+  ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    a {
+      color: #fff;
+      display: block;
+      font-weight: 400;
+      font-size: 14px;
+      display: inline-block;
+      width: 260px;
+      padding-left: 20px;
+      padding-top: 10px;
+      padding-bottom: 15px;
+      &:hover {
+        text-decoration: none;
+        background-color: lighten($flypanels_primary_color, 15%)
+      }
+      &:before {
+        color: #fff;
+        font-size: 25px;
+        margin-right: 20px;
+        position: relative;
+        top: 4px;
+      }
+    }
+
+
+  }
+}
+
+.flypanels-container .offcanvas .panelcontent[data-panel="iconmenu"] {
+  padding-left: 0;
+  padding-right: 0;
+}

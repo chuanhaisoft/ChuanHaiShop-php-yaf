@@ -1,0 +1,16 @@
+{
+  "name": "circliful",
+  "version": "0.1.5",
+  "homepage": "https://github.com/pguso/jquery-plugin-circliful",
+  "authors": [
+    "Patric Gutersohn <pguso@gmx.de>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": ">= 1.5.0"
+  },
+  "main": [
+    "js/jquery.circliful.min.js",
+    "css/jquery.circliful.css"
+  ]
+}

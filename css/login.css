@@ -1,0 +1,330 @@
+/* css reset */
+body{color:#000;background:#fff;font-size:12px;line-height:166.6%;text-align:center;}
+body.move{-webkit-transition:padding 0.3s ease;-moz-transition:padding 0.3s ease;-o-transition:padding 0.3s ease;-ms-transition:padding 0.3s ease;transition:padding 0.3s ease;}
+body,input,select,button{font-family:verdana}
+h1,h2,h3,select,input,button{font-size:100%}
+body,h1,h2,h3,ul,li,form,p,img{margin:0;padding:0;border:0}
+input,button,select,img{margin:0;line-height:normal}
+select{padding:1px}
+ul{list-style:none}
+select,input,button,button img,label{vertical-align:middle}
+header,footer,section,aside,nav,hgroup,figure,figcaption{display:block;margin:0;padding:0;border:none}
+a{text-decoration:none;color:#959595}
+a:hover{color:#626262}
+.fontWeight{font-weight:700;}
+/* global */
+.unvisi{visibility:hidden}
+.txt-suc{color: #22AC38}
+.txt-err{color: #e60012}
+.txt-yixin{color: #279C7B;}
+/* backgroundImage */
+.themeCtrl a,
+.loginFormIpt,
+.headerIntro,
+.verify-input-line,
+.themeText li,
+.btn,
+.btn-moblogin,
+.ico,
+.locationTestTitle,
+.verSelected,
+.servSelected,
+.locationTestTitleClose,
+#extText li,
+#mobtips_arr,
+#mobtips_close{background-image:url(/images/bg_v3.png)}
+.headerLogo,
+.headerIntro,
+.headerNav,
+.footerLogo,
+.footerNav,
+.formIpt,
+.domain,
+#whatAutologinTip,
+#mobtips,
+#mobtips_arr,
+#mobtips_close{position:absolute}
+/* ico */
+.ico-uid{width:14px;height:16px;background-position:-154px -64px}
+.ico-pwd{width:14px;height:16px;background-position:-178px -64px}
+.ico-miniAlert{margin-right:3px;display:inline-block;width:14px;height:14px;background-position:-132px -112px;vertical-align:top;}
+.ico-arr{display:inline-block;width:7px;height:12px;vertical-align:baseline;background-position:-160px -112px;}
+.ico-arr-d{background-position:-160px -110px;}
+.loginFormConf a:hover .ico-arr-d,
+.ico-arr-d-focus{background-position:-176px -110px;}
+*+html .ico-arr-d{background-position:-160px -112px;}
+*+html .loginFormConf a:hover .ico-arr-d,
+*+html .loginFormConf a:hover .ico-arr-d,
+*+html .ico-arr-d-focus{background-position:-176px -112px;}
+/*.ico-android{display:inline-block;vertical-align:middle;width:17px;height:21px;background-position:0 0;_background-position: -40px 0;}
+.ico-ios{display:inline-block;vertical-align:middle;width:15px;height:18px;background-position:-20px 0;_background-position: -60px 0;}*/
+.ico-new{display:block;width:19px;height: 12px;background: url(/images/new.png) no-repeat;}
+/* header */
+.header{width:1000px;height:64px;position:relative;margin:0 auto;z-index:2;overflow:hidden;}
+.headerLogo{top:17px;left:50px}
+.headerIntro{height:28px;width:144px;display:block;background-position:0 -64px;top:17px;left:194px}
+.headerNav{top:21px;right:100px;text-align:right;color:#cfd0d0;}
+.headerNav a{padding-left:13px;display:inline-block;}
+.headerNav .last{padding-left: 0;}
+/* main */
+.main{height:600px;background:#fff;position: relative;min-width: 1000px;}
+.main-inner-iframe{border:0; width: 100%; height: 600px; overflow: hidden;}
+#mainCnt{width:100%;height:600px;position:relative;clear:both;background-repeat:no-repeat;background-position:center top;}
+#theme{margin:0 auto;height:600px;width:1000px;overflow:hidden;position:relative;}
+.themeLink{height:274px;width:430px;display:block;outline:0;}
+.themeText{margin-left:26px;}
+.themeText li{line-height:22px;-line-height:24px;height:24px;color:#858686;text-indent:12px;background-position:-756px -72px;background-repeat:no-repeat}
+.themeText li a{color:#005590;text-decoration:underline;}
+.login{width:295px;height:460px;padding:13px 14px 15px;top:56px;left:50%;margin-left:90px;text-align:left;position:absolute;z-index:2;background:url(/images/login_v5.png) no-repeat;-background-image:url(/images/login_ie6_v5.png);}
+.unishadow{box-shadow:0px 1px 3px 0 rgba(0,0,0,0.2);-webkit-box-shadow:0px 1px 3px 0 rgba(0,0,0,0.2);-moz-box-shadow:0px 1px 3px 0 rgba(0,0,0,0.2);}
+.loginFunc{width:100%;height:47px;overflow:hidden;clear:both;}
+.loginFuncNormal,.loginFuncApp{width:148px;height:100%;overflow:hidden;position:relative;line-height:46px;float:left;font-size:14px;text-align:center;+line-height:48px;color:#626262;cursor:pointer;}
+.loginFuncApp{padding-left:15px;width:132px;border-right:none;background: url(/images/icon_code.png) 28px 17px no-repeat;}
+.tab-2{background-position:-323px 0;}
+.tab-22 #extVerSelect,
+.tab-2 #normalLoginTab,
+.tab-1 #appLoginTab{display:block;}
+.tab-22 #extText,
+.tab-1 #normalLoginTab,
+.tab-2 #appLoginTab{display:none;}
+/* form */
+.loginForm{position:relative;padding-top:40px;}
+#login163{height: 310px;}
+.loginFormIpt{position:relative;width:240px;height:42px;line-height:42px;margin:0 0 20px 25px;padding-right:5px;clear:both;background-position:0 -352px;z-index:2}
+.loginFormIpt .ico{position:absolute;left:9px;top:13px;z-index:1;}
+.loginFormIpt-over{}
+.loginFormIpt-focus{box-shadow:0 0 5px rgba(2,145,252,.5);}
+.loginFormIpt-focus .placeholder{color:#C9C9C9;}
+.loginFormBtn{position:relative;width:245px;height:38px;margin:18px 0 0 25px}
+.formIpt{width:205px;padding:9px 0 10px;ime-mode:disabled;height:21px;top:1px;left:28px;color:#333;font-size:14px;font-weight:700;border:none;font-family:verdana;line-height:21px;background:transparent!important;}
+.formIpt:focus{outline:0;}
+.showPlaceholder .placeholder{visibility:visible;cursor:text;}
+.placeholder{color:#C9C9C9;;font-size:14px;position:absolute;left:30px;top:14px;line-height:14px;visibility:hidden;background:none;}
+.domain{padding-left:5px;width:75px;height:33px;line-height:33px;color:#616161;font-size:14px;overflow:hidden;display:block;right:8px;top:4px;white-space:nowrap;}
+#idInput::-ms-clear{display:none;}
+#idInputTest{visibility: hidden; position: absolute; font-size: 14px; font-weight: 700;}
+.loginFormCheck{height:14px;line-height:14px;color:#555;margin-left:25px;clear:both;width:245px;position:relative;z-index:1;}
+.loginFormCheckInner{line-height:13px;width:150px;float:left;position: relative;}
+/*#dynPwInput{width:110px;}
+#dynPwLoginHint{margin-left:25px;height:14px;line-height:14px;color:#959595;}*/
+.forgetPwdLine{text-align: right}
+#capsLockHint{position: absolute; top: 42px; left: 0px;padding: 4px 8px; line-height: 12px; background-color: #ffffcc; border: 1px solid #d7d7d7; color: #555; z-index: 2;}
+#remAutoLogin{visibility:hidden; position: absolute;left:0;}
+.ico-checkbox{display: inline-block; width: 13px; height: 13px; background-position: -40px -160px; vertical-align: middle; cursor: pointer;}
+.autoLogin-checked .ico-checkbox{background-position: -40px -180px;}
+#remAutoLoginTxt,
+.forgetPwd{color:#848585;}
+#remAutoLoginTxt:hover,
+.forgetPwd:hover{color:#626262;}
+.loginFormCbx{width:13px;height:13px;padding:0;overflow:hidden;margin:0; vertical-align: middle;}
+#whatAutologinTip{z-index:9; width:180px; height:36px;background-color:#fffde4; border:1px #dfb86d solid; left:0px;top:16px;text-align:left; padding:5px 10px;line-height:18px; color:#dc9632;display:none;border-radius: 4px}
+.btn{width:110px;height:38px;float:left;text-align:center;cursor:pointer;border:0;padding:0;font-weight:700;font-size:14px;display:inline-block;vertical-align:baseline;line-height:38px;outline:0;background-color:transparent;}
+.btn-main{color:#fff;box-shadow:0 2px 5px rgba(0,28,88,.3);}
+.btn-side{color:#6d798c;box-shadow:0 2px 5px rgba(0,0,0,.1);}
+.btn-login{background-position:0 -208px;}
+.btn-login-hover{background-position:0 -256px;}
+.btn-login-active{background-position:0 -304px;color:#b5d1ee;}
+.btn-reg{background-position:-117px -208px;float:right;}
+.btn-reg-hover{background-position:-117px -256px;color:#347bc7;}
+.btn-reg-active{background-position:-117px -304px;color:#6d798c;}
+/*.btn-login2{width:245px;height:38px;background-position:0 -710px;}
+.btn-login2-hover{background-position:0 -758px;}
+.btn-login2-active{background-position:0 -806px;color:#b5d1ee;}
+.btn-showDynPwWrap{position:absolute;top:0;right:0;_right:-1px;display:block;width:101px;height:42px;font-size:14px;font-weight:normal;text-align:center;line-height:42px;color:#6d798c;background-position:-195px -405px;}
+.btn-showDynPwWrap-hover{color:#347bc7;background-position:-195px -455px;}
+.btn-showDynPwWrap-active{color:#6d798c;background-position:-195px -505px;}
+.btn-getDynPw{width:150px;background-position:0 -565px;}
+.btn-getDynPw-hover{background-position:0 -613px;}
+.btn-getDynPw-active{background-position:0 -661px;}*/
+.btn-cancel{width:124px;background-position:-160px -565px;}
+.btn-cancel-hover{background-position:-160px -613px;color:#347bc7;}
+.btn-cancel-active{background-position:-160px -661px;color:#6d798c;}
+.loginFormConf{height:14px;line-height:14px;margin-left:25px;margin-top:18px;clear:both;width:245px;position:relative;color:#848585;z-index:1;}
+.loginFormVer{float:left;width:160px;}
+.loginFormService{float:right;text-align:right;}
+.loginFormVerList{width:140px;position:absolute;padding:1px;background:#fff;border:1px solid #b7c2c9;top:-5px;top:-4px\9;left:33px;display:none;}
+.loginFormVerList li a{height:22px;line-height:22px;width:140px;overflow:hidden;color:#848585;display:block;text-indent:22px;}
+.loginFormVerList li a:hover{background-color:#eef3f8;}
+.loginFormVerList li a.verSelected{color:#5B8CCA;background-position:-250px -58px;background-repeat:no-repeat;}
+/* app */
+.mailApp{margin: 30px 0 0 20px;}
+.mailApp-logo{display: block; width: 256px; height: 35px; background:url(/images/hpapp_logo_141212.png) no-repeat; _background-image: url(/images/mailapp_logo_141212.jpg);}
+/* ext */
+#extVerSelect{display:none;}
+.ext{padding:11px 55px 0 25px; height: 38px; overflow: hidden;}
+#extText{line-height:20px;}
+#extText li{padding-left:7px;background-position:-240px -118px;background-repeat:no-repeat;}
+#extText li a{color:#9bacc6;}
+#extText li a:hover{color:#5B8CCA;}
+#extVerSelect{line-height:40px;font-size:12px;font-weight:700;}
+#extVerSelect a{color:#005590;text-decoration:underline;}
+/* tab-2 */
+.tab-2 .ico-mob{top:12px; width: 13px; height:18px; background-position: -200px -64px;}
+/* footer */
+.footer{height:65px;margin:0 auto;}
+.footer-inner{width:1000px;height:63px;overflow:visible;margin:0 auto;color:#848585;position:relative;}
+.footerLogo{top:11px;left:35px}
+.footerNav{top:25px;right:123px;}
+.footerNav a{margin-left:12px}
+.copyright{margin-left:12px}
+/* noscript */
+.noscriptTitle{line-height:32px;font-size:24px;color:#d90000;padding-top:60px;font-weight:700;background:#fff;}
+.noscriptLink{text-decoration:underline;color:#005590;font-size:14px;}
+/* mobtips */
+#mobtips{height:18px;border:1px solid #c6c6a8;top:41px;left:30px;line-height:18px;background:#ffffe1;padding-left:6px;padding-right:20px;display:none;color:#565656;zoom:1;}
+#mobtips_arr{width:9px;height:9px;background-position:-684px -72px;top:-5px;left:15px;}
+#mobtips_close{background-position:-715px -68px;top:2px;width:16px;height:14px;right:0px;}
+#mobtips em{font-style:normal;color:#328721;}
+#mobtips a{text-decoration:underline;color:#005590;}
+/* mask */
+.mask{position:absolute;left:0;top:0;width:100%;height:100%;background:#000;filter:alpha(opacity=30);-moz-opacity:0.3;opacity:0.3;z-index:998}
+/* 加密http登录弹窗 */
+.enhttp .topborder,
+.enhttp .bottomborder,
+.enhttp .ct,
+.enhttp .cldenhttp,
+.enhttp .ct .inner .httplogin{background-image:url(/images/bg_httplogin.gif);background-color:transparent;background-repeat:no-repeat;text-decoration:none;}
+.enhttp{width:420px;height:270px;position:absolute;z-index:999;overflow:hidden;top:0;left:50%;margin-left:-210px;top:50%;margin-top:-135px;}
+.enhttp .topborder{width:418px;height:2px;font-size:1px;overflow:hidden;margin:0 auto;background-position:0 -108px;}
+.enhttp .bottomborder{width:418px;height:2px;font-size:1px;overflow:hidden;margin:0 auto;background-position:0 -110px;}
+.enhttp .ct{width:418px;height:266px;background-position:0 -134px;background-color:#fff;border-left:1px solid #82aecd;border-right:1px solid #82aecd;position:relative;overflow:hidden;}
+.enhttp .ct .inner{padding-top:40px;margin:0 auto;text-align:left;}
+.enhttp .ct .inner p{font-size:14px;}
+.enhttp .ct .inner .txt-tips{color:#737373;line-height:30px;width:325px;margin-left:46px;display:inline;}
+.enhttp .ct .inner .txt-normal{line-height:30px;width:325px;margin:10px 0 0 46px;}
+.enhttp .ct .inner .httplogin{font-size:14px;height:34px;width:120px;display:block;background-position:-432px -108px;line-height:34px;text-align:center;color:#fff;font-weight:700;background-color:#3486cc;}
+.enhttp .ct .inner .txt-line{width:325px;margin-left:46px;background:#b6cad9;height:1px;overflow:hidden;font-size:1px;margin-top:24px;}
+.enhttp .ct .inner .txt-advice{line-height:60px;width:325px;color:#8d8d8d;margin-left:46px;}
+.enhttp .ct .inner .txt-advicelink{margin-left:20px;font-size:14px;}
+.enhttp .cldenhttp{height:22px;width:22px;overflow:hidden;position:absolute;right:8px;top:6px;background-position:0 -112px;text-indent:-9999px;}
+.enhttp .cldenhttp:hover{background-position:-22px -112px;}
+.enhttp .enhttpbox{position:absolute;z-index:2;left:0;}
+.enhttp .httploginframe{width:100%;height:200px;position:absolute;top:2px;z-index:1;left:0;}
+/* 测速 */
+#locationTest{position:absolute;width:255px;top:-2px;left:0px;height:88px;background:#fff;border:1px solid #b7c2c9;display:;margin-bottom:200px;height:79px;overflow:hidden;display:none;}
+.locationTestTitle{width:255px;height:26px;line-height:26px;position:relative;color:#555;text-indent:10px;background-position:0 -10px;border-bottom:1px solid #f1f3f5;}
+.locationTestTitle h3{font-size:12px;}
+.locationTestTitleClose{height:8px;width:8px;overflow:hidden;display:block;position:absolute;right:6px;top:7px;background-position:-224px -112px}
+.locationTestTitleClose:hover{background-position:-208px -112px}
+.locationTestEach{display:inline-block;width:5em;font-family:verdana;color:#848585;}
+.locationTestList li{padding:2px;float:left;display:inline-block;}
+.locationTestList .servSelected{background-position:-248px -50px;background-repeat:no-repeat;}
+.locationTestList li a{height:38px;width:80px;display:block;line-height:16px;padding-top:10px;overflow:hidden;text-align:center;color:#000;}
+.locationTestList li a:hover{background-color:#eef3f8;}
+#selectLocation{text-align:center;}
+#locationTestCur{width:3em;}
+#selectLocationTipsDone{display:none;}
+.locationTestBest{display:none;color:green;}
+.locationChoose{text-decoration:underline;color:#005590;}
+
+/* 主题控制栏 */
+.themeCtrl{position:absolute;right:50%;bottom:12px;margin-right:-405px;text-align:right;}
+.themeCtrl a{float:left;display:inline;}
+#musicLink,
+#prevTheme,
+#nextTheme{width:25px;height:25px;margin-right:7px;display: none;}
+#musicLink{background-position:-161px -457px;}
+#musicLink:hover{background-position:-161px -492px;}
+#prevTheme{background-position:0 -457px;}
+#prevTheme:hover{background-position:0 -492px;}
+#nextTheme{margin-right:0;background-position:-35px -457px;}
+#nextTheme:hover{background-position:-35px -492px;}
+/* 首页评分 */
+#scoreIndex{margin:1px 10px 0 0;width:73px;height:24px;background-position:-70px -457px;font-size:12px;color:#fff;line-height:24px;text-align:center;display:none;}
+#scoreIndex:hover{background-position:-70px -492px;}
+#scoreIndexPop{left:50%;top:50%;margin-left:-231px;margin-top:-115px;width:462px;position:absolute;z-index:999;overflow:hidden;display:none;height:229px;background:#fff;}
+#scoreIndexPopIfm{width:462px;height:229px;}
+
+/* ie6 */
+#musicLink,
+#musicLink:hover,
+#prevTheme,
+#prevTheme:hover,
+#nextTheme,
+#nextTheme:hover,
+#scoreIndex,
+#scoreIndex:hover{-height:24px;-background-position-y:-527px;}
+
+/* 云音乐 */
+#yunMusic{width:329px;height:162px;border-radius:3px;position:absolute;z-index:999;left:50%;top:50%;margin-left:-450px;overflow:hidden;color:#626262;margin-top:-122px;box-shadow:0px 2px 5px rgba(0 ,0 ,0 , .6);display:none;}
+#yunMusicBackground{width:329px;height:162px;position:absolute;left:0;top:0;background:#fff;filter:alpha(opacity=90);opacity:0.9;z-index:0;}
+#yunMusicText1{position:absolute;z-index:1;line-height:22px;vertical-align:baseline;left:21px;top:24px;text-align:left;width:290px;}
+#yunMusicText1 img{position:relative;top:2px;}
+#yunMusicText2{position:absolute;z-index:1;left:21px;top:80px;width:290px;text-align:left;}
+#yunMusicConfirm{position:absolute;z-index:1;height:25px;line-height:25px;width:86px;display:block;border:1px solid #459830;border-radius:3px;background:#59b045;color:#fff;left:120px;top:120px;
+background: -moz-linear-gradient(top, #6bbb59 0%, #459830 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6bbb59), color-stop(100%,#459830)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #6bbb59 0%,#459830 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #6bbb59 0%,#459830 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #6bbb59 0%,#459830 100%); /* IE10+ */
+background: linear-gradient(to bottom, #6bbb59 0%,#459830 100%); /* W3C */
+}
+#yunMusicClose{height:14px;width:14px;right:0;top:0;line-height:14px;left:auto;font-size:12px;text-align:center;background:#ccc;border-color:#b8b8b8;color:#fff;font-family:Verdana;position:absolute;border-radius:3px;}
+#yunMusicClose:hover{background:#c2c2c2;border-color:#aaa9a9;}
+
+/* 气泡提示 */
+.layer-hd,
+.layer-mid,
+.layer-ft,
+.layer-arrow,
+.error-tt p{background-image: url(/images/error_bg.png); _background-image: url(/images/error_bg_ie6.png);}
+.layer{position: absolute; width: 347px; top: 0; left: 50%; margin-left: -265px; color: #434343; text-align: left; z-index: 1000; display: none;}
+.layer.bubbleLayer-show{display: block; -webkit-animation: shake 0.6s ease-in-out 0.3s; -moz-animation: shake 0.6s ease-in-out 0.3s; -o-animation: shake 0.6s ease-in-out 0.3s; animation: shake 0.6s ease-in-out 0.3s;}
+.layer-hd,
+.layer-ft{overflow: hidden; font-size: 0; line-height: 0;}
+.layer-hd{height: 8px; background-position: -10px 0; background-repeat: no-repeat;}
+.layer-ft{height: 10px; background-position: -10px -8px; background-repeat: no-repeat;}
+.layer-mid{padding: 5px 20px 7px; background-position: -357px 0; background-repeat: repeat-y;}
+.layer-arrow{position: absolute; top: 35px; right: -6px; width: 10px; height: 19px; background-position: 0 0; background-repeat: no-repeat;}
+/* 错误提示 */
+.layer .error-tt a{color:#5B8CCA;font-family:simsun;}
+.layer .error-tt p{padding: 10px 10px 8px 50px; line-height: 22px; font-weight: bold; font-size: 14px; background-position: -714px -4px; background-repeat: no-repeat;}
+.layer .error-detail{margin-top:2px; padding: 8px 12px 5px; color: #7d7d7d; line-height: 18px; border-top: 1px solid #e1e1e1;}
+.layer .error-detail a{color: #4e90e2; text-decoration: underline;}
+/* 输入验证码获取动态密码 */
+/*.verify{padding: 10px;}
+.verify-wrap{height: 70px;}
+.verify-tt{margin-bottom:10px;font-size:14px;font-weight:bold;}
+.verify-input{float: left;}
+.verify-img{margin-left: 156px;}
+.verify-input-line{width: 150px;height:42px;background-position:0 -405px;position:relative;}
+.verify-input-line .formIpt{left:7px;width:135px;}
+.verify-img-btn{float: right;color: #4E90E2;line-height:22px;}
+.verify-img-btn:hover{color: #4E90E2; text-decoration: underline;}
+.verify-img-btn img{vertical-align: top;}
+.verify .btn-getDynPw{margin-right: 12px;}
+.verify-opt{height: 42px;}
+.verify-err{line-height:22px;}*/
+
+@-webkit-keyframes shake{0%{margin-left: -265px;}25%{margin-left: -262px;}50%{margin-left: -265px;}75%{margin-left: -262px;}100%{margin-left: -265px;}}
+@-moz-keyframes shake{0%{margin-left: -265px;}25%{margin-left: -262px;}50%{margin-left: -265px;}75%{margin-left: -262px;}100%{margin-left: -265px;}}
+@-o-keyframes shake{0%{margin-left: -265px;}25%{margin-left: -262px;}50%{margin-left: -265px;}75%{margin-left: -262px;}100%{margin-left: -265px;}}
+@keyframes shake{0%{margin-left: -265px;}25%{margin-left: -262px;}50%{margin-left: -265px;}75%{margin-left: -262px;}100%{margin-left: -265px;}}
+#mainMask{position:absolute; top:0; left: 0;width: 100%; height: 600px; background: #000; opacity: 0.2; filter:alpha(opacity=20); z-index: 1;}
+
+/*app登录*/
+#appLoginTab{font-size: 16px; color: #626262; text-align: center; position: relative; overflow: hidden;}
+#appLoginTab h3{padding-top: 20px; font-weight: normal; line-height: 35px}
+#appCodeWrap{margin-top: 30px; height: 150px; position: relative;}
+#appCode{padding: 2px; background: #fff; box-shadow: 0 0 5px rgba(0,0,0,.3)}
+#appCodeBox,
+.appCode-example{-webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out;}
+#appCodeBox{position: relative; left: 0; width: 100%;}
+#appLoginTab .hover #appCodeBox{left: -66px;}
+#appCodeLoading{position: absolute; top: 60px; left: 140px;}
+.appCode-example{position: absolute; top: -20px; right: 5px; opacity: 0; filter:alpha(opacity=0); width: 140px; height: 175px; background: url(/images/applogin_example.png) no-repeat; _background-image:url(/images/applogin_example_ie6.png);}
+#appLoginTab .hover .appCode-example{opacity: 1; filter:alpha(opacity=100);}
+#appCodeRefresh{position: absolute; top: 0; left: 80px; width: 134px; height: 134px; cursor: pointer;}
+#appLoginTxt{height: 12px; line-height: 12px; font-size: 12px;}
+.appLogin-hint{margin: 5px auto 0; width: 190px; text-align: center; font-size: 12px; line-height: 22px; background: #74B9F4; background: rgba(117, 187, 245, 0.8); color: #fff; border-radius: 20px;}
+.appLoginlink{padding-top: 30px; font-size: 13px; line-height: 16px}
+.appLoginlink var{color: #e0e0e0; margin: 0 10px;}
+.appLoginlink a{color: #4ea9f6;}
+.appLoginlink a:hover{color: #4ea9f6;text-decoration: underline;}
+#howToUseApp:hover{color: #67bdff; text-decoration: none;}
+.appCode-mask{height: 100%; background: #000; opacity: 0.7; filter:alpha(opacity=70);}
+.appCode-wrap{position: absolute; top: 0; left: 0; width: 100%; padding-top: 44px; text-align: center; color: #fff; line-height: 26px;}
+.appLogin-scanSuc{margin: 0 auto; width: 230px; height: 210px; background: url(/images/applogin_scansuc.png) no-repeat; _background-image:url(/images/applogin_scansuc_ie6.png);}
+#appLoginScan{padding-top: 20px;}
+#appLoginRestart{color: #5b8cca; font-size: 14px;}
+.appLogin-scantxt{margin-top: 10px; line-height: 40px; font-weight: bold;}

@@ -1,0 +1,10 @@
+{
+  "curly": true,
+  "eqeqeq": true,
+  "latedef": true,
+  "noarg": true,
+  "quotmark": "single",
+  "boss": true,
+  "trailing": true,
+  "browser": true
+}

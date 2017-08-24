@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+
+</head>
+<body >
+<form  method="post">
+<table  border="0" align="left" cellpadding="0" cellspacing="1" class="mytable" width="100%">
+  <tr>
+    <td><div align="right">地区：</div></td>
+    <td>
+<script src="/js/xiala2/js/comm.js"></script>
+<script src="/js/xiala2/js/linkagesel-min.js"></script>
+<script type="text/javascript" src="http://cache.huiup.cn/upload/cache/service.js"></script>
+<style type="text/css">
+body{ font-size:50px}
+input[type=text]{height:100px;width:200px;border:1px solid #cccccc;line-height:100px}
+input[type=password]{height:100px;width:400px;border:1px solid #cccccc;line-height:100px}
+textarea{height:50px;width:400px;border:1px solid #cccccc;line-height:26px}
+select{height:100px;line-height:100px; margin-bottom:12px;font-size:80px}
+input[type=button]
+{
+    background: #0AE;
+    line-height: 100px;
+    padding: 0px 30px;
+    border: 0px none;
+    color: #FFF;
+    height: 100px;
+    cursor: pointer;
+	border-radius:4px;
+	font-size:18px;font-size:30px;line-height:100px;
+}
+.btn {
+    background: #0AE;
+    line-height: 100px;
+    padding: 0px 30px;
+    border: 0px none;
+    color: #FFF;
+    height: 100px;
+    cursor: pointer;
+	border-radius:4px;
+	font-size:18px;font-size:40px
+}
+	span.invalid,
+	div.yiiForm textarea.invalid,
+	div.yiiForm select.invalid
+	{
+		background: #FEE;
+		border-color: #ffffff;
+	}
+	div.yiiForm label.invalid,
+	div.yiiForm span.invalid
+	{
+		color: #ffffff;
+	}
+.STYLE1 {color: #FF0000}
+	
+.mytable
+{
+	border:1px #cfdae8;
+	margin-top:80px;
+}
+.mytable tr
+{
+	border:1px #cfdae8;
+	
+}
+.mytable tr td
+{
+	 padding-left:2px;padding-right:10px;padding-top:6px;padding-bottom:6px;
+}
+select{  display:block; margin-bottom:10px;font-size:40px  }
+</style>
+<select id="fu_wu_shang"></select>
+<input type="hidden" name="fuwushang" id="fuwushang">
+<script>
+var linkageSel1;
+$(document).ready(function(){
+    var LockStr="5000602";
+    var opts = {
+            data: Service_Data,
+root:[5000602],            select: '#fu_wu_shang',level:3,
+			selStyle: 'margin-left: 3px;',
+			//autoHide:false,
+			head:  '=请选择='
+    };
+    linkageSel1 = new LinkageSel(opts);
+    
+    linkageSel1.onChange(function() {
+    	var arr = linkageSel1.getSelectedArr();
+    	$('#fuwushang').val((LockStr==''?'':LockStr+',')+arr.join(','));
+		;   
+    });
+});
+</script></td>
+  </tr>
+  
+  <tr>
+    <td ><div align="right">名称：</div></td>
+    <td>
+<input name="serch_name" style="font-size:30px;line-height:100px; width:400px" id="serch_name" type="text" /></td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td></td>
+    <td><input onclick="Ti_Jiao()" type="button" value="&nbsp;查&nbsp;&nbsp;&nbsp;&nbsp;询&nbsp;" /></td>
+  </tr>
+</table>
+<script type="text/javascript">
+
+function Ti_Jiao()
+{
+	str=$('#fuwushang').val();
+	var strs= new Array();var str_name=$('#serch_name').val();
+
+	strs=str.split(",");
+	//alert(obj2string(window.contact));
+	window.contact.getmappara(str_name,strs[1],strs[2],strs[3]);//
+	//alert(strs[1]+strs[2]+strs[3]+$('#serch_name').val())
+	
+}
+</script>
+</form>
+
+</body>
+</html>

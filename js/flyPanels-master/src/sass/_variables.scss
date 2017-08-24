@@ -1,0 +1,74 @@
+$flypanels_primary_color: #c0392b;
+
+$flypanels_main_background_fade_opacity: 0.2;
+$flypanels_loader_size: 120px;
+$flypanels_top_bar_height: 50px;
+$flypanels_panel_width: 260;
+$flypanels_panel_padding: 20;
+$flypanels_top_bar_bgcolor: $flypanels_primary_color;
+
+$flypanels_panel_bg: $flypanels_primary_color;
+$flypanels_text_color: #fff;
+$flypanels_link_color: $flypanels_text_color;
+
+$flypanels_primary_font: Helvetica, sans-serif, arial;
+
+$flypanels_loader_size: 120px;
+$flypanels_loader_color: #fff;
+
+$flypanels_transition_time: 0.5s;
+
+
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@include keyframes(fadein) {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@include keyframes(fadeout) {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+// generic transform
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+	 @include transform(scale($scale));
+}

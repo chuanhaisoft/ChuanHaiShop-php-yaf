@@ -1,0 +1,22 @@
+{
+  "name": "flypanels",
+  "title": "flypanels",
+  "description": "Responsive off canvas menu panels",
+  "version": "2.0.5",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.2.3",
+    "grunt": "~0.4.4",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-watch": "~0.4.0",
+    "grunt-postcss": "^0.7.1",
+    "grunt-sass": "^1.0.0",
+    "grunt-update-json": "^0.2.1"
+  }
+}

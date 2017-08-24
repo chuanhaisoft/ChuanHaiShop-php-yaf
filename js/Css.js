@@ -1,0 +1,1 @@
+document.writeln('<link rel="stylesheet" type="text/css" href="/css/css1.css" />');

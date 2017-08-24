@@ -1,0 +1,219 @@
+
+.panelcontent nav.flypanels-treemenu {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  ul, ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  ul {
+    li {
+      div {
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        font-weight: 400;
+        font-size: 12px;
+        display: inline-block;
+        width: #{$flypanels_panel_width}px;
+        position: relative;
+
+        a.link {
+          color: $flypanels_link_color;
+          padding-top: 11px;
+          padding-bottom: 13px;
+          display: inline-block;
+          padding-left: 15px;
+          padding-right: 15px;
+          width: #{$flypanels_panel_width}px;
+        }
+      }
+      &.haschildren {
+        a.link {
+          width: #{$flypanels_panel_width - 60}px;
+          border-right: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        a.expand {
+          color: $flypanels_link_color;
+          width: #{$flypanels_panel_width - 200}px;
+          font-size: 11px;
+          float: right;
+          display: inline-block;
+          height: 100%;
+          padding-left: 15px;
+          padding-top: 11px;
+          padding-bottom: 13px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+        }
+      }
+      &.haschildren > div > a.expand > i.fa.icon:before {
+        content: "\f105";
+      }
+      &.expanded > div > a.expand > i.fa.icon:before {
+        content: "\f107";
+      }
+    }
+  }
+
+  /* Tree Menu Level 2-6 */
+  ul li.haschildren {
+    li {
+      div {
+        border-bottom-color: desaturate(lighten(darken($flypanels_primary_color, 5%), 10%), 20%);
+        a {
+          background-color: darken($flypanels_primary_color, 5%);
+          &.link {
+            border-right: none;
+            width: #{$flypanels_panel_width}px;
+            padding-left: 25px;
+          }
+        }
+      }
+      &.haschildren {
+        a.link {
+          border-right: 1px solid desaturate(lighten(darken($flypanels_primary_color, 5%), 10%), 20%);
+          width: #{$flypanels_panel_width - 60}px;
+        }
+        li {
+          div {
+            border-bottom-color: desaturate(lighten(darken($flypanels_primary_color, 10%), 10%), 20%);
+            a {
+              background-color: darken($flypanels_primary_color, 10%);
+              &.link {
+                border-right: none;
+                width: #{$flypanels_panel_width}px;
+                padding-left: 40px;
+              }
+            }
+          }
+          &.haschildren {
+            a.link {
+              border-right: 1px solid desaturate(lighten(darken($flypanels_primary_color, 10%), 10%), 20%);
+              width: #{$flypanels_panel_width - 60}px;
+            }
+            li {
+              div {
+                border-bottom-color: desaturate(lighten(darken($flypanels_primary_color, 15%), 10%), 20%);
+                a {
+                  background-color: darken($flypanels_primary_color, 15%);
+                  &.link {
+                    border-right: none;
+                    width: #{$flypanels_panel_width}px;
+                    padding-left: 55px;
+                  }
+                }
+              }
+              &.haschildren {
+                a.link {
+                  border-right: 1px solid desaturate(lighten(darken($flypanels_primary_color, 15%), 10%), 20%);
+                  width: #{$flypanels_panel_width - 60}px;
+                }
+                li {
+                  div {
+                    border-bottom-color: desaturate(lighten(darken($flypanels_primary_color, 20%), 10%), 20%);
+                    a {
+                      background-color: darken($flypanels_primary_color, 20%);
+                      &.link {
+                        border-right: none;
+                        width: #{$flypanels_panel_width}px;
+                        padding-left: 70px;
+                      }
+                    }
+                  }
+                  &.haschildren {
+                    a.link {
+                      border-right: 1px solid desaturate(lighten(darken($flypanels_primary_color, 20%), 10%), 20%);
+                      width: #{$flypanels_panel_width - 60}px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+
+  li div a.link:hover, li.active > div * * > * * a.link {
+    text-decoration: none;
+    background-color:rgba(255, 255, 255, 0.8) !important;
+    color: $flypanels_primary_color;
+  }
+
+  li div  a.expand:hover {
+    text-decoration: none;
+    background-color:rgba(255, 255, 255, 0.8) !important;
+    color: $flypanels_primary_color;
+  }
+
+  ul li a:focus, .panelcontent nav ul li a:visited, .panelcontent nav ul li a:link {
+    text-decoration: none;
+  }
+}
+
+/* Touch devices :hover fix */
+.panelcontent nav.flypanels-treemenu.touch li a:hover {
+  background-color:inherit !important;
+  color: $flypanels_link_color;
+}
+.panelcontent nav.flypanels-treemenu.touch li li a:hover {
+  background-color:rgba(0, 0, 0, 0.1) !important;
+  color: $flypanels_link_color;
+}
+.panelcontent nav.flypanels-treemenu.touch li li li a:hover {
+  background-color:rgba(0, 0, 0, 0.2) !important;
+  color: $flypanels_link_color;
+}
+.panelcontent nav.flypanels-treemenu.touch li li li li a:hover {
+  background-color:rgba(0, 0, 0, 0.3) !important;
+  color: $flypanels_link_color;
+}
+.panelcontent nav.flypanels-treemenu.touch li li li li li a:hover {
+  background-color:rgba(0, 0, 0, 0.4) !important;
+  color: $flypanels_link_color;
+}
+.panelcontent nav.flypanels-treemenu.touch li li li li li li a:hover {
+  background-color:rgba(0, 0, 0, 0.5) !important;
+  color: $flypanels_link_color;
+}
+
+.panelcontent nav.flypanels-treemenu.touch li a:active,
+.panelcontent nav.flypanels-treemenu.touch li li a:active,
+.panelcontent nav.flypanels-treemenu.touch li li li a:active,
+.panelcontent nav.flypanels-treemenu.touch li li li li a:active,
+.panelcontent nav.flypanels-treemenu.touch li li li li li a:active {
+  text-decoration: none;
+  background-color:rgba(255, 255, 255, 0.8) !important;
+  color: $flypanels_primary_color;
+}
+
+.panelcontent nav.flypanels-treemenu {
+  li.haschildren > ul {
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      overflow: hidden;
+      transform: translate3d(0, 0, 0);
+      transition: 0.5s ease-in-out;
+  }
+  li.haschildren.expanded > ul {
+      max-height: 3000px;
+      overflow:hidden;
+  }
+  ul li a i {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+
+}
+
+.flypanels-container .offcanvas .panelcontent[data-panel="treemenu"] {
+  padding-left: 0;
+  padding-right: 0;
+}

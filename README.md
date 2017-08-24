@@ -9,3 +9,8 @@ ChuanHaiShop 采用php的yaf内存框架开发，运行速度极快，自身集�
 3.微信支付证书位置：\m\weixin\cert\
 
 4.shell服务：php -f /web路径/cmd.php request_uri=/cmd/order/do
+
+
+前端演示：http://www.chuanhaisoft.com/
+
+后台演示：http://demo.chuanhaisoft.com/chuanhai/ 用户名:admin 密码:chuanhaisoft

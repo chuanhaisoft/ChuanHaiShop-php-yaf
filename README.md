@@ -13,4 +13,6 @@ ChuanHaiShop 采用php的yaf内存框架开发，运行速度极快，自身集�
 
 前端演示：http://www.chuanhaisoft.com/
 
-后台演示：http://demo.chuanhaisoft.com/chuanhai/ 用户名:admin 密码:chuanhaisoft
+
+后台演示：http://demo.chuanhaisoft.com/chuanhai/ 
+用户名:admin 密码:chuanhaisoft

@@ -56,7 +56,7 @@ $(function(){
 	$("#buy_now").click(function(){
 		if (<?php echo $UserId ? $UserId : 0; ?> == 0) {
 			alert('请登录');
-			window.location.href = "<?php echo Pub\SysPara::site_url('member/login.html');?>";
+			window.location.href = "/";
 			return false;
 		}
 		if (check_guige() == false) return false;

@@ -374,7 +374,7 @@ function pay()
     if (<?php echo $UserId ? $UserId : 0; ?> == 0) 
     {
         layer.alert('请登录', function (index) {
-            window.location.href = "<?php echo Pub\SysPara::site_url('member/login.html');?>";
+            window.location.href = "/";
             layer.close(index);
         });
         return false;

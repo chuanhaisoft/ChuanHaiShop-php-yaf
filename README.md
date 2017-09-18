@@ -1,4 +1,4 @@
-
+﻿
 ChuanHaiShop 采用php的yaf内存框架开发，运行速度极快，自身集成orm，使用灵活，sql语句的执行采用sql预处理方式，从根源上避免了sql注入，业务逻辑大量采用行锁，事务，运行稳定。
 
 
@@ -16,3 +16,5 @@ ChuanHaiShop 采用php的yaf内存框架开发，运行速度极快，自身集�
 
 后台演示：http://demo.chuanhaisoft.com/chuanhai/
 用户名:admin 密码:chuanhaisoft
+
+即时通讯插件助您整合咨询系统，商家可使用桌面版与用户的web版在线交流，提高订单成交。

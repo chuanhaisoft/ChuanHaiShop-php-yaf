@@ -17,4 +17,4 @@ ChuanHaiShop 采用php的yaf内存框架开发，运行速度极快，自身集�
 后台演示：http://demo.chuanhaisoft.com/chuanhai/
 用户名:admin 密码:chuanhaisoft
 
-即时通讯插件助您整合咨询系统，商家可使用桌面版与用户的web版在线交流，提高订单成交。
+川海即时通讯插件助您整合咨询系统，商家可使用桌面版与用户的web版在线交流，提高订单成交。

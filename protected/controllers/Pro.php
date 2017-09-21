@@ -45,7 +45,7 @@ class ProController extends \Base\Common
 	    $Arr2=array();
 	    foreach ($Arr as $key => $value)
 	    {
-	        array_push($Arr2,$key.'='.urlencode($value));
+	        array_push($Arr2,$key.'='.$value);
 	    }
 	    sort($Arr2);
 	    $Str='';

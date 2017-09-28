@@ -11,7 +11,7 @@ ChuanHaiShop 采用php的yaf内存框架开发，运行速度极快，自身集�
 
 1.数据库信息修改：protected\config\application.ini
 
-2.环境要求：php>=5.4  yaf最新版即可,开启yaf命名空间
+2.环境要求：php>=5.4 (支持php7) yaf最新版即可,开启yaf命名空间
 
 3.微信支付证书位置：\m\weixin\cert\
 

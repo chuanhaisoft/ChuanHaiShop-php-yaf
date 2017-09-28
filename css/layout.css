@@ -449,7 +449,7 @@ a.uline								{text-decoration:underline;}
 .navitems li a strong 	{font-weight: normal;}
 .navitems li.hover 		{color:#c50000;}
 .navitems li.hover a	{color:#c50000;}
-.navitems li .ico-kh	{position: absolute;background:url(/images/ico-kaohe.png) no-repeat;width:41px;height:22px;line-height: 200px;overflow: hidden;top:-5px;right:-18px;}
+.navitems li .ico-kh	{position: absolute;width:41px;height:22px;line-height: 200px;overflow: hidden;top:-5px;right:-18px;}
 
 
 /*shop-car*/

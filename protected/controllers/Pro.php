@@ -26,7 +26,7 @@ class ProController extends \Base\Common
 		$data['IndexViewSort']=[348,683,725,352];
 		
 		//即时通讯im
-		Pub\ChuanHaiIm::Set('71' , '川海软件-A', 'http://www.chuanhaisoft.com/images/default_top.jpg');
+		Pub\ChuanHaiIm::Set('71', '川海软件-A', 'http://www.chuanhaisoft.com/images/default_top.jpg');
 
 		$this->display('index',$data);
 	}

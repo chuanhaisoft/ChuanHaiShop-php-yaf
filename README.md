@@ -3,9 +3,9 @@ ChuanHaiShop 采用php的yaf内存框架开发，运行速度极快，自身集�
 
 产品特征：
 
-多规格可以设置多价格
+  多规格可以设置多价格，规格自定义
 
-运费支持设置省级运费
+  运费支持设置省级运费
 
 
 1.数据库信息修改：protected\config\application.ini

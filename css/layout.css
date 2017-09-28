@@ -749,7 +749,7 @@ a.uline								{text-decoration:underline;}
 .banner li.banner-li a{position:absolute;top:0;left:50%;width:815px;height:455px;margin-left:-465px;overflow:hidden}
 .banner li.banner-li a img{width: 815px;height:445px;}
 .banner .banner-wrapper{position:absolute;top:0;left:50%;width:815px;height:1px;margin-left:-465px;}
-.banner-wrapper .unslider-arrow06{opacity:.6;filter:alpha(opacity=60);position:absolute;width:38px;height:78px;background:url(/images/indexNew-bg.png);z-index:3;top:208px;line-height: 300px;overflow: hidden;}
+.banner-wrapper .unslider-arrow06{opacity:.6;filter:alpha(opacity=60);position:absolute;width:38px;height:78px;z-index:3;top:208px;line-height: 300px;overflow: hidden;}
 .banner .banner-wrapper .prev{left:50%;margin-left:-406px;background-position:0 -51px}
 .banner .banner-wrapper .next{right:50%;margin-right:-408px;background-position:-43px -51px}
 

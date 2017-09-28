@@ -7,6 +7,7 @@ ChuanHaiShop 采用php的yaf内存框架开发，运行速度极快，自身集�
 
   运费支持设置省级运费
 
+配置：
 
 1.数据库信息修改：protected\config\application.ini
 

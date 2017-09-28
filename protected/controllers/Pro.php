@@ -26,33 +26,9 @@ class ProController extends \Base\Common
 		$data['IndexViewSort']=[348,683,725,352];
 		
 		//即时通讯im
-		$UserID=isset($_GET['id'])?$_GET['id']:71;
-		$UserData=['userid'=>"{$UserID}",'domainid'=>'80026','name'=>'测试-'.$UserID,'pic'=>'http://www.chuanhaisoft.com/images/default_top.jpg'];
-		$UserData['key']=self::ApiSign($UserData,'K^X7LF976VMAmDb*1#ZMpfvnyjDV4c');
-		self::SetCookies('chuanhaisoft_im_user',base64_encode(json_encode($UserData)),365*24*3600);
+		Pub\ChuanHaiIm::Set(71, '川海软件-A', 'http://www.chuanhaisoft.com/images/default_top.jpg');
 
 		$this->display('index',$data);
-	}
-	
-	public static function SetCookies($_CookieName,$_Value,$_Expire=0)
-	{
-	    if($_Expire>0)
-	        $_Expire=strtotime(date("Y-m-d H:i:s"))+$_Expire;
-	    setcookie($_CookieName,$_Value,$_Expire,"/");//time()+3600*
-	}
-	public static function ApiSign($Arr,$Key)
-	{
-	    $Arr2=array();
-	    foreach ($Arr as $key => $value)
-	    {
-	        array_push($Arr2,$key.'='.$value);
-	    }
-	    sort($Arr2);
-	    $Str='';
-	    $Str=implode("&", $Arr2);
-	    $Str=md5($Str.$Key);
-	
-	    return $Str;
 	}
 	
 	public function DetailAction()

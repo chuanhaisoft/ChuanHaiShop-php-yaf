@@ -37,8 +37,8 @@ class SysFram
 			Fram::SetSession("SysRoleID",$dr["ROLE_ID"]);
 			
 			//msg
-			//if($IsCheckPassWord)
-			//     Fram::SetCookies('chuanhaisoft_im_user',base64_encode('71'.'---'.$dr["LOGIN_NAME"].'---'.$PassWord2),365*24*3600);
+			if($IsCheckPassWord)
+			     \Pub\ChuanHaiIm::Set($dr["ID"], $dr["NAME"], 'http://www.chuanhaisoft.com/images/default_top.jpg');
 
 			Fram::SetCookies("cSys001",Encrypt::CommonEncode($dr["ID"]),$expire);
 			Fram::SetCookies("cSys002",Encrypt::PassWordEncode2($dr["ID"].'hTtP://wWw.YunhUatOng.coM'.$dr["LOGIN_PASS"]),$expire);

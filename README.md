@@ -42,15 +42,15 @@ server {<br/>
 }<br/>
 
  Lighttpd配置：
- $HTTP["host"] =~ "(www.)?domain.com$" {
-  url.rewrite = (
-     "^/(.+)/?$"  => "/index.php/$1",
-  )
-}
+ $HTTP["host"] =~ "(www.)?domain.com$" {<br/>
+  url.rewrite = (<br/>
+     "^/(.+)/?$"  => "/index.php/$1",<br/>
+  )<br/>
+}<br/>
 
  SAE的配置 (config.yaml)
  
- name: your_app_name
-version: 1
-handle:
-    - rewrite: if(!is_dir() && !is_file() && path ~ "^(.*)$" ) goto "/index.php"
+ name: your_app_name<br/>
+version: 1<br/>
+handle:<br/>
+    - rewrite: if(!is_dir() && !is_file() && path ~ "^(.*)$" ) goto "/index.php"<br/>

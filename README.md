@@ -26,7 +26,7 @@ ChuanHaiShop 采用php的yaf内存框架开发，运行速度极快，自身集�
 
 川海即时通讯插件助您整合咨询系统，商家可使用桌面版与用户的web版在线交流，提高订单成交。
 
-apache配置：
+apache配置：<br/>
 apache使用.htaccess即可
 
 nginx 配置：

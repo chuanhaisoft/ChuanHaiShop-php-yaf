@@ -25,3 +25,32 @@ ChuanHaiShop 采用php的yaf内存框架开发，运行速度极快，自身集�
 用户名:admin 密码:chuanhaisoft
 
 川海即时通讯插件助您整合咨询系统，商家可使用桌面版与用户的web版在线交流，提高订单成交。
+
+apache配置：
+apache使用.htaccess即可
+
+nginx 配置：
+server {
+  listen ****;
+  server_name  domain.com;
+  root   document_root;
+  index  index.php index.html index.htm;
+
+  if (!-e $request_filename) {
+    rewrite ^/(.*)  /index.php/$1 last;
+  }
+}
+
+ Lighttpd配置：
+ $HTTP["host"] =~ "(www.)?domain.com$" {
+  url.rewrite = (
+     "^/(.+)/?$"  => "/index.php/$1",
+  )
+}
+
+ SAE的配置 (config.yaml)
+ 
+ name: your_app_name
+version: 1
+handle:
+    - rewrite: if(!is_dir() && !is_file() && path ~ "^(.*)$" ) goto "/index.php"

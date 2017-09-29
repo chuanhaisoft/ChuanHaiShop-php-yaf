@@ -11,8 +11,7 @@
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript" src="/js/detail.js"></script>
-<!-- <script src="https://msg.yunhuatong.com/im.js" id="chuanhaisoft_im_script" data="jsjq=0" upload_back="http://xxxxxxx.cn/shopm/Im_url"></script> -->
-</head>
+<script src="http://msg.yunhuatong.com/im.js" id="chuanhaisoft_im_script" para_jsjq="0" para_add_friend="71.1;" pic_upload_url="http://www.chuanhaisoft.com/system/upload/Upload_im/"></head>
 <body>
 <script type="text/javascript">
 <?php
@@ -752,8 +751,9 @@ $(document).ready(function(){
 		<!-- / pro-detail-wz-->
 		<div class="clear"></div>
 	</div>
-	<!--/ content-->
+	
+	
 	<?php \Pub\Yaf::display('footer'); ?>
-	<script src="http://msg.yunhuatong.com/im.js" id="chuanhaisoft_im_script" para_jsjq="0" para_add_friend="71.1;" pic_upload_url="http://www.chuanhaisoft.com/system/upload/Upload_im/">
+	
 </body>
 </html>

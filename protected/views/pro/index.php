@@ -365,7 +365,8 @@ $(document).ready(function(e) {
 	
 	<!--/ content-->
 	</div>
-	<?php \Pub\Yaf::display('footer'); ?>
 	<script src="http://msg.yunhuatong.com/im.js" id="chuanhaisoft_im_script" para_jsjq="0" para_add_friend="71.1;" pic_upload_url="http://www.chuanhaisoft.com/system/upload/Upload_im/">
+	<?php \Pub\Yaf::display('footer'); ?>
+	
 </body>
 </html>

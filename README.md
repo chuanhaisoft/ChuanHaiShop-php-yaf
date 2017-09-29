@@ -30,16 +30,16 @@ apache配置：<br/>
 apache使用.htaccess即可
 
 nginx 配置：
-server {
-  listen ****;
-  server_name  domain.com;
-  root   document_root;
-  index  index.php index.html index.htm;
-
-  if (!-e $request_filename) {
-    rewrite ^/(.*)  /index.php/$1 last;
-  }
-}
+server {<br/>
+  listen ****;<br/>
+  server_name  domain.com;<br/>
+  root   document_root;<br/>
+  index  index.php index.html index.htm;<br/>
+<br/>
+  if (!-e $request_filename) {<br/>
+    rewrite ^/(.*)  /index.php/$1 last;<br/>
+  }<br/>
+}<br/>
 
  Lighttpd配置：
  $HTTP["host"] =~ "(www.)?domain.com$" {

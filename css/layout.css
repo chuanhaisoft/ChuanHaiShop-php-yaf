@@ -7,7 +7,7 @@ html{color:#303030;background:#FFF;}
 body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,
 dl,dt,dd,ul,ol,li,pre,form,fieldset,
 legend,button,input,textarea,th,td	{margin:0;padding:0;}
-html,body{overflow-x:hidden!important;}
+body{overflow-x:hidden!important;}
 body,button,input,select,textarea	{font:14px "Microsoft YaHei",tahoma,arial,"Hiragino Sans GB","宋体",sans-serif;letter-spacing: 1px;}
 h1,h2,h3,h4,h5,h6					{font-size:100%;}
 address,cite,dfn,em,var				{font-style:normal;}
@@ -438,11 +438,11 @@ a.uline								{text-decoration:underline;}
 .search_form .form .input_select_menu .item_list a:hover	{background-color:#f5f5f5; }
 .search_form .form .input_select_menu .item_list .selected a {cursor:default; background-color:#eee; }
 
-#header2 .search_form{width: 590px;padding-top:10px;}
+#header2 .search_form{width: 590px;padding-top:9px;}
 #header2 .search_form .form .sr{width: 389px;}
 
 /*navitems*/
-.navitems				{float: left;width:780px;margin-top: 6px;}
+.navitems				{float: left;width:780px;margin-top: 6px; padding-left:30px;}
 .navitems li 			{float: left;position: relative;height: 38px;}
 .navitems li a 			{font-size:16px;color: #333;line-height: 38px; height: 38px; padding: 0 20px; text-align: center; text-decoration: none;font-weight: 400;}
 .navitems li a:hover{color:#c50000;}
@@ -496,7 +496,7 @@ a.uline								{text-decoration:underline;}
 
 
 /*header*/
-#navbox							{border-bottom:2px solid #c50000;background:#FFF;position: relative;z-index: 100;}
+#navbox							{border-bottom:2px solid #c50000;background:#FFF;position: relative;z-index:500;}
 #navbox .hbox					{width: 1180px;margin: 0 auto;padding-top:5px;} 
 #navbox .navitems				{margin-top: 0;}
 
@@ -509,11 +509,11 @@ a.uline								{text-decoration:underline;}
 #AdClose:hover					{background-image:url(/images/close_hover_03.png);}
 
 /*content*/
-#content						{width:1180px;margin:0 auto 30px auto;}
+.content						{width:1180px;margin:0 auto 30px auto;}
 
 
 /*footer*/
-#footer							{margin-bottom: 10px;}
+#footer							{clear:both;margin-bottom: 10px;}
 #footer .slogen					{background:#f5f5f5;padding:15px 0;}
 #footer .slogen	 dl 			{float: left;width:176px;padding-left:60px;background: url(/images/jsh-footer.png) no-repeat;}
 #footer .slogen	 dl dt 			{font-size:16px;}
@@ -644,9 +644,8 @@ a.uline								{text-decoration:underline;}
 .user-info .title{font-size:14px;margin-bottom:10px;font-weight: normal;}
 .user-info .title .tith{font-weight: normal;}
 
-.user-info li{margin-bottom:8px;}
 .user-info .sr{height:20px;width:195px; text-indent: 10px;padding:5px 0;line-height: 20px;border:1px solid #d5d5d5;color: #666;}
-.user-info .unlogin{margin-bottom: 15px;}
+.user-info .unlogin{margin-bottom: 15px;margin-top:15px;}
 .user-info .f-cb{margin-bottom: 20px;}
 .user-info .btn.u-loginbtn{height:44px;width:100%;text-align: center;line-height: 44px;font-size: 18px;}
 
@@ -655,7 +654,7 @@ a.uline								{text-decoration:underline;}
 
 
 /*order-form-num*/
-.order-form-num				{background:#f5f5f5;padding:10px 0;border-bottom:1px solid #e8e8e7;}
+.order-form-num				{background:#f5f5f5;padding:5px 0;border-bottom:1px solid #e8e8e7;}
 .order-form-num li 			{float: left;width:59px;text-align: center;}
 .order-form-num li .num		{color:#c50000;font-size:18px;}
 .order-form-num li .text	{color:#333;font-size:12px;}
@@ -679,7 +678,7 @@ a.uline								{text-decoration:underline;}
 .navitm-cats .catli .icon 	{display: block;float: left;width:25px;height:25px;background:url(/images/jsh-menu-cd.png) no-repeat;margin-right:10px;}
 
 .navitm-cats .catli .t		{display: block;width:110px;height:25px;float:left;}
-.navitm-cats .catli .t strong{font-weight: normal;height: 25px; line-height: 25px;float: left;}
+.navitm-cats .catli .t strong{font-weight: normal;height: 25px; line-height: 25px;float: left; color:#fff;}
 
 .navitm-cats .catli .arr	{background:url(/images/jsh-menu-ico.png) no-repeat; height: 13px;width: 7px;position: absolute;right:-1px;top:7px;display: none;}
 .navitm-cats .catli .icon.i1271{background-position: 0 3px;}
@@ -728,7 +727,7 @@ a.uline								{text-decoration:underline;}
 .classification{float: left;height:39px;position: relative;width: 125px;margin-right: 15px;}
 
 .classification .ng-all-hook{position:absolute;display:block;width:125px;height:38px;line-height:38px;font-size:14px;left:0;top:3px;background:#c50000;color:#FFF !important;font-weight:normal;overflow:visible;text-decoration:none;text-indent: 12px;}
-.classification .navitm-cats{position:absolute;left:0;top:41px;height:451px;width:125px;padding:5px 0 0 0;background:#f4f4f4;z-index:7675;opacity:.95}
+.classification .navitm-cats{position:absolute;left:0;top:41px;height:451px;width:125px;padding:5px 0 0 0;background:#ef2c3b;z-index:7675;opacity:.95}
 
 
 .banner { position: relative; overflow: hidden; text-align: center;height:455px;margin-bottom: 20px;}
@@ -753,7 +752,7 @@ a.uline								{text-decoration:underline;}
 .banner .banner-wrapper .prev{left:50%;margin-left:-406px;background-position:0 -51px}
 .banner .banner-wrapper .next{right:50%;margin-right:-408px;background-position:-43px -51px}
 
-.user-pos{position: absolute;top:10px;left:50%;background: #FFF;width:240px;z-index: 99;margin-left:350px;text-align: left;}
+.user-pos{background: #FFF;width:240px;z-index: 99;text-align: left;float:right;}
 
 /*价格*/
 .price-yj					{color:#666;}
@@ -1508,8 +1507,9 @@ dl.m-progress dt b{display:block;filter:progid: DXImageTransform.Microsoft.Gradi
 .sy-fenbox .sy2{background: url(/images/syfen/syfen2.png) no-repeat;}
 .sy-fenbox .sy3{background: url(/images/syfen/syfen3.png) no-repeat;}
 .sy-fenbox .sy4{background: url(/images/syfen/syfen4.png) no-repeat;}
+.sy-fenbox .sy5{background: url(/images/syfen/syfen5.png) no-repeat;}
 .sy-fenbox .title .tith{padding-left:30px;display:table-cell;display:inline-block;*display:inline;zoom:1;vertical-align:top;color:white;font-family:"宋体";font-size:22px;height:56px;line-height: 56px;letter-spacing:5px;}
-.sy-fenbox .pt_tags {float: right;max-width: 540px;overflow: hidden;height: 28px;text-align: right;z-index:1px;margin-right:20px;margin-top: 15px;}
+.sy-fenbox .pt_tags {float: right;max-width: 540px;overflow: hidden;height: 28px;text-align: right;z-index:1px;margin-right:20px;margin-top: 15px;[;;margin-top: 0px;height:auto;]}
 .sy-fenbox .pt_tags_item {background-color: hsla(0,0%,100%,.2);display: inline-block;height: 24px;line-height: 24px;padding: 0 10px;border: 1px solid hsla(0,0%,100%,.2);color: #fff; margin-left: 10px; margin-bottom: 10px; max-width: 100px;
 overflow: hidden;word-wrap: break-word;word-break: break-all;white-space: nowrap;text-overflow: ellipsis;}
 .sy-fenbox .pt_tags_item a{color: #fff;text-decoration: none;}

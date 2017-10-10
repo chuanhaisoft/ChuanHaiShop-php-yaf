@@ -170,9 +170,9 @@ var oStyle = {
 
 		// 绑定提交表单事件
 		// fEventListen($id('login163'), 'submit', me.submitForm);
-		$id('login163').onsubmit = function(){
-			return me.submitForm();
-		};
+		//$id('login163').onsubmit = function(){
+			//return me.submitForm();
+		//};
 
 		// 大写锁定开启判断
 		var oCapsLockTest = new CapsLock({
@@ -752,193 +752,8 @@ var aj = $.ajax( {
 	 * @return {Boolean}
 	 */
 	function fSubmitForm(){
-		var me = this;
-
-		/*var bDyn = ntabOn == 2;
-		// 浏览器禁止了ssl
-		if(window.bHTTPSDisabled && bDyn){
-			alert('由于您在浏览器设置中禁止使用了ssl，所以无法使用动态密码登录！');
-			return false;
-		}*/
-
-		// 检查输入
-		oId.value = fTrim(oId.value);
-		if(oId.value == ''){
-			oId.focus();
-			me.showError(1);
-			return false;
-		}
-		if(ntabOn == 2){
-			if(oPw.value.length == ''){
-				oPw.focus();
-				me.showError(3);
-				return false;
-			}else if(!fTrim(oPw.value)){ // 特殊处理密码全空格
-				me.showError(460);
-				return false;
-			}
-		}/*else{
-			if(oDynPw.value.length == ''){
-				oDynPw.focus();
-				if(window.DynamicPassword){
-					if(DynamicPassword.sms){
-						me.showError(5);
-					}else if(DynamicPassword.yixin){
-						me.showError(6);
-					}else{
-						me.showError(4);
-					}
-				}else{
-					me.showError(4);
-				}
-				return false;
-			}else if(!fTrim(oDynPw.value)){ // 特殊处理密码全空格
-				me.showError(460);
-				return false;
-			}
-		}*/
-
-		// starttime 登录时间统计
-		if(bStartTime){
-			var sNow = new Date().getTime();
-			fSetCookie("starttime", sNow, false);
-			bStartTime = false;
-		}
-
-		//用户名、密码不标准字符处理
-		oId.value = me.handleString(oId.value);
-		oPw.value = me.handleString(oPw.value);
-		//oDynPw.value = me.handleString(oDynPw.value);
-
-		//16位密码截断
-		if(oPw.value.length > 16){
-			oPw.value = oPw.value.substr(0,16);
-		}
-		//保存十天免登录
-		if($id('remAutoLogin').checked){
-			$id('savelogin').value = 1;
-		}else{
-			$id('savelogin').value = 0;
-		}
-		//登陆后锁定tab
-		var oTabDisabled;
-		if( ntabOn == 2 ){
-			oTabDisabled = $id('lbApp');
-		}else{
-			oTabDisabled = $id('lbNormal');
-		}
-		fEventUnlisten(oTabDisabled, 'mouseover', me.switchTabTimeout);
-		fEventUnlisten(oTabDisabled, 'mouseout', me.setbSwitchTabTimeout);
-
-		var fReBindSwitchTab = setInterval(function(){
-			try{
-				//若有错误提示，则重新绑定切换tab事件
-				if(window.frames["frameforlogin"].document.body.className == 'error'){
-					fEventListen(oTabDisabled, 'mouseover', me.switchTabTimeout);
-					fEventListen(oTabDisabled, 'mouseout', me.setbSwitchTabTimeout);
-					clearInterval(fReBindSwitchTab);
-				}
-			}catch(e){}
-		},500);
-
-		//锁定登录键
-		$id('loginBtn').disabled = true;
-		//$id('loginBtn2').disabled = true;
-
-		//储存登录信息
-		gUserInfo.username = oId.value;
-		gUserInfo.style = oStyle.value;
-		if(bIsFirstLog){
-			//if($id('SslLogin').checked){
-				gUserInfo.safe = 1;
-				sLoginFunc = 'ssl';
-			/*}else{
-				gUserInfo.safe = 0;
-				sLoginFunc = 'http';
-			}*/
-		}else{
-			if(sLoginFunc == 'ssl'){
-				gUserInfo.safe = 1;
-			}else{
-				gUserInfo.safe = 0;
-			}
-		}
 		
-		gVisitorCookie.saveInfo();
-		//弹出超时对话框
-		if(bIsFirstLog){
-			sCoremailCookie = fGetCookie('Coremail');
-			setTimeout(function(){
-				//若无错误提示，则判断为登录超时
-				try{
-					if(window.frames["frameforlogin"].document.body.className != 'error'){
-						me.showTheHttpLogin();
-					}
-				}catch(e){
-					me.showTheHttpLogin();
-				}
-			},5000);
-		}
-		//判断登录来源
-		var sUrlRace = aSpdResult[1]+'_'+aSpdResult[0]+'_'+aSpdResult[2]+'_'+aSpdResult[3],
-			sUrlDf = (function(){
-				var sDf = fGetQueryHash('df');
-				if(sDf == null){
-					// 判断不同tab
-					//var bIsMobile = ntabOn == 2;
-					//if(bIsMobile){
-					//	sDf = 'mail163_mobile';
-					//}else{
-						sDf = 'mail163_letter';
-					//}
-				}
-				fSetCookie('df',sDf,false);
-				return sDf;
-			})(),
-			sUrlUid = oId.value + '@' + gOption.sDomain;
-		// 全程SSL
-		var sAllSSL = ($id('AllSSLCkb').checked ? fUrlP('allssl', 'true') : '');
-		//选择登录方式
-		switch(sLoginFunc){
-			case 'ssl' :
-				var oForm = $id('login163');
-				oForm.action = gOption.sSslAction
-				+ fUrlP('df',sUrlDf,true)
-				+ fUrlP('from','web')
-				+ fUrlP('funcid','loginone')
-				+ fUrlP('iframe','1')
-				+ fUrlP('language','-1')
-				+ fUrlP('passtype','1')
-				+ fUrlP('product','mail163')
-				+ fUrlP('net',sLocationInfo)
-				+ fUrlP('style', oStyle.value)
-				+ fUrlP('race',sUrlRace)
-				+ fUrlP('uid', sUrlUid)
-				//+ (bDyn ? fUrlP('passAuthType', '1'):'')
-				+ sAllSSL;
-				if(bIsFirstLog){
-					bIsFirstLog = false;
-					return true;
-				}else{
-					oForm.submit();alert(1);
-				}
-				break;
-			case 'http' :
-				window.sHttpAction  = gOption.url
-				+ fUrlP('df',sUrlDf,true)
-				+ fUrlP('from','web')
-				+ fUrlP('language','-1')
-				+ fUrlP('net',sLocationInfo)
-				+ fUrlP('race',sUrlRace)
-				+ fUrlP('style', oStyle.value)
-				+ fUrlP('uid', sUrlUid)
-				//+ (bDyn ? fUrlP('passAuthType', '1'):'')
-				+ sAllSSL;alert(2);
-				loginRequest('fEnData');
-				return false;
-				break;
-			default :;
-		}
+		
 		return false;
 	}
 
@@ -947,58 +762,9 @@ var aj = $.ajax( {
 	 * @return {Boolean}
 	 */
 	function fShowTheHttpLogin(){
-		var me = this;
-		var oIdLoginBtn = $id('idLoginBtn'),
-			oHttpTips = $id('enhttpTips');
-		fResize();
-		window.frames['frameforlogin'].location.href = 'about:blank';
-		$id('enhttpblock').style.display = 'block';
-		$id('mask').style.display = 'block';
-		$id('enhttpblock').focus();
-		if(sLoginFunc == 'ssl'){
-			var sCoremailCookieNew = fGetCookie('Coremail');
+		
 
-			if( sCoremailCookieNew != sCoremailCookie ){
-				oHttpTips.innerHTML = '登录成功..等待跳转..';
-				oIdLoginBtn.style.display = 'none';
-				return false;
-			}else{
-				var nCount = 3;
-				oHttpTips.innerHTML = '<span id="backwards">' + nCount +'</span>&nbsp;秒后自动重试';
-				oIdLoginBtn.innerHTML = '立刻登录';
-				fEventUnlisten(oIdLoginBtn, 'click', _fLoginFunc);
-				fEventListen(oIdLoginBtn, 'click', _fLoginFunc1);
-				window.gBackwards = setInterval(function(){
-					nCount = nCount - 1;
-					$id('backwards').innerHTML = nCount;
-					if(nCount == 0){
-						clearInterval(window.gBackwards);
-						sLoginFunc = 'http';
-						me.submitForm();
-						me.showTheHttpLogin();
-					}
-				},1000);
-				return false;
-			}
-		}else{
-			//oHttpTips.innerHTML = '点击重新尝试普通加密方式登录';
-			oIdLoginBtn.innerHTML = '重试';
-			fEventUnlisten(oIdLoginBtn, 'click', _fLoginFunc1);
-			fEventListen(oIdLoginBtn, 'click', _fLoginFunc);
-		}
 
-		// 登录函数引用
-		function _fLoginFunc(){
-			me.submitForm();
-		}
-		function _fLoginFunc1(){
-			me.submitForm();
-			oHttpTips.innerHTML ='点击重新尝试https登录';
-			oIdLoginBtn.innerHTML = '重试';
-			clearInterval(window.gBackwards);
-			fEventUnlisten(oIdLoginBtn, 'click', _fLoginFunc1);
-			fEventListen(oIdLoginBtn, 'click', _fLoginFunc);
-		}
 	}
 
 	/**
@@ -1790,7 +1556,7 @@ window.onload = function(){
 	loginExtAD.init();
 	// piwik 输出1%的日志
 	if(fRandom(100) <= 1){
-		var pkBaseURL = "http://pstat.mail.163.com/";
+		var pkBaseURL = "/";
 		fGetScript(pkBaseURL + 'piwik.js', function(){
 			try{
 				var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 16);

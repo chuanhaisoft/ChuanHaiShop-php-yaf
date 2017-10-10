@@ -5,7 +5,7 @@ class SysPara
 	const IfMyCat=false;//是否使用mysql中间件
 	const PicDomain='/';
 	const SiteName='川海商城';
-	const Version='1.0';
+	const Version='1.5';
 	
 	
 	

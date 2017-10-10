@@ -7,18 +7,16 @@
 <title><?php echo Pub\SysPara::SiteName; ?></title>
 <link href="/css/layout.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/js/jquery.min.js"></script>
-<script type="text/javascript" src="/js/jquery.masonry.js"></script>
 <script type="text/javascript" src="/js/stickUp.min.js"></script>
-<script type="text/javascript" src="/js/scrollFix.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
-<script type="text/javascript" src="/js/jquery.pin.js"></script>
+
 </head>
 <body>
 
 <?php \Pub\Yaf::display('header',['hover'=>isset($hover)?$hover:null]); ?>
-	<div id="content">
+	<div class="content">
 		<div class="box120 fl mr20">
-		    <?php \Pub\Yaf::display('menu'); ?>
+		    <?php //\Pub\Yaf::display('menu'); ?>
 			<div style="width: 120px; height: 1px;"></div>
 		</div>
 		<!-- /box120 -->

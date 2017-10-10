@@ -16,7 +16,7 @@
 <body>
 
 <?php \Pub\Yaf::display('header',['hover'=>isset($hover)?$hover:null]); ?>
-	<div id="content">
+	<div class="content">
 		<div class="box120 fl mr20">
 		    <?php \Pub\Yaf::display('menu'); ?>
 			<div style="width: 120px; height: 1px;"></div>

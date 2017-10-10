@@ -6,10 +6,10 @@
 <div id="navbox">
   <div class="hbox clearfix">
 
-    <div class="classification" id='classification'>
+    <div class="classification">
 
-      <div class="ng-all-hook" id='ng-all-hook' style='text-align:center'><span>商品分类</span></div>
-      <?php \Pub\Yaf::display('menu'); ?>
+      
+      <?php \Pub\Yaf::display('menu',['left_menu_state'=>isset($left_menu_state)?$left_menu_state:0]); ?>
     </div>
         <?php \Pub\Yaf::display('navitems',['hover'=>isset($hover)?$hover:null]); ?>
         <div class="shop-car" id="shop-car">
@@ -30,7 +30,7 @@
                 <?php else : ?>
                 <div class="settleup-content" id="shop-car-content">
                     <div class="smt">
-                        <h4 class="fl">最新加入的商品</h4>
+                        <h4 class="fl">商品清单</h4>
                     </div>
                     <div class="smc">
                         <ul>
@@ -76,13 +76,11 @@
 </div>
 <!--/ header-->
 <script type="text/javascript">
-    //initiating jQuery
-    jQuery(function($) {
-        jQuery(document).ready(function() {
-            //enabling stickUp on the '#navbar' ID
-       	 jQuery('#navbox').stickUp();
-        });
-    });
+jQuery(function($){
+                $(document).ready(function(){
+                  $('#navbox').stickUp();
+                });
+              });
 
     function cart_refresh() {
         $.ajax({
@@ -93,7 +91,7 @@
                 if (data) {
                     $("#shop-car-content").attr("class", "settleup-content");
                     var amount = count = totalprice = 0;
-                    var html = '<div class="settleup-content" id="shop-car-content"><div class="smt"><h4 class="fl">最新加入的商品</h4></div><div class="smc"><ul>';
+                    var html = '<div class="settleup-content" id="shop-car-content"><div class="smt"><h4 class="fl">商品清单</h4></div><div class="smc"><ul>';
                     $.each(data, function() {
                         html += '<li><div class="p-img fl"><a target="_blank" href="' + this.url + '"><img width="50" height="50" src="' + this.PIC + '"></a></div><div class="p-name fl"><a target="_blank" href="' + this.url +
                             '">' + this.NAME + '</a></div><div class="p-detail fr ar"><span class="p-price"><strong>￥' + this.PRICE + '</strong>×' + this.num + '</span><br /><a href="#" onclick="cart_delete(\'' + this.cart_key +

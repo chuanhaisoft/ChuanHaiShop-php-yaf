@@ -2,26 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<meta name="Keywords" content="" />
+<meta name="Keywords" content="ChuanHaiShop,川海商城" />
 <meta name="Description" content="" />
 <title><?php echo Pub\SysPara::SiteName; ?></title>
 <link href="/css/layout.css" rel="stylesheet" type="text/css" />
+<link href="/js/jquery-nivo-slider/nivo-slider.css" rel="stylesheet" type="text/css"  />
+<link href="/js/jquery-nivo-slider/themes/default/default.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/js/jquery.min.js"></script>
-<script type="text/javascript" src="/js/jquery.masonry.js"></script>
-<script type="text/javascript" src="/js/stickUp.min.js"></script>
-<script type="text/javascript" src="/js/scrollFix.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
-<script type="text/javascript" src="/js/unslider/unslider.min.js"></script>
-<script type="text/javascript" src="/js/jquery.infinitescroll.js"></script>
-<script type="text/javascript" src="/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
+<script src="/js/jquery-nivo-slider/jquery.nivo.slider.pack.js"></script>
 <script type="text/javascript" src="/js/Common.js"></script>
+
 </head>
 <body style="background-color: #f6f6f6;">
 
 <div style="background-color: #ffffff;">
-<?php \Pub\Yaf::display('header',['hover'=>'index']); ?>
+<?php \Pub\Yaf::display('header',['hover'=>'index','left_menu_state'=>1]); ?>
 </div>
 <script type="text/javascript">
 	function DoLogin()
@@ -41,10 +38,35 @@
 		$("#state5").html(state5);
 		$("#state2").html(state2);
 	}
-	
+	var FirstLunBoPic='/images/loginbg.jpg';
 </script>
-<div class="banner" id="b06">
-    <div class="user-pos">
+
+
+			
+<div >
+	<div class="content" style="margin-bottom:5px;">
+	
+	
+
+
+<div class="fl slider-wrapper theme-default" style="padding-left:160px;">
+    <div id="slider" class="nivoSlider" style="width:760px;height:377px;">
+	
+<?php 
+$i=1;
+foreach ($ad as $x): ?>
+		<?php if($x['URL'] && $x['URL']!='#'){ ?><a target="_blank" href="<?php echo $x['URL'];?>" <?php if($i>1)echo "style='display:none'"; ?> ><?php } ?>
+				<img alt="<?php echo $x['TITLE'];?>" src="/<?php echo $x['PIC1'];?>" <?php if($i>1)echo "style='display:none'"; ?> />
+				<?php if($x['URL'] && $x['URL']!='#'){ ?></a><?php } ?>
+<?php $i++;endforeach; ?>
+
+    </div>
+</div>
+
+
+
+
+<div class="user-pos">
       <div class="user-news mb" style=" border-bottom: none;">
 				
 				<div class="user-info" id='user-info' style="display:<?php echo $user_id?'':'none';?>">
@@ -74,7 +96,6 @@
 </a>
 					</ul>
 </div>	
-						
 						
 				</div>
 				<!-- /user-info -->
@@ -106,95 +127,36 @@
 					</form>
 				</div>
 				
-				
+<img src="/upload/auto/2017/07/28/15/59/11/70783913157.jpg" style="width:99%; height:145px">	
 			</div>
 			<!-- user-news -->
-			 </div>
-    <!-- /user-pos -->
-	 <ul>
-<?php foreach ($ad as $x): ?>
-        <li class="banner-li" style="background:<?php echo $x['COLOR'];?> repeat scroll 0% 0%; display: list-item;">
-        <?php if($x['URL'] && $x['URL']!='#'){ ?><a target="_blank" href="<?php echo $x['URL'];?>"  ><?php } ?>
-        <img alt="<?php echo $x['TITLE'];?>" class="lazy-loading" src="/<?php echo $x['PIC1'];?>" />
-        <?php if($x['URL'] && $x['URL']!='#'){ ?></a><?php } ?></li>
-<?php endforeach; ?>
-	 
-    </ul>
-    <div class="banner-wrapper">
-    <a href="javascript:void(0);" class="unslider-arrow06 prev">上一张</a>
-    <a href="javascript:void(0);" class="unslider-arrow06 next">下一张</a>
-    </div>
-
 </div>
 
 
 
 
-<script>
 
-function imgReload()
 
-{
-
-  var imgHeight = 0;
-
-  var wtmp = $("body").width();
-
-  $("#b06 ul li.banner-li").each(function(){
-
-        $(this).css({width:wtmp + "px"});
-
+</div>
+<script type="text/javascript">
+	document.getElementById("slider").style.height=(document.getElementById("vertical-menu").offsetHeight-3-5)+"px";
+    $(window).load(function() {
+		$("#slider").height($("#vertical-menu").height()-3-5);
+		//$("#slider").css({background:"#fff url("+FirstLunBoPic+") no-repeat 50% 50%"});
+        $('#slider').nivoSlider({controlNav:false,startSlide:1});
     });
-
-  $(".sliderimg").each(function(){
-
-    $(this).css({width:wtmp + "px"});
-
-    imgHeight = $(this).height();
-
-  });
-
-}
-
-
-
-$(window).resize(function(){imgReload();});
-
-
-
-$(document).ready(function(e) {
-
-  imgReload();
-
-    var unslider06 = $('#b06').unslider({
-
-    dots: true,
-
-    fluid: true
-
-  }),
-
-  data06 = unslider06.data('unslider');
-
-  
-
-  $('.unslider-arrow06').click(function() {
-
-        var fn = this.className.split(' ')[1];
-
-        data06[fn]();
-
-    });
-
-});
-
 </script>
 
-<!-- example_06 end -->
 
-			
-<div >
-	<div id="content" >
+
+
+	
+	
+	
+</div><div class="content">
+	
+	
+	
 		<div class="box120 fl mr20">
 		 
 			<div style="width: 120px; height: 1px;"></div>
@@ -325,39 +287,6 @@ $(document).ready(function(e) {
   </div>
 	<?php \Pub\Yaf::display('pro-item',['pro'=>$pro_list],false); ?>
 			
-			<script>  
-    $(document).ready(function (){
-    	$('#pro_list').infinitescroll({
-    		navSelector: "#navigation", //导航的选择器，会被隐藏
-            nextSelector: "#navigation a", //包含下一页链接的选择器
-            itemSelector: ".wfc", //你将要取回的选项(内容块)
-            debug: true, //启用调试信息
-            animate: true, //当有新数据加载进来的时候，页面是否有动画效果，默认没有
-            extraScrollPx: 150, //滚动条距离底部多少像素的时候开始加载，默认150
-            bufferPx: 40, //载入信息的显示时间，时间越大，载入信息显示时间越短
-            maxPage: 5,
-            errorCallback: function() {
-                //alert('error');
-            }, //当出错的时候，比如404页面的时候执行的函数
-            localMode: true, //是否允许载入具有相同函数的页面，默认为false
-            dataType: 'html',//可以是json
-//            template: function(data) {
-//                //data表示服务端返回的json格式数据，这里需要把data转换成瀑布流块的html格式，然后返回给回到函数
-//                return '';
-//            },
-            loading: {
-                msgText: "加载中...",
-                finishedMsg: '到底了...',
-                selector: '.loading' // 显示loading信息的div
-            }
-        }, function(newElements, data, url) { //回调函数
-            //console.log(data);
-            //alert(url);
-        });
-    
-    });
-</script> 
-			<!-- /pro-list-span2 -->
 		</div>
 		</div>
 	</div>
@@ -365,8 +294,8 @@ $(document).ready(function(e) {
 	
 	<!--/ content-->
 	</div>
-	<script src="http://msg.yunhuatong.com/im.js" id="chuanhaisoft_im_script" para_jsjq="0" para_add_friend="71.1;" pic_upload_url="http://www.chuanhaisoft.com/system/upload/Upload_im/">
 	<?php \Pub\Yaf::display('footer'); ?>
-	
+
+<script src="http://msg.yunhuatong.com/im_auto.js" id="chuanhaisoft_im_script" para_jsjq="0" pic_upload_url="http://www.chuanhaisoft.com/system/upload/Upload_im/"></script>
 </body>
 </html>

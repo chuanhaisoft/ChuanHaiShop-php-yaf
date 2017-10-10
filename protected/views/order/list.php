@@ -38,8 +38,8 @@ table .myList a{color:#000;}
 </style>
 <script type="text/javascript" src="/js/main.js"></script>
 <?php \Pub\Yaf::display('header',['hover'=>isset($hover)?$hover:'pro']); ?>
-<?php \Pub\Yaf::display('menu'); ?>
-<div id="content">
+
+<div class="content">
   
 
 <div class="page-nav mb20">
@@ -176,8 +176,8 @@ table .myList a{color:#000;}
 <div style="padding-top:5px"></div>
           <?php }?>
 
-
-        <div class="op_subbox clearfix">
+<div style="padding-top:5px"></div>
+        <div class="op_subbox clearfix" style="clear:both;">
             <div class="op-bnt fl">
               <label class="mr"><input type="checkbox" value="" name="" onclick="switchAll('TID')"> 全选</label>
               <input style="display:none;" type="submit" class="sub_sy1 vm mr" value="单/批量结单" name="">

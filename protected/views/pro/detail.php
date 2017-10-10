@@ -2,16 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 <meta name="Keywords" content="" />
 <meta name="Description" content="" />
 <title><?php echo $pro['NAME']?>-<?php echo \Pub\SysPara::SiteName?></title>
 <link href="/css/layout.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/stickUp.min.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript" src="/js/detail.js"></script>
-<script src="http://msg.yunhuatong.com/im.js" id="chuanhaisoft_im_script" para_jsjq="0" para_add_friend="71.1;" pic_upload_url="http://www.chuanhaisoft.com/system/upload/Upload_im/"></head>
+<!-- <script src="https://msg.yunhuatong.com/im.js" id="chuanhaisoft_im_script" data="jsjq=0" upload_back="http://xxxxxxx.cn/shopm/Im_url"></script> -->
+</head>
 <body>
 <script type="text/javascript">
 <?php
@@ -61,7 +62,7 @@ $(function(){
 		if (check_guige() == false) return false;
 		document.buyform.submit();
 	});
-	send_data(<?php echo $pro['ID']; ?>, <?php echo $UserId ? : '-1'; ?>);
+	//send_data(<?php echo $pro['ID']; ?>, <?php echo $UserId ? : '-1'; ?>);
 	<?php if (empty($guige)) {
 		echo 'select($("<a></a>"))';
 	}?>
@@ -164,12 +165,12 @@ function select(obj, id){
 $(document).ready(function(){
         $("#navitm-cats").css("display","none");
         $(window).unbind ('scroll');
-		navitm_input_select_menu("classification");//替换select为可编辑样式
-		tab_door("#navitm-cats");
+		//navitm_input_select_menu("classification");//替换select为可编辑样式
+		//tab_door("#navitm-cats");
 		});
 
 		</script>
-	<div id="content">
+	<div class="content">
 		<div class="crumbs_nav mb" style="padding-left:80px;">
 		当前位置：
 			<?php if ($mallBreadCrumbs['ID']): ?>
@@ -193,9 +194,9 @@ $(document).ready(function(){
 						</div>
 						<ul class="banner-img">
 							<?php
-							    if(!$pro['desc']['PIC1'] && !$pro['desc']['PIC2'] && !$pro['desc']['PIC3'] && !$pro['desc']['PIC4'] && !$pro['desc']['PIC5'] && !$pro['desc']['PIC6'])
+							    if(!$pro['desc']['PIC1'] && !$pro['desc']['PIC2'] && !$pro['desc']['PIC3'] && !$pro['desc']['PIC4'] && !$pro['desc']['PIC5'])
 							        $pro['desc']['PIC1']=$pro['PIC'];
-								for ($i=1; $i<6; $i++) :
+								for ($i=1; $i<5; $i++) :
 									if ($pro['desc']['PIC'.$i]) :
 							?>
 							<li><img src="<?php echo Pub\Fram::Img_Url($pro['desc']['PIC'.$i]); ?>" /></li>
@@ -207,7 +208,7 @@ $(document).ready(function(){
 					</div>
 					<ul class="banner-circle">
 						<?php
-							for ($i=1; $i<6; $i++) :
+							for ($i=1; $i<5; $i++) :
 								if ($pro['desc']['PIC'.$i]) :
 						?>
 						<li<?php if ($i == 1) echo ' class="selected"';?>><a href="javascript:void(0);"><img src="<?php echo Pub\Fram::Img_Url($pro['desc']['PIC'.$i]); ?>" height="80" width="80"/></a></li>
@@ -613,38 +614,31 @@ $(document).ready(function(){
 			<div class="box210 fl mr20">
 				<div class="ui_box2 mb">
 					<div class="cbox">
-						<div class="title mb">
-							<h2 class="tith">
-								<strong class="name">商家信息</strong>
-							</h2>
-						</div>
+				<div class="title">
+					<h2 class="tith"></h2>
+				</div>
 						<!--/ title-->
-						<div class="cont shop-info">
-							<div class="photo mb">
-								<?php if ($pro['shopinfo']['SHOP_PIC'] != '/'): ?>
-								<img src="<?php echo Pub\Fram::Img_Url($pro['shopinfo']['SHOP_PIC']); ?>" width="100%" alt="" />
-								<?php endif; ?>
-							</div>
-							<ul>
-								<li><?php echo $pro['shopinfo']['NAME']; ?></li>
-								<li>电话：<?php echo $pro['shopinfo']['MOBILE_NUM']; ?></li>
-								<li>地址：<?php echo $pro['shopinfo']['ADDRESS']; ?></li>
-							</ul>
-							<div style="text-align:center;height:26px">
-								<?php if ($pro['shopinfo']['QQ']) {?>
-								<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $pro['shopinfo']['QQ'];?>&site=qq&menu=yes">
-									<img src="<?php echo Pub\SysPara::site_url()?>images/qq.png" />
-								</a>
-								<?php }?>
-								<a href="javascript:void(0)" onClick="chuanhaisoft_im_totalk('<?php echo $pro['shopinfo']['NAME'] ?>', '<?php echo $pro['shopinfo']['ID'] ?>')">
-									<img src="<?php echo Pub\SysPara::site_url()?>images/hp.png" />
-								</a>
-							</div>
-							<div class="btn-box">
-							<br /><br />
-								
-							</div>
-						</div>
+						<div class="cont pro-list-sides2">
+					<ul>
+						<?php $i = 0;foreach ($role as $v): $i++;?>
+						<li <?php if ($i == count($role)) echo 'class="last"'?>>
+							<dl>
+								<dt>
+									<a href="<?php echo \Pub\SysPara::Pro_Detail_Url(array('id'=>$v['ID']));?>" class="img-h" style="text-align:inherit">
+									<img src="<?php echo \Pub\Fram::Img_Url($v['PIC']); ?>" alt="<?php echo $v['NAME']?>" style="width:180px;"></a>
+								</dt>
+								<dd class="name">
+									<a href="<?php echo \Pub\SysPara::Pro_Detail_Url(array('id'=>$v['ID']));?>"><?php echo $v['NAME']?></a>
+								</dd>
+								<dd class="price-box">
+									<span class="price-sc"><i>¥</i><b><?php echo $v['PRICE']?></b></span>
+									
+								</dd>
+							</dl>
+						</li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
 					</div>
 				</div>
 				<!-- ui_box2 -->
@@ -751,9 +745,8 @@ $(document).ready(function(){
 		<!-- / pro-detail-wz-->
 		<div class="clear"></div>
 	</div>
-	
-	
+	<!--/ content-->
 	<?php \Pub\Yaf::display('footer'); ?>
-	
+	<script src="http://msg.yunhuatong.com/im_auto.js" id="chuanhaisoft_im_script" para_jsjq="0" pic_upload_url="http://www.chuanhaisoft.com/system/upload/Upload_im/"></script>
 </body>
 </html>

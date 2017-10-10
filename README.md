@@ -28,7 +28,7 @@ ChuanHaiShop为b2c版本，但表结构已经设计为多商户，使用者可�
 后台演示：http://demo.chuanhaisoft.com/chuanhai/
 用户名:admin 密码:chuanhaisoft
 
-川海即时通讯插件助您整合咨询系统，商家可使用桌面版与用户的web版在线交流，提高订单成交。
+川海即时通讯插件助您整合咨询系统，商家可使用桌面版与用户的web版在线交流，提高订单成交。（websocket通讯）
 
 apache配置：<br/>
 apache使用.htaccess即可

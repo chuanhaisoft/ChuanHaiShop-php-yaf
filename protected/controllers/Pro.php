@@ -26,7 +26,7 @@ class ProController extends \Base\Common
 		$data['IndexViewSort']=[348,683,725,352];
 		
 		//即时通讯im
-		Pub\ChuanHaiIm::Set('71', '川海软件-A', 'http://www.chuanhaisoft.com/images/default_top.jpg');
+		Pub\ChuanHaiIm::SetKeFu('访客', 'http://www.chuanhaisoft.com/images/default_top.jpg','#川海软件专业提供 电子商务解决方案，即时通讯解决方案，客服系统解决方案，欢迎咨询。');
 
 		$this->display('index',$data);
 	}

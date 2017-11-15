@@ -4,13 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title></title>
 <script type="text/javascript" src="/js/jQuery.js"></script>
-<script src="jquery.uploadify.min.js" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="uploadify.css">
-<style type="text/css">
-body {
-	font: 13px Arial, Helvetica, Sans-serif;
-}
-</style>
+<script type="text/javascript" src="/js/layui/layui.js"></script>
+<link href="/js/layui/css/layui.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -32,59 +27,33 @@ function GetNumValue($key,$value=-1,$IsToUTF8=false,$IsUrlEnCode=false,$IsUrlDeC
     $UpUrl="/system/upload/file/";
     $UpUrl=$UpUrl.'?pic_type='.$PicType;
 ?>
-	<form style="margin:50px; text-align:center; padding-left:30px;">
+	<form style="margin:50px; text-align:center;">
 		<div id="queue"></div>
-		<input id="file_upload" name="file_upload" type="file" multiple="true">
+        <button type="button" class="layui-btn layui-btn-danger" id="chuanhai_upload">
+          <i class="layui-icon">&#xe67c;</i>上传图片
+        </button>
 	</form>
+<script type="text/javascript">
+layui.use('upload', function(){
+  var upload = layui.upload;
+   
+  //执行实例
+  var uploadInst = upload.render({
+    elem: '#chuanhai_upload' //绑定元素
+    ,url: '<?php echo $UpUrl; ?>' //上传接口
+    ,field:'Filedata'
+    ,size:500
+    ,data:{return_type:'json'}
+    ,done: function(res){
+    	 parent.window.SetValueByID('<?php echo $_GET['name'] ?>',res.file_url);
+    	 parent.window.ExtWindowClose(escape(window.location.pathname+window.location.search));
+    }
+    ,error: function(){//alert('error');
+      //请求异常回调
+    }
+  });
+});
+</script>
 
-	<script type="text/javascript">
-		<?php $timestamp = time();?>
-	
- 
-		$(function() {
-		
-
-			$('#file_upload').uploadify({
-				'formData'     : {
-					'timestamp' : '<?php echo $timestamp;?>',
-					'user_id'   : '<?php echo $UserID;?>',
-					'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
-				},
-				'swf'      : 'uploadify.swf',
-				'fileTypeDesc' : 'Image Files',//只允许上传图像
-				'fileTypeExts' : '*.gif; *.jpg; *.png; *.jpeg;*.zip;*.rar;',//限制允许上传的图片后缀
-				'fileSizeLimit' : '500KB',//限制上传的图片不得超过200KB 
-				'overrideEvents': ["onSelectError","onDialogClose"],
-				'onSelectError':function(file, errorCode, errorMsg){
-            switch(errorCode) {
-                case -100:
-                    alert("上传的文件数量已经超出！");
-                    break;
-                case -110:
-                    alert("文件 ["+file.name+"] 大小超出系统限制的500KB大小！");
-                    break;
-                case -120:
-                    alert("文件 ["+file.name+"] 大小异常！");
-                    break;
-                case -130:
-                    alert("文件 ["+file.name+"] 类型不正确！");
-                    break;
-            }
-        },
-				'onUploadSuccess' : function(file, data, response) {
-            //alert('The file ' + file.name + ' was successfully uploaded with a response of ' + response + ':' + data);
-			 parent.window.SetValueByID('<?php echo $_GET['name'] ?>',data);
-			 parent.window.ExtWindowClose(escape(window.location.pathname+window.location.search));
-        },
-		
-
-				'uploader' : '<?php echo $UpUrl; ?>'
-			});
-			
-$('#file_upload').uploadify('settings','buttonText','点击选择文件');
-			
-		});
-		
-	</script>
 </body>
 </html>

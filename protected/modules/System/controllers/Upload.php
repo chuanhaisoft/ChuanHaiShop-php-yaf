@@ -4,12 +4,77 @@ use Pub\File;
 
 class UploadController extends yaf\Controller_Abstract
 {
+    
+    public function Upload_imAction()
+    {
+        //header('Access-Control-Allow-Origin:*');
+        //header("Access-Control-Allow-Methods", "POST,OPTIONS,GET");
+        
+        $from = @$_SERVER['HTTP_REFERER'];
+        if($from) {
+            $arr = parse_url($from);
+            $Host=$arr['host'];//SERVER_PORT
+            if(isset($arr['port']) && $arr['port']!='80' )
+            {
+                $Host.=':'.$arr['port'];
+            }
+            $allowDomain = $arr['scheme'] . "://" . $Host;
+            header("Access-Control-Allow-Origin: " . $allowDomain);
+        }
+        
+        header("Access-Control-Allow-Methods: POST,OPTIONS,GET");
+        header("Access-Control-Allow-Credentials: true");
+        header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
+         
+        $filename = Fram::GetValue("filename","");
+        $FileType=Fram::GetNumValue('pic_type',0);
+    
+        if(Fram::IsPost())
+        {
+            $data =  $_FILES["file"];
+            $_FileSize=$data['size']/1024;
+            if($_FileSize>1024*5)
+            {
+                json_encode(json_encode(array('code'=>1,'msg'=>'文件尺寸太大')));
+            }
+            $fileTypes = array('jpg','jpeg','gif','png','JPG','JPEG','GIF','PNG','rar','zip','mp3','arm','mp4');
+            $fileParts = pathinfo($_FILES['file']['name']);
+            if (!in_array($fileParts['extension'],$fileTypes))
+            {
+                self::ShuChu(json_encode(array('code'=>1,'msg'=>'文件类型错误')));
+            }
+    
+            if (!is_null($data))
+            {
+                if(false || self::CheckFileName($filename))
+                    $FileName = $filename;
+                else
+                    $FileName=File::SuiJiName("a.".$fileParts['extension'],'im_pic');
+
+                File::CreateFile2($FileName,"");
+                move_uploaded_file($_FILES['file']['tmp_name'],realpath($FileName));
+    
+                self::ShuChu(json_encode(array('code'=>0,'data'=>array('src'=>'http://'.$_SERVER['SERVER_NAME'].'/'.$FileName),'msg'=>'')));
+    
+            }
+            else
+            {
+                self::ShuChu(json_encode(array('code'=>1,'msg'=>'文件内容为空')));
+            }
+        }
+        else
+        {
+            
+        }
+    
+    }
+    
 	public static function ShuChu($str)
 	{
 	    $type=Fram::GetValue('type','web');
 	    //$Url=Fram::GetValue('tmpurl','https://');
 	    if($type=='web')
-	    {
+	    {die($str);
 	        header('Location:' . $_GET['tmpurl'] . '?data=' . urlencode($str));
 	        exit();
 	    }
@@ -25,6 +90,7 @@ class UploadController extends yaf\Controller_Abstract
 	{
 		$filename = Fram::GetValue("filename","");
 		$FileType=Fram::GetNumValue('pic_type',0);
+		$Return_Type=Fram::GetValue('return_type','string');
 		
 		if(Fram::IsPost())
 		{
@@ -87,7 +153,7 @@ class UploadController extends yaf\Controller_Abstract
 				
 				//$file=CUploadedFile::getInstanceByName($_FILES['Filedata']);
 				//$file->saveAs($data,true);
-				echo $FileName;
+				echo $Return_Type=='json'?json_encode(['file_url'=>$FileName]):$FileName;
 				/**
 				if($IsIE)
 					$str="<script>returnValue='{$FileName}';window.close();</script>";

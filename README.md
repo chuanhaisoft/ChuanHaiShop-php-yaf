@@ -61,6 +61,6 @@ version: 1<br/>
 handle:<br/>
     - rewrite: if(!is_dir() && !is_file() && path ~ "^(.*)$" ) goto "/index.php"<br/>
     
-<img src="http://www.chuanhaisoft.com/images/shows/shop1.png" >
-<img src="http://www.chuanhaisoft.com/images/shows/shop2.png" >
+<img src="http://www.chuanhaisoft.com/images/shows/shop1.jpg" >
+<img src="http://www.chuanhaisoft.com/images/shows/shop2.jpg" >
 <img src="http://www.chuanhaisoft.com/images/shows/ChuanHaiIm.jpg" >

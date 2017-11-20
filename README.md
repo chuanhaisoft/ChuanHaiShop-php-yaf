@@ -66,5 +66,6 @@ handle:<br/>
 <img src="http://www.chuanhaisoft.com/images/shows/houtai1.jpg" >
 <img src="http://www.chuanhaisoft.com/images/shows/houtai2.jpg" >
 <img src="http://www.chuanhaisoft.com/images/shows/houtai3.jpg" >
-<br/>客服桌面端截图：<br/>
+<br/>客服桌面端截图：
+<br/>
 <img src="http://www.chuanhaisoft.com/images/shows/ChuanHaiIm.jpg" >

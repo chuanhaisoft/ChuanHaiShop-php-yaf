@@ -53,8 +53,14 @@ table .myList a{color:#000;}
     </div>
     <!-- / p-tith-tab-->
 
-    <div class="crumbs_nav fr" style="float:left;">
+    <div class="crumbs_nav fr" style="float:left;width:100%">
         <span class="icon">当前位置：</span><a href="/">首页</a><span class="line">&gt;</span>商城订单
+		<div style="float:right;">
+<?php 
+    $user=Bll\User::Model(Pub\SysFram::GetLoginID());
+?>
+		账户余额：<span class="red"><?php echo $user->Money() ?></span>    账户积分：<span class="red"><?php echo $user->Point() ?></span>
+		</div>
     </div>
 
 

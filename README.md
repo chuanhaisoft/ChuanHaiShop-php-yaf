@@ -24,7 +24,7 @@ ChuanHaiShop为b2c版本，但表结构已经设计为多商户，使用者可�
 4.shell服务：php -f /web路径/cmd.php request_uri=/cmd/order/do
 
 
-前端演示：http://www.chuanhaisoft.com/
+前端演示：http://shop.chuanhaisoft.com/
 
 
 后台演示：http://demo.chuanhaisoft.com/chuanhai/
@@ -61,11 +61,11 @@ version: 1<br/>
 handle:<br/>
     - rewrite: if(!is_dir() && !is_file() && path ~ "^(.*)$" ) goto "/index.php"<br/>
     
-<img src="http://www.chuanhaisoft.com/images/shows/shop1.jpg" >
-<img src="http://www.chuanhaisoft.com/images/shows/shop2.jpg" >
-<img src="http://www.chuanhaisoft.com/images/shows/houtai1.jpg" >
-<img src="http://www.chuanhaisoft.com/images/shows/houtai2.jpg" >
-<img src="http://www.chuanhaisoft.com/images/shows/houtai3.jpg" >
+<img src="http://shop.chuanhaisoft.com/images/shows/shop1.jpg" >
+<img src="http://shop.chuanhaisoft.com/images/shows/shop2.jpg" >
+<img src="http://shop.chuanhaisoft.com/images/shows/houtai1.jpg" >
+<img src="http://shop.chuanhaisoft.com/images/shows/houtai2.jpg" >
+<img src="http://shop.chuanhaisoft.com/images/shows/houtai3.jpg" >
 <br/>客服桌面端截图：
 <br/>
-<img src="http://www.chuanhaisoft.com/images/shows/ChuanHaiIm.jpg" >
+<img src="http://shop.chuanhaisoft.com/images/shows/ChuanHaiIm.jpg" >

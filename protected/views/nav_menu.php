@@ -37,7 +37,7 @@ document.writeln("<a href=\'https://github.com/chuanhaisoft/ChuanHaiShop-php-yaf
     <script type="text/javascript">repselect("input_select_menu");</script>
     <div class="fl" style="padding-top: 20px;font-size: 14px;"> 
     &nbsp;&nbsp;
-    <A href="javascript:return;">客服电话,授权购买:18661990031</A>  
+    <A href="javascript:return;">授权购买:</A>  
 	<a target=blank href=http://wpa.qq.com/msgrd?V=3&uin=276556803&Site=川海软件&Menu=yes><img border="0" SRC=http://wpa.qq.com/pa?p=1:276556803:1 alt="点击这里给我发消息"></a>
     </div>
  

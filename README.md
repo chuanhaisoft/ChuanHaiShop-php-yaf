@@ -66,6 +66,8 @@ handle:<br/>
 <img src="http://shop.chuanhaisoft.com/images/shows/houtai1.jpg" >
 <img src="http://shop.chuanhaisoft.com/images/shows/houtai2.jpg" >
 <img src="http://shop.chuanhaisoft.com/images/shows/houtai3.jpg" >
+<br/>川海app：
+<img src="http://shop.chuanhaisoft.com/upload/auto/2018/01/08/15/36/59/36615079672.jpg" >
 <br/>客服桌面端截图：
 <br/>
 <img src="http://shop.chuanhaisoft.com/images/shows/ChuanHaiIm.jpg" >

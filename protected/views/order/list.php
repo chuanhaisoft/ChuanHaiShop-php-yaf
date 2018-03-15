@@ -1,4 +1,4 @@
-<script type="text/javascript" src="/js/layer/layer.js"></script>
+<script type="text/javascript" src="/js/layui/layui.js"></script>
 <script type="text/javascript" src="/js/layer/Common.js"></script>
 <style>
 table .list_tbody .title_list td {border: 1px solid #f2f2f2;border-bottom: none;color: #a9aaac;height:34px;padding-left:17px;}
@@ -53,7 +53,7 @@ table .myList a{color:#000;}
     </div>
     <!-- / p-tith-tab-->
 
-    <div class="crumbs_nav fr" style="float:left;width:100%">
+    <div class="crumbs_nav fr" style="float:left; width:100%">
         <span class="icon">当前位置：</span><a href="/">首页</a><span class="line">&gt;</span>商城订单
 		<div style="float:right;">
 <?php 
@@ -78,7 +78,7 @@ table .myList a{color:#000;}
               <tr>
                 <th colspan="6" class="tl_14" style="text-align:left; padding-left:5px;">
                 <input type="checkbox" value="<?php echo $v['ID']?>" name="TID" class="mr">
-                <span class="dd">订单号：<?php echo $v['ORDER_ID']?></span>
+                <span class="dd">订单号：<?php echo $v['ID']?></span>
                                订单时间：<span class="time"><?php echo $v['ADD_TIME']?></span>
                 <span class="name"> 商家：<?php echo $v['SHOP_ID_NAME']?></span></th>
               </tr>
@@ -158,11 +158,11 @@ table .myList a{color:#000;}
                                      </td>
                 <td width="120">
                 <?php if($v['STATE']==1&&($v['STATE2']==1||$v['STATE2']==0)&&!in_array($v['STATE2'],array(2.5,2.6,2.7,2.8,2.9,4))&&Bll\Role::Role_Id_Shop($RoleID)){?>
-					<p><a href="javascript:OpenLayer('订单详情','/new_shop/order_shop/<?php echo $xiangqing_action;?>.html?ID=<?php echo $v['ID']?>',800,600)" class="btn-fh order-detail">发货</a></p>	     
+					<p><a href="javascript:OpenLayer('','/mall/ordershop/<?php echo $xiangqing_action;?>.html?ID=<?php echo $v['ID']?>',800,600)" class="btn-fh order-detail">发货</a></p>	     
 				<?php }?>
                   
                   <?php if($v['show_tui_btn']){?>
-                  <p style="display:none"><a href="javascript:OpenLayer('订单详情','/new_shop/order_shop/<?php echo $xiangqing_action;?>.html?ID=<?php echo $v['ID']?>',800,600)" class="btn-th order-detail">退货</a></p>
+                  <p><a href="javascript:OpenLayer('','/mall/ordershop/<?php echo $xiangqing_action;?>.html?ID=<?php echo $v['ID']?>',800,600)" class="btn-th order-detail">退货</a></p>
                   <?php }?>
                   
                   <?php if($v['IS_PING_JIA']==1){?>

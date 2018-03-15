@@ -18,6 +18,7 @@ tr{height:38px}
 .layui-form-switch i {
     background-color: #fff;
 }
+.layui-form-switch {margin-top:0px;}
 </style>
 </head>
 

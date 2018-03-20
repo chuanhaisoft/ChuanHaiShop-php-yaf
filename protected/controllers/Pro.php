@@ -23,13 +23,13 @@ class ProController extends \Base\Common
 		    $data['order_count']['2'] = \Bll\OrderMallDetail::TongJi('-1',Pub\SysFram::GetLoginID(),Pub\Fram::Data_Add_Day(-7));
 		}
 		$data['ad']=\Bll\News::SortNews(10);
-		$data['IndexViewSort']=[348,683,725,352];
+		$data['IndexViewSort']=[348,683,354,352,311];
 		
-		//即时通讯im
-		Pub\ChuanHaiIm::SetKeFu('访客', 'http://www.chuanhaisoft.com/images/default_top.jpg','#川海软件专业提供 电子商务解决方案，即时通讯解决方案，客服系统解决方案，欢迎咨询。');
+		Pub\ChuanHaiIm::SetKeFu('访客', 'http://msg.yunhuatong.com/images/top_kefu.png','川海软件专业提供 电子商务解决方案，即时通讯解决方案，客服系统解决方案，欢迎咨询。',100);
 
 		$this->display('index',$data);
 	}
+	
 	
 	public function DetailAction()
 	{
@@ -114,12 +114,18 @@ class ProController extends \Base\Common
 		}
 		**/
 		$data['UserId'] = SysFram::GetLoginID(false);
+		$m_pro=new \Model\Pro();
+		$data['role'] = Bll\Pro::GetList(1,10,[$m_pro->_State->w('=',1)]);
+		
+		
 		$this->display('detail',$data);
 	}
 	//分类
 	public function ListAction()
 	{
 		$page = Fram::GetNumValue('page',1);
+		if($page<=0){$page=1;}
+		
 		$mallsort_id = Fram::GetNumValue('sort_id',0);
 		$paixu = Fram::GetNumValue('paixu',0);
 		$role = Fram::GetNumValue('role','');

@@ -11,7 +11,7 @@ class CartController extends \Base\Common
 		$data = array();
 		if(!SysFram::CheckAdminLogin(false))
 		{
-		    die(Pub\Js::Alert('会员未登录，请先登录',true).Pub\Js::HistoryBack(-1,true));
+		    die(Pub\Js::Alert('会员未登录，请先登录',true).Pub\Js::LocationHref('/',true));
 		}
 		$data['UserId'] = SysFram::GetLoginID();
 		$m = new Model\ShoppingAddress();

@@ -1,5 +1,6 @@
 <?php \Pub\Yaf::display('jq_form'); ?>
-<body class="ext-gecko x-border-layout-ct">
+<body>
+
 <?php
 if(false)$m=new \Model\ProYunFei();
 echo Form\Html::FormBegin($m);

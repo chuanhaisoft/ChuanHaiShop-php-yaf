@@ -222,7 +222,7 @@ class OrdershopController extends \Base\ControllerAdmin
 	}
 	
 	//修改运费
-	public function actionChange_yunfei()
+	public function Change_yunfeiAction()
 	{
 	  
 // 	    SysFram::CheckPagePower('339,367');
@@ -358,8 +358,334 @@ class OrdershopController extends \Base\ControllerAdmin
 	}
 	
 	
-	
-	
+	public function TuiHuoAction()
+	{
+	    $OrderDetailID=Fram::GetNumValue('ID',-1);
+	    $TuiReason=Fram::GetNumValue('tui_reason',1);
+	   
+	    if(!Fram::CheckNum($OrderDetailID))
+	        die('主键缺失');
+	    $UID=SysFram::GetLoginID();
+	    $RoleID=SysFram::getLoginRoleID();
+	    
+	    $OrderDetail=Bll\OrderMallDetail::Model($OrderDetailID);
+	    
+	    
+	    $ShouHuoTime = $OrderDetail->ShouHuoTime();
+	    $State2 = $OrderDetail->State2();
+	    
+	    if(floor((strtotime(Pub\Fram::Date())-strtotime($ShouHuoTime))/86400)>=7)
+	    {
+	        die('收货超过7天不能再进行退货处理!');
+	    }
+	    
+	    if(!Fram::CheckNum($OrderDetail->Id()))
+	        die('主键缺失2');
+	    if($OrderDetail->UserId()!=$UID && $RoleID!=1)
+	        die('无权访问');
+	     
+	    $order=Bll\OrderMall::Model($OrderDetail->OrderId());
+	    $pay_time = $order->PayTime();
+	    //支付3天后未发货 可以退货
+	    //if($OrderDetail->State2()==0&&$order->State()==1&&floor((time()-strtotime($pay_time))/86400)<3){
+	    //    die('支付3天后才能申请退货!');
+	    //}
+	     
+        //更新状态
+        $up=new Model\OrderMallDetail();
+        $up->Id($OrderDetailID);
+        $up->State2(2.5);
+        $up->TuiTime(Fram::Date());
+        $up->TuiReason($TuiReason);
+        $up->EndTuiTime(Fram::Data_Add_Day(3));
+        
+
+        if(Bll\OrderMallDetail::Update($up,[$up->_State2->w('=',1),$up->_State2->w_or('=',2),$up->_State2->w_or('=',0)])){
+            die("申请成功!");
+        }else{
+            die("申请失败!");
+        }
+	         
+	}
+	public function Tui_Huo_Fa_HuoAction()
+	{
+	    SysFram::CheckPagePower('339,367');
+	    $OrderDetailID=Fram::GetNumValue('ID',-1);
+	    $TuiKuaidiDanhao=Fram::GetValue('TUI_KUAIDI_DANHAO');
+	    $TuiKuaidi=Fram::GetNumValue('TUI_KUAIDI');
+	   
+	    if(!Fram::CheckNum($OrderDetailID))
+	        die('主键缺失');
+	    if(!Fram::CheckNum($TuiKuaidi))
+	        die('请选择使用的快递');
+	    if(!$TuiKuaidiDanhao)
+	        die('快递单号不能为空');
+	   
+	    $UID=SysFram::GetLoginID();
+	    $RoleID=SysFram::getLoginRoleID();
+	    
+	    $OrderDetail=Bll\OrderMallDetail::Model($OrderDetailID);
+	    
+	    
+	    $ShouHuoTime = $OrderDetail->ShouHuoTime();
+	    $State2 = $OrderDetail->State2();
+	    
+	    
+	    if(!Fram::CheckNum($OrderDetail->Id()))
+	        die('主键缺失2');
+	    if($OrderDetail->UserId()!=$UID && $RoleID!=1)
+	        die('无权访问');
+	     
+	    $order=Bll\OrderMall::Model($OrderDetail->OrderId());
+	     
+        //更新状态
+        $up=new Model\OrderMallDetail();
+        $up->Id($OrderDetailID);
+        $up->State2(2.8);
+        $up->TuiFahuoTime(Fram::Date());
+        $up->TuiKuaidi($TuiKuaidi);
+        $up->TuiKuaidiDanhao($TuiKuaidiDanhao);
+        $up->EndTuiShouhuoTime(Fram::Data_Add_Day(10));
+        
+
+        if(Bll\OrderMallDetail::Update($up,[$up->_State2->w('=',2.6)])){
+            die("发货成功!");
+        }else{
+            die("发货失败!");
+        }
+	         
+	}
+	public function Xie_Tiao_Wan_ChengAction()
+	{
+	    SysFram::CheckPagePower('339,367');
+	    $OrderDetailID=Fram::GetNumValue('ID',-1);
+	    $XieTiaoValue = Fram::GetNumValue('xie_tiao_value',1);
+	   
+	    if(!Fram::CheckNum($OrderDetailID))
+	        die('主键缺失');
+	   
+	    $UID=SysFram::GetLoginID();
+	    $RoleID=SysFram::getLoginRoleID();
+	    
+	    $OrderDetail=Bll\OrderMallDetail::Model($OrderDetailID);
+	    
+	    if(!Fram::CheckNum($OrderDetail->Id()))
+	        die('主键缺失2');
+	    if($RoleID!=1)
+	        die('无权访问');
+	     
+	    $order=Bll\OrderMall::Model($OrderDetail->OrderId());
+	     
+        //更新状态
+        $up=new Model\OrderMallDetail();
+        $up->Id($OrderDetailID);
+        
+        if($XieTiaoValue==1)
+        {
+            if($OrderDetail->KuaiDiGongSi())
+            {
+                $up->State2(1);
+            }else
+            {
+                $up->State2(0);
+            } 
+        }
+        elseif($XieTiaoValue==2)
+        {
+            
+            $Conn=Fram::GetConn(true);
+            $r=true;
+            
+            $up->State2(4);
+            //退款
+            $r = $r && Bll\OrderMallDetail::Tui_Kuan($OrderDetailID,$Conn);
+            $r = $r && Bll\OrderMallDetail::Update($up,[$up->_State2->w('=',2.7)],$Conn);
+             
+            if($r && $Conn->commit())
+            {
+                Fram::CloseConn($Conn);
+                die("操作成功!");
+            }
+            else
+            {
+                $Conn->rollback();Fram::CloseConn($Conn);
+                die("操作失败!");
+            }
+            
+        }
+        elseif($XieTiaoValue==3)
+        {
+            $up->State2(2);
+        }
+       
+        
+        if(Bll\OrderMallDetail::Update($up,[$up->_State2->w('=',2.7)])){
+            die("操作成功!");
+        }else{
+            die("操作失败!");
+        }
+	         
+	}
+	public function Delay_Shou_HuoAction()
+	{
+	    SysFram::CheckPagePower('339,367');
+	    
+	    $OrderDetailID=Fram::GetNumValue('ID',-1);
+	    if(!Fram::CheckNum($OrderDetailID))
+	        die('主键缺失');
+	    $UID=SysFram::GetLoginID();
+	    $RoleID=SysFram::getLoginRoleID();
+	     
+	    $OrderDetail=Bll\OrderMallDetail::Model($OrderDetailID);
+	    if(!Fram::CheckNum($OrderDetail->Id()))
+	        die('主键缺失2');
+	    $UID=SysFram::GetLoginID();
+	    $RoleID=SysFram::getLoginRoleID();
+	    
+	    if($OrderDetail->UserId()!=$UID && $RoleID!=1)
+	        die('无权访问');
+	    
+	    $end_shou_huo_time = $OrderDetail->EndShouHuoTime();
+	    $shou_huo_time = $OrderDetail->ShouHuoTime();
+	    
+	    if(!$end_shou_huo_time||!$shou_huo_time){
+	        die('暂时不能延期!');
+	    }
+	    if(floor((strtotime($end_shou_huo_time)-time())/86400)>=3){
+	        die('暂时不能延期!');
+	    }
+	    
+	    if(floor((strtotime($end_shou_huo_time)-strtotime($shou_huo_time))/86400)>=24){
+	        die('最多延期15天!');
+	    }
+	    
+	    $shou_huo_time = date('Y-m-d H:i:s',strtotime($end_shou_huo_time)+5*24*60*60);
+	    
+	    $order=Bll\OrderMall::Model($OrderDetail->OrderId());
+	    
+        //更新状态
+        $up=new Model\OrderMallDetail();
+        $up->Id($OrderDetailID);
+        $up->EndShouHuoTime($shou_huo_time);
+    
+       
+        if(Bll\OrderMallDetail::Update($up,[$up->_State2->w('=',1)]))
+        {
+            die("延期收货成功");
+        }
+        else
+        {
+            die("延期收货失败");
+        }
+	         
+	    
+	     
+	}
+	public function Chuli_tui_huoAction()
+	{
+	    SysFram::CheckPagePower('339,367');
+	    
+	    $OrderDetailID=Fram::GetNumValue('ID',-1);
+	    $tongyi=Fram::GetNumValue('tongyi',1);
+	    if(!Fram::CheckNum($OrderDetailID))
+	        die('主键缺失');
+	    $UID=SysFram::GetLoginID();
+	    $RoleID=SysFram::getLoginRoleID();
+	     
+	    $OrderDetail=Bll\OrderMallDetail::Model($OrderDetailID);
+	    if(!Fram::CheckNum($OrderDetail->Id()))
+	        die('主键缺失2');
+	    $UID=SysFram::GetLoginID();
+	    $RoleID=SysFram::getLoginRoleID();
+	    if($RoleID!=1 && $OrderDetail->ShopId()!=$UID)
+	        die('角色无权限');
+	    
+	    $order=Bll\OrderMall::Model($OrderDetail->OrderId());
+	    
+        //更新状态
+        $up=new Model\OrderMallDetail();
+        $up->Id($OrderDetailID);
+        if($tongyi==1){
+            $up->State2(2.6);
+            $up->State26Time(Fram::Date());
+            //如果卖家没发货直接退款
+            
+            if(!$OrderDetail->KuaiDiDanHao()&&!$OrderDetail->FaHuoTime()){
+                $Conn=\Pub\Fram::GetConn(true);
+                $r=true;
+                
+                $up->State2(4);
+                //退款
+                $r = $r && Bll\OrderMallDetail::Tui_Kuan($OrderDetailID,$Conn);
+                $r = $r && Bll\OrderMallDetail::Update($up,[$up->_State2->w('=',2.5)],$Conn);
+                 
+                if($r && $Conn->commit()){
+                    Fram::CloseConn($Conn);
+                    die("处理成功!");
+                }else{
+                    $Conn->rollback();Fram::CloseConn($Conn);
+                    die("处理失败!");
+                }
+            
+            }
+            
+        }else{
+            $up->State2(2.7);
+        }
+       
+        if(\Bll\OrderMallDetail::Update($up,[$up->_State2->w('=',2.5)])){
+            die("处理成功!");
+        }else{
+            die("处理失败!");
+        }
+	         
+	    
+	     
+	}
+	public function Tui_Huo_Shou_HuoAction()
+	{
+	    SysFram::CheckPagePower('339,367');
+	    
+	     
+	    $OrderDetailID=Fram::GetNumValue('ID',-1);
+	    if(!Fram::CheckNum($OrderDetailID))
+	        die('主键缺失');
+	    $UID=SysFram::GetLoginID();
+	    $RoleID=SysFram::getLoginRoleID();
+	     
+	    $OrderDetail=Bll\OrderMallDetail::Model($OrderDetailID);
+	    if(!Fram::CheckNum($OrderDetail->Id()))
+	        die('主键缺失2');
+	    $UID=SysFram::GetLoginID();
+	    $RoleID=SysFram::getLoginRoleID();
+	    if($RoleID!=1 && $OrderDetail->UserId()!=$UID)
+	        die('角色无权限');
+	    
+	    $order=Bll\OrderMall::Model($OrderDetail->OrderId());
+	    
+        //更新状态
+        $up=new Model\OrderMallDetail();
+        $up->Id($OrderDetailID);
+        $up->State2(4);
+        $up->TuiShouhuoTime(Fram::Date());
+        
+        $Conn=\Pub\Fram::GetConn(true);
+        $r=true;
+        
+        
+        //退款
+        $r = $r && Bll\OrderMallDetail::Tui_Kuan($OrderDetailID,$Conn);
+        $r = $r && Bll\OrderMallDetail::Update($up,[$up->_State2->w('=',2.8)],$Conn);
+       
+        if($r && $Conn->commit()){
+            Fram::CloseConn($Conn);
+            die("收货成功!");
+        }else{
+            $Conn->rollback();Fram::CloseConn($Conn);
+            die("收货失败!");
+        }
+	     
+	}
 	
 	
 	

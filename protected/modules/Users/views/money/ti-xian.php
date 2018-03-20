@@ -62,7 +62,8 @@ function TiXianState(value, cellmeta, record)
 -->
 </style>
 
-<body class="ext-gecko x-border-layout-ct">
+<body>
+
 <?php
 if(false)$m=new \Model\User();
 echo Form\Html::FormBegin($m);

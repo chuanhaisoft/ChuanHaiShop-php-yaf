@@ -1,7 +1,8 @@
 <script type="text/javascript" src="/js/Ext_Css.js"></script>
 <script type="text/javascript" src="/js/Ext.js"></script>
 <script type="text/javascript" src="/js/Css.js"></script>
-<body class="ext-gecko x-border-layout-ct">
+<body>
+
  
 <table width="100%"  border="0" align="left" cellpadding="0" cellspacing="1" class="mytable">
   <tr>

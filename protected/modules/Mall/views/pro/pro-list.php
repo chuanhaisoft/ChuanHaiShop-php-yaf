@@ -66,7 +66,8 @@ var ti_jiao_id = 0;
 function TiJiaoShenHe(id)
 {
 	ti_jiao_id = id;
-	parent.window.Ext.Msg.show({title:"系统提示：",msg:"您确定提交审核么？",minWidth:300,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:DoTiJiaoShenHe});
+	//parent.window.Ext.Msg.show({title:"系统提示：",msg:"您确定提交审核么？",minWidth:300,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:DoTiJiaoShenHe});
+	ExtAlertFn("您确定提交审核么？",DoTiJiaoShenHe);
 }
 function DoTiJiaoShenHe(button,text)
 {
@@ -106,7 +107,8 @@ function ActDel2()
     var rows=grid.getSelectionModel().getSelections();
     if(rows && rows.length > 0)
     {
-        Ext.Msg.show({title:"系统提示：",msg:"您确定 删除 么？",minWidth:230,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:ToDelRows2});
+		ExtAlertFn("您确定 删除 么？",ToDelRows2);
+        //Ext.Msg.show({title:"系统提示：",msg:"您确定 删除 么？",minWidth:230,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:ToDelRows2});
     }else{
         ExtAlert("没有选择的行");
     }
@@ -194,7 +196,8 @@ function AjaxAct2(url,params)
 //商城审核-上架
 function ActShangJia()
 {
-	parent.window.Ext.Msg.show({title:"系统提示：",msg:"您确定 上架么？",minWidth:300,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:DoShangJia});
+	//parent.window.Ext.Msg.show({title:"系统提示：",msg:"您确定 上架么？",minWidth:300,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:DoShangJia});
+	ExtAlertFn("您确定 上架么？",DoShangJia);
 }
 function DoShangJia(button,text)
 {
@@ -219,7 +222,8 @@ function DoShangJia(button,text)
 //商城审核-下架
 function ActXiaJia()
 {
-	parent.window.Ext.Msg.show({title:"系统提示：",msg:"您确定 下架么？",minWidth:300,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:DoXiaJia});
+	//parent.window.Ext.Msg.show({title:"系统提示：",msg:"您确定 下架么？",minWidth:300,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:DoXiaJia});
+	ExtAlertFn("您确定 下架么？",DoXiaJia);
 }
 function DoXiaJia(button,text)
 {
@@ -248,7 +252,8 @@ function DoXiaJia(button,text)
 //库管审核
 function ActDoState()
 {
-	parent.window.Ext.Msg.show({title:"系统提示：",msg:"您确定 审核么？",minWidth:300,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:DoState});
+	//parent.window.Ext.Msg.show({title:"系统提示：",msg:"您确定 审核么？",minWidth:300,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:DoState});
+	ExtAlertFn("您确定 审核么？",DoState);
 }
 function DoState(button,text)
 {
@@ -273,7 +278,7 @@ function DoState(button,text)
 
 function ActDoStateFalse()
 {
-	parent.window.Ext.Msg.show({title:"系统提示：",msg:"驳回原因",minWidth:300,buttons:Ext.Msg.OKCANCEL,fn:DoStateFalse,multiline: true});
+	//parent.window.Ext.Msg.show({title:"系统提示：",msg:"驳回原因",minWidth:300,buttons:Ext.Msg.OKCANCEL,fn:DoStateFalse,multiline: true});
 }
 function DoStateFalse(button,text)
 {

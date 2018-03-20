@@ -2,7 +2,8 @@
 <script type="text/javascript" src="/js/Ext.js"></script>
 <script type="text/javascript" src="/js/Css.js"></script>
 
-<body class="ext-gecko x-border-layout-ct">
+<body>
+
 <?php		
 	echo EHtml::beginForm(); 
 	EHtml::setOptions(array(

@@ -1,4 +1,5 @@
-<?php \Pub\Yaf::display('jq_form'); ?>
+<?php use Pub\Fram;
+\Pub\Yaf::display('jq_form'); ?>
 <body >
 <style type="text/css">
 .mytable
@@ -121,7 +122,7 @@
     }
 ?>
 
-<?php if(1==2 && (in_array($State2,array(1,2,2.5,2.6,2.7,2.8,2.9,4))||$show_tui)){?>
+<?php if((in_array($State2,array(1,2,2.5,2.6,2.7,2.8,2.9,4))||$show_tui)){?>
 <tr>
     <td valign="top" align="right">退货：</td>
     <td id="tui_tr">
@@ -135,7 +136,9 @@
                         买家已发货
         <?php }elseif($State2==4){?>
                         退货完成
-        <?php }else{?>
+        <?php }else{
+if(!$m->ShouHuoTime() || ($m->ShouHuoTime() && Pub\Fram::Time_Cha(Pub\Fram::Date(),$m->ShouHuoTime())<7)){
+            ?>
         <select name="tui_reason">
             <option value="1">图片、产地、保质期等描述不符</option>
             <option value="2">认为是假货</option>
@@ -146,7 +149,7 @@
             <option value="7">认为是三无产品</option>
         </select>  
         <a id="tui_huo" class="btn_a" style="maring-left:12px;">申请退货</a>   
-        <?php }?>
+        <?php }}?>
     </td>
 </tr>
 
@@ -158,7 +161,8 @@
     <tr class="tui_tr_fa">
     <td valign="top" align="right">物流公司：</td>
     <td id="tui_tr">
-<?php  $this->renderPartial('mall.views.web.kuai_di_gong_si_select',array('value'=>$m->KuaiDiGongSi())); ?></td></tr>
+<?php \Pub\Yaf::display('kuai-di-gong-si-select',['value'=>$m->KuaiDiGongSi()]); ?>
+</td></tr>
     <tr class="tui_tr_fa">
     <td valign="top" align="right">运单号：</td>
     <td id="tui_tr">
@@ -175,9 +179,9 @@
         <td>
         
         <?php 
-            $RoleID=SysFram::getLoginRoleID();
-		
-		if(Bll_Role::Role_Id_User($RoleID))
+            $RoleID=\Pub\SysFram::getLoginRoleID();
+/**
+		if(Bll\Role::Role_Id_User($RoleID))
 		{?>
 		
 		<a href="javascript:OpenLayer('留言','/mall/tui_char/list.html?ID=<?php  echo $m->ID(); ?>',600,500)">留言</a>
@@ -186,7 +190,9 @@
 		
 		<a href="javascript:window.OpenExtIframWindow2('/mall/tui_char/list.html?ID=<?php  echo $m->ID(); ?>','留言',600,500)">留言</a>
 		
-		<?php }?>
+		<?php }
+**/
+		?>
         
         
   </td></tr>
@@ -202,13 +208,14 @@ $('#tui_huo').click(function(){
     var tui_reason = $('select[name=tui_reason]').val();
 
     $.ajax({
-		url: '/mall/order_shop/tui_huo.html?ID='+ID,
+		url: '/mall/ordershop/tuihuo.html?ID='+ID,
 		type: 'get',
 		dataType: 'text',
 		data: 'tui_reason='+tui_reason,				
 		success: function(data) {
 			if(data=="申请成功!"){
 				$('#tui_tr').hide();
+				location.reload();
 			}
 			alert(''+data);
 		}

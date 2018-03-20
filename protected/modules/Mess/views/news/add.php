@@ -10,7 +10,8 @@ $this->display(APP_PATH.'/views/top_ext.php');
 <script type="text/javascript" src="/js/Ext.js"></script>
 </head>
 
-<body class="ext-gecko x-border-layout-ct">
+<body>
+
 <?php
 if(false)$m=new Model\News();
 echo Form\Html::FormBegin($m);

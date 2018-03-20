@@ -188,7 +188,8 @@ function ActDel(opp,dbid)
 		delID=dbid;
 	}
 	publi_opp=opp;
-	Ext.Msg.show({title:"系统提示：",msg:"您确定 删除 么？",minWidth:230,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:deltr});
+	ExtAlertFn("您确定 删除 么？",deltr);
+	//Ext.Msg.show({title:"系统提示：",msg:"您确定 删除 么？",minWidth:230,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:deltr});
 }
 function SetPointValue(i)
 {

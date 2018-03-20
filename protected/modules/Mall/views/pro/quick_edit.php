@@ -1,7 +1,8 @@
 <script type="text/javascript" src="/js/Ext_Css.js"></script>
 <script type="text/javascript" src="/js/Ext.js"></script>
 <script type="text/javascript" src="/js/Css.js"></script>
-<body class="ext-gecko x-border-layout-ct">
+<body>
+
 <?php		
 	echo EHtml::beginForm(); 
 	EHtml::setOptions(array(
@@ -188,7 +189,8 @@ function ActDel(opp,dbid)
 		delID=dbid;
 	}
 	publi_opp=opp;
-	Ext.Msg.show({title:"系统提示：",msg:"您确定 删除 么？",minWidth:230,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:deltr});
+	ExtAlertFn("您确定 删除 么？",deltr);
+	//Ext.Msg.show({title:"系统提示：",msg:"您确定 删除 么？",minWidth:230,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:deltr});
 }
 
 
@@ -295,7 +297,7 @@ function SetDrop()
 				<input name="xing_hao_num_tmp" type="hidden" value="xing_hao_num_tmp_value">
 				<input name="tmp_xing_hao_db_key" type="hidden" value="-1">
 				<td class="gui_ge_row_td" align="center">规格：<span class='kong' name="row_guige_1"></span><span class='kong' name="row_guige_2"></span><span class='kong' name="row_guige_3"></span><span class='kong' name="row_guige_4"></span><span class='kong' name="row_guige_5"></span></td>
-				<td align="center">价格：<input type="text" id="tmp_price" name="tmp_price" style="width:80px" onchange="SetPointValue(_tmp_id_)" /> </td>
+				<td align="center">价格：<input type="text" id="tmp_price" name="tmp_price" style="width:80px" onChange="SetPointValue(_tmp_id_)" /> </td>
 				<td align="center">惠点：<input type="text" id="tmp_hui_dian" name="tmp_hui_dian" value="0" style="width:70px" /> </td>
 				<td align="center">库存：<input type="text" name="tmp_ku_cun" style="width:80px" /></td>
 				<td align="center">积分：<input type="text" id="tmp_point" name="tmp_point" style="width:70px" class="typepoint" /> </td>
@@ -321,7 +323,7 @@ function SetDrop()
 				<input name="xing_hao_num" type="hidden" value="<?php echo $j; ?>">
 				<input name="<?php echo $j; ?>_xing_hao_db_key" type="hidden" value="<?php echo $row['ID']; ?>">
 				<td class="gui_ge_row_td" align="center">规格：<span class='kong' name="row_guige_1"></span><span class='kong' name="row_guige_2"></span><span class='kong' name="row_guige_3"></span><span class='kong' name="row_guige_4"></span><span class='kong' name="row_guige_5"></span></td>
-				<td align="center">价格：<input disabled="disabled"  readonly="readonly" type="text" id="<?php echo $j; ?>_price" name="<?php echo $j; ?>_price" style="width:80px" onchange="SetPointValue(<?php echo $j; ?>);" value="<?php echo $row['PRICE']; ?>" /> </td>
+				<td align="center">价格：<input disabled="disabled"  readonly="readonly" type="text" id="<?php echo $j; ?>_price" name="<?php echo $j; ?>_price" style="width:80px" onChange="SetPointValue(<?php echo $j; ?>);" value="<?php echo $row['PRICE']; ?>" /> </td>
 				<td align="center">惠点：<input disabled="disabled" readonly="readonly" type="text" id="<?php echo $j; ?>_hui_dian" name="<?php echo $j; ?>_hui_dian" style="width:70px" value="<?php echo $row['HUI_DIAN']; ?>" /> </td>
 				<td align="center">库存：<input type="text" name="<?php echo $j; ?>_ku_cun" style="width:80px" value="<?php echo $row['KU_CUN']; ?>" /></td>
 				<td align="center">积分：<input disabled="disabled" type="text" id="<?php echo $j; ?>_point" name="<?php echo $j; ?>_point" style="width:70px" class="typepoint" value="<?php echo $row['POINT']; ?>" /> </td>
@@ -344,7 +346,7 @@ function SetDrop()
 				<input name="xing_hao_num" type="hidden" value="1">
 				<input name="1_xing_hao_db_key" type="hidden" value="-1">
 				<td align="center">规格：<span class='kong' name="row_guige_1"></span><span class='kong' name="row_guige_2"></span><span class='kong' name="row_guige_3"></span><span class='kong' name="row_guige_4"></span><span class='kong' name="row_guige_5"></span></td>
-				<td align="center">价格：<input type="text" id="1_price" name="1_price" style="width:80px" onchange="SetPointValue(1);" /> </td>
+				<td align="center">价格：<input type="text" id="1_price" name="1_price" style="width:80px" onChange="SetPointValue(1);" /> </td>
 				<td align="center">惠点：<input type="text" id="1_hui_dian" name="1_hui_dian" value="0" style="width:70px" /> </td>
 				<td align="center">库存：<input type="text" name="1_ku_cun" style="width:80px" /></td>
 				<td align="center">积分：<input type="text" id="1_point" name="1_point" style="width:70px" class="typepoint" /> </td>

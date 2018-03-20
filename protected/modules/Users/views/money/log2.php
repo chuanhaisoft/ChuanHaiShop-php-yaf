@@ -64,7 +64,8 @@ function TiXianState(value, cellmeta, record)
 -->
 </style>
 
-<body class="ext-gecko x-border-layout-ct">
+<body>
+
 
 <form name="form1" method="post" action="" id="form1">
 <div id="SearchDiv" style=" padding-bottom:3px;">

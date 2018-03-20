@@ -1,6 +1,7 @@
 <?php $this->display(APP_PATH.'/views/top_ext.php'); ?>
 
-<body class="ext-gecko x-border-layout-ct">
+<body>
+
 <?php
 if(false)$m=new \Model\Bank();
 echo Form\Html::FormBegin($m);

@@ -1,7 +1,8 @@
 <script type="text/javascript" src="/js/Ext_Css.js"></script>
 <script type="text/javascript" src="/js/Ext.js"></script>
 <script type="text/javascript" src="/js/Css.js"></script>
-<body class="ext-gecko x-border-layout-ct">
+<body>
+
 <?php \Pub\Yaf::display('jq_form'); ?>
 <?php
 $m=new \Model\Pub();

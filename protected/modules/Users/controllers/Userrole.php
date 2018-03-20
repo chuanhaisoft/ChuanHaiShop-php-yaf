@@ -18,9 +18,9 @@ class UserroleController extends yaf\Controller_Abstract
 	        $m->Id($ID);
 	        
 	        $m->_LoginName->SetChanged();
-	        $c=Bll\User::Column(null,'count(1)',[$m->_LoginName->w('=',$m->LoginName()),$m->_Id->w_and('<>',$UID)]);
+	        $c=Bll\User::Column(null,'count(1)',[$m->_LoginName->w('=',$m->LoginName()),$m->_Id->w_and('<>',$ID)]);
 	        if($c>0)
-	            die("parent.window.ExtAlert('此登录名已经占用！');");
+	            die("parent.window.ExtAlert('此登录名已经占用！{$c}');");
 	        $m->_Name->SetChanged();
 	        $m->_Address->SetChanged();
 	        if(Fram::IsNotEmpty($m->LoginPass()))

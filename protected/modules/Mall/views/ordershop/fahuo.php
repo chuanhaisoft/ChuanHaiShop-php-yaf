@@ -1,5 +1,6 @@
 <?php \Pub\Yaf::display('jq_form'); ?>
-<body class="ext-gecko x-border-layout-ct">
+<body>
+
 <?php
 if(false)$m=new \Model\OrderMallDetail();
 if(false)$order=new Model\OrderMall();
@@ -245,7 +246,7 @@ if(\Bll\Role::Role_Id_Shop($RoleID) || $RoleID==1)
         
         
         
-        <?php if(in_array($State2,array(2.7))&&(SysFram::getLoginRoleID()==1||SysFram::getLoginRoleID()==104)){?>
+        <?php if(in_array($State2,array(2.7))&&(Pub\SysFram::getLoginRoleID()==1)){?>
         <tr class="tui_tr_queren">
         <td align="right">协调:</td>
             <td>
@@ -268,7 +269,7 @@ if(\Bll\Role::Role_Id_Shop($RoleID) || $RoleID==1)
         <td></td>
         <td>
         
-        <a href="javascript:window.OpenExtIframWindow2('/mall/tui_char/list.html?ID=<?php  echo $m->ID(); ?>','留言',600,500)">留言</a>
+        <a style="display:none" href="javascript:window.OpenExtIframWindow2('/mall/tui_char/list.html?ID=<?php  echo $m->ID(); ?>','留言',600,500)">留言</a>
   </td></tr>
 <?php }?>
 
@@ -283,7 +284,7 @@ $('#Delay_Shou_huo').click(function(){
     var RoleID = <?php  echo \Pub\SysFram::getLoginRoleID(); ?>;
 
     $.ajax({
-		url: '/mall/order_shop/delay_Shou_huo.html?ID='+ID,
+		url: '/mall/ordershop/delay_Shou_huo.html?ID='+ID,
 		type: 'get',
 		dataType: 'text',
 		data: '',				
@@ -307,13 +308,14 @@ $('.tongyi_tui_huo').click(function(){
     var Tongyi = $(this).attr('tongyi');
 
     $.ajax({
-		url: '/mall/order_shop/Chuli_tui_huo.html?ID='+ID,
+		url: '/mall/ordershop/Chuli_tui_huo.html?ID='+ID,
 		type: 'get',
 		dataType: 'text',
 		data: 'tongyi='+Tongyi,				
 		success: function(data) {
 			
 			parent.window.ExtAlert(''+data);
+			location.reload();
 		}
 	});
     
@@ -327,13 +329,14 @@ $('.tui_huo_shou_huo').click(function(){
     var ID = <?php  echo $m->ID(); ?>;
 
     $.ajax({
-		url: '/mall/order_shop/tui_huo_shou_huo.html?ID='+ID,
+		url: '/mall/ordershop/tui_huo_shou_huo.html?ID='+ID,
 		type: 'get',
 		dataType: 'text',
 					
 		success: function(data) {
 			if(data=="收货成功!"){
 				$('.tui_tr_queren').hide();
+				location.reload();
 			}
 			parent.window.ExtAlert(''+data);
 		}
@@ -350,13 +353,14 @@ $('.xie_tiao_wan_cheng').click(function(){
     var xie_tiao_value = $('input[name=xie_tiao_value]:checked').val();
 
     $.ajax({
-		url: '/mall/order_shop/xie_tiao_wan_cheng.html?ID='+ID+'&xie_tiao_value='+xie_tiao_value,
+		url: '/mall/ordershop/xie_tiao_wan_cheng.html?ID='+ID+'&xie_tiao_value='+xie_tiao_value,
 		type: 'get',
 		dataType: 'text',
 					
 		success: function(data) {
 			if(data=="操作成功!"){
 // 				$('.tui_tr_queren').hide();
+				location.reload();
 			}
 			parent.window.ExtAlert(''+data);
 		}

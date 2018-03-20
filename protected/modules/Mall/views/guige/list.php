@@ -74,7 +74,7 @@ var del_row = 0;
 function ActDelGuiGe(id)
 {
 	del_row = id;
-	parent.window.Ext.Msg.show({title:"系统提示：",msg:"您确定 删除么？",minWidth:300,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:DoDelGuiGe});
+	ExtAlertFn("您确定 删除么？",DoDelGuiGe);
 }
 function DoDelGuiGe(button,text)
 {
@@ -82,7 +82,6 @@ function DoDelGuiGe(button,text)
 	if(button=="ok")
 	{
 		ExtAjaxDo(PageAddress,"act=Del&DelId=" + del_row);
-		
 	}
 }
 </script>

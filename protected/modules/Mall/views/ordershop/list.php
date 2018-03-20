@@ -149,7 +149,8 @@ function ActDelOrder(_id)
 	DoDelID=_id;
 	if(DoDelID)
 	{
-		parent.window.Ext.Msg.show({title:"系统提示：",msg:"您确定 撤单么？",minWidth:300,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:DoDelOrder});
+		//parent.window.Ext.Msg.show({title:"系统提示：",msg:"您确定 撤单么？",minWidth:300,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:DoDelOrder});
+		ExtAlertFn("您确定 撤单么？",DoDelOrder);
 	}else{
 		ExtAlert("没有选择的行");
 	}

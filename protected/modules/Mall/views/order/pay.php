@@ -7,7 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 </head>
-<body class="ext-gecko x-border-layout-ct">
+<body>
+
 <style type="text/css">
 body
 {
@@ -75,7 +76,7 @@ layer.config({
     <td width="25%"><div align="right">订单金额：</div></td>
     <td ><span class="font_red"><?php echo $m->MoneyAll() ?></span></td>
     <td width="350px" rowspan="9" >
-	<iframe id="ifr_pay" src="" width="100%"  height="300px" allowTransparency="true" frameborder="0" style="overflow-x:hidden;overflow-y:hidden"></iframe>
+	<iframe id="ifr_pay" src="" width="100%" height="300px" allowTransparency="true" frameborder="0" style="overflow-x:hidden;overflow-y:hidden"></iframe>
 	</td>
   </tr>
     <tr>

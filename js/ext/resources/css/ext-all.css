@@ -259,7 +259,7 @@ fieldset.x-panel-collapsed .x-fieldset-bwrap{visibility:hidden;position:absolute
 .x-btn-pressed .x-btn-right{background:url(../images/default/button/btn-sprite.gif) no-repeat 0 -84px;}
 .x-btn-pressed .x-btn-center{background:url(../images/default/button/btn-sprite.gif) repeat-x 0 -126px;}
 
-.x-toolbar{border-color:#a9bfd3;border-style:solid;border-width:0 0 1px 0;display:block;padding:2px;background:#d0def0 url(../images/default/toolbar/bg.gif) repeat-x top left;position:relative;zoom:1;}
+.x-toolbar{border-color:#a9bfd3;border-style:solid;border-width:0 0 1px 0;display:block;padding:2px;position:relative;zoom:1;}
 .x-toolbar .x-item-disabled .x-btn-icon{opacity:.35;-moz-opacity:.35;filter:alpha(opacity=35);}
 .x-toolbar td{vertical-align:middle;}
 .mso .x-toolbar,.x-grid-mso .x-toolbar{border:0 none;background:url(../images/default/grid/mso-hd.gif);}

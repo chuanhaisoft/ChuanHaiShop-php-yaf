@@ -4,7 +4,7 @@ namespace Pub;
 class ChuanHaiIm
 {
     //正式上线请将测试版的domain，key 替换为 正式版
-    private static function DomainID()
+    public static function DomainID()
     {
         return "80026";
     }
@@ -21,7 +21,7 @@ class ChuanHaiIm
         self::SetCookies('chuanhaisoft_im_user',base64_encode(json_encode($UserData)),$_Expire==null?5*24*3600:$_Expire);
     }
     
-    public static function SetKeFu($UserName,$UserPic,$WelcomeMess=null)
+    public static function SetKeFu($UserName,$UserPic,$WelcomeMess=null,$WelcomeUserID=null)
     {
         $Len=15;
         $UserId=self::GetIp();
@@ -33,9 +33,12 @@ class ChuanHaiIm
         
         if(!isset($_COOKIE['chuanhaisoft_im_user']) || !$_COOKIE['chuanhaisoft_im_user'] || strlen($_COOKIE['chuanhaisoft_im_user'])<=5 )
         {
-            $UserData=array('userid'=>"{$UserId}",'domainid'=>self::DomainID().'','name'=>"{$UserName}",'pic'=>"{$UserPic}");
-            if($WelcomeMess && $WelcomeMess!='')
-                $UserData['welcome_mess']=$WelcomeMess;
+            $UserData=array('userid'=>"{$UserId}",'domainid'=>self::DomainID().'','name'=>"{$UserName}",'pic'=>"{$UserPic}",'anonymous'=>'1');
+            if($WelcomeMess && $WelcomeMess!='' && is_numeric($WelcomeUserID) && $WelcomeUserID>0)
+            {
+				$UserData['welcome_mess']=$WelcomeMess;
+				$UserData['welcome_userid']=$WelcomeUserID;
+			}
             
             $UserData['key']=self::ApiSign($UserData,self::Key());
             self::SetCookies('chuanhaisoft_im_user',base64_encode(json_encode($UserData)),10*365*24*3600);

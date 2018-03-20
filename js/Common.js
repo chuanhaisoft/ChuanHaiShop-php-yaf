@@ -204,12 +204,22 @@ function base64_encode(str){
 var openwinowPanel;var openwinowPanel3;
 function ExtAlert(value)
 {
-    parent.window.ExtAlert(value);
+	var IsTime = arguments[1] ? parseInt(arguments[1])*1000 : 10*1000;
+	layui.use('layer', function(){
+  	var layer = layui.layer;
+	layer.msg(value, {
+			time: IsTime,
+			area: ['210px'],
+			isOutAnim: false,
+			btn: ['确 定', '取 消']
+		  });
+	  
+	}); 
 }
 
 function ExtAlertFn(value,fn)
 {
-    parent.window.ExtAlert(value,fn);
+    parent.window.ExtAlertFn(value,fn);
 }
 
 function OpenUrl(IframeUrl,id,text)
@@ -219,7 +229,7 @@ function OpenUrl(IframeUrl,id,text)
 }
 function CLoseWindowPanel()
 {
-	if(openwinowPanel){openwinowPanel.close();}	
+	//////////if(openwinowPanel){openwinowPanel.close();}	
 	////var win=Ext.getCmp("windowsP4");
 	////if(win){win.close();}	
 }
@@ -253,11 +263,13 @@ function OpenExtWindow(_url,_title,_width,_height)
 function OpenExtIframWindow(_url,_title,_width,_height)
 {
 	CLoseWindowPanel();
+	/**
     openwinowPanel=new Ext.Window({title:_title,modal:true,width:_width,height:_height,x:200,y:30,id:"windowsP4_"+WindowStrEnCode(_url),
                     html:'<iframe src="' + _url + '" width="100%" height="100%" allowTransparency="true" frameborder="0" scrolling="auto"></iframe>' 
     
     }).show();
-	
+	**/
+	OpenLayer(_title,_url,_width,_height);
 }
 /**
 function OpenExtIframWindow2(_url,_title,_width,_height)
@@ -285,10 +297,13 @@ function OpenExtIframWindow2(_url,_title,_width,_height,_x,_y)
 		_height=document.documentElement.clientHeight*_height-30;
 	}
 	CLoseWindowPanel();
+	/**
     openwinowPanel=new Ext.Window({title:_title,resizable:false,modal:true,width:_width,height:_height,x:_x,y:_y,id:"windowsP4_"+WindowStrEnCode(_url),
                     html:'<iframe src="' + _url + '" width="100%" height="100%" allowTransparency="true" frameborder="0" scrolling="auto"></iframe>' 
     
     }).show();
+	**/
+	OpenLayer(_title,_url,_width,_height);
 }
 
 function OpenExtIframWindow3(_url,_title,_width,_height,_x,_y)
@@ -566,18 +581,24 @@ function OpenLayer(name,url,width,height)
 {
 	var width_n = arguments[2]?arguments[2]:750;
 	var height_n = arguments[3]?arguments[3]:600;
-	parent.parent.layer.ready(function(){ 
-		parent.parent.layer.open({
+layui.use('layer', function(){
+  var layer = layui.layer;
+layer.open({
 			type: 2,
 			//skin: 'layui-layer-lan',
 			title: name,
 			fix: false,
+			anim: -1,isOutAnim:false,
+			move: false,
 			shadeClose: true,
 			maxmin: false,
 			area: [width_n+'px', height_n+'px'],
 			content: url
 		});
-	});
+  
+}); 
+	//parent.parent.
+	
 }
 function OpenLayer2(name,url,width,height)
 {
@@ -587,6 +608,7 @@ function OpenLayer2(name,url,width,height)
 			//skin: 'layui-layer-lan',
 			title: name,
 			fix: false,
+			anim: -1,isOutAnim:false,
 			shadeClose: true,
 			maxmin: true,
 			area: [width+'px', height+'px'],

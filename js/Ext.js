@@ -4,4 +4,6 @@ document.writeln('<script type="text/javascript" src="/js/ext/build/locale/ext-l
 document.writeln('<script type="text/javascript" src="/js/Common.js"></script>');
 document.writeln('<script type="text/javascript" src="/js/CommonVara.js"></script>');
 document.writeln('<script type="text/javascript" src="/js/DatePicker/WdatePicker.js"></script>');
+document.writeln('<script type="text/javascript" src="/js/layui/layui.js"></script>');
+
 

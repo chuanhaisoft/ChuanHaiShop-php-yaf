@@ -245,7 +245,8 @@ function DoAutoHeight()
 {
     if(IsPersentHeight<=1)
     {
-        GridHeight=document.documentElement.clientHeight*IsPersentHeight+HeightCha;
+        GridHeight=document.documentElement.clientHeight;if(GridHeight==0){GridHeight=$(parent.window).height()-35;}
+        GridHeight=GridHeight*IsPersentHeight+HeightCha;
         if(vLimit<=0)
         {
             vLimit=parseInt((GridHeight-53)/27);
@@ -464,7 +465,8 @@ function ActPiLiangJieDan()
 	var rows=grid.getSelectionModel().getSelections();
 	if(rows && rows.length > 0)
 	{
-		Ext.Msg.show({title:"系统提示：",msg:"您确定 结单 么？结单后不可更改撤销！！！",minWidth:300,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:PiLiangJieDan});
+		ExtAlertFn("您确定 结单 么？结单后不可更改撤销！！！",PiLiangJieDan);
+		//Ext.Msg.show({title:"系统提示：",msg:"您确定 结单 么？结单后不可更改撤销！！！",minWidth:300,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:PiLiangJieDan});
 	}else{
 		ExtAlert("没有选择的行");
 	}
@@ -512,7 +514,8 @@ function AjaxJieDan(url,params)
 	            var rows=grid.getSelectionModel().getSelections();
 	            if(rows && rows.length > 0)
 	            {
-		            Ext.Msg.show({title:"系统提示：",msg:"您确定 删除 么？",minWidth:230,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:ToDelRows});
+			        ExtAlertFn("您确定 删除 么？",ToDelRows);
+		            //Ext.Msg.show({title:"系统提示：",msg:"您确定 删除 么？",minWidth:230,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:ToDelRows});
 		        }else{
 		            ExtAlert("没有选择的行");
 		        }
@@ -522,7 +525,8 @@ function AjaxJieDan(url,params)
 	            var rows=grid.getSelectionModel().getSelections();
 	            if(rows && rows.length > 0)
 	            {
-		            Ext.Msg.show({title:"系统提示：",msg:"您确定 审核 么？",minWidth:230,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:ToTiJiaoShenHeRows});
+			        ExtAlertFn("您确定 审核 么？",ToTiJiaoShenHeRows);
+		            //Ext.Msg.show({title:"系统提示：",msg:"您确定 审核 么？",minWidth:230,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:ToTiJiaoShenHeRows});
 		        }else{
 		            ExtAlert("没有选择的行");
 		        }
@@ -532,7 +536,8 @@ function AjaxJieDan(url,params)
 	            var rows=grid.getSelectionModel().getSelections();
 	            if(rows && rows.length > 0)
 	            {
-		            Ext.Msg.show({title:"系统提示：",msg:"您确定 驳回 么？",minWidth:230,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:ToBoHuiShenHeRows});
+			        ExtAlertFn("您确定 驳回 么？",ToBoHuiShenHeRows);
+		            //Ext.Msg.show({title:"系统提示：",msg:"您确定 驳回 么？",minWidth:230,icon:Ext.MessageBox.QUESTION,buttons:Ext.Msg.OKCANCEL,fn:ToBoHuiShenHeRows});
 		        }else{
 		            ExtAlert("没有选择的行");
 		        }

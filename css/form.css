@@ -58,11 +58,11 @@ input[type=button]
 	
 .mytable
 {
-	border:1px #cfdae8; background-color:#cfdae8
+	border:1px #cfdae8; background-color:#cfdae8;
 }
 .mytable tr
 {
-	border:1px #cfdae8; background-color:#dfe8f6;
+	border:1px #cfdae8; background-color:#fff;
 }
 .mytable tr td
 {

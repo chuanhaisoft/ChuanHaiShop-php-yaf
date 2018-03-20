@@ -46,7 +46,9 @@ layui.use('upload', function(){
     ,data:{return_type:'json'}
     ,done: function(res){
     	 parent.window.SetValueByID('<?php echo $_GET['name'] ?>',res.file_url);
-    	 parent.window.ExtWindowClose(escape(window.location.pathname+window.location.search));
+    	 //parent.window.ExtWindowClose(escape(window.location.pathname+window.location.search));
+    	 var index = parent.layer.getFrameIndex(window.name);  
+    	 parent.layer.close(index); 
     }
     ,error: function(){//alert('error');
       //请求异常回调

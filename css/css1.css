@@ -156,3 +156,11 @@ a, a:visited
 	color: #003366;
 	text-decoration: none;
 }
+
+.layui-layer-setwin {
+    top: 10px !important;
+}
+.layui-layer-title {
+    height: 32px !important;
+    line-height: 32px !important;
+}

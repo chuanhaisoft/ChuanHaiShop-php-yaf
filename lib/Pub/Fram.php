@@ -22,6 +22,18 @@ class Fram
 	    return date("Y-m-d H:i:s", strtotime("{$datetime} +{$FenZhong} min"));
 	}
 	
+	public static function Time_Cha($Time1,$Time2=null,$Type='day')
+	{
+	    if($Time2==null)
+	        $Time2=Fram::Date();
+	    if($Type=='day')
+	        $r=(strtotime($Time1)-strtotime($Time2))/86400;
+	    else
+	        $r=(strtotime($Time1)-strtotime($Time2));//abs
+	     
+	    return $r;
+	}
+	
 	public static function Time1_Time2_Cha($Time1,$Time2=null)
 	{
 	    if($Time2==null)

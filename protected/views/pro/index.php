@@ -294,8 +294,7 @@ foreach ($ad as $x): ?>
 	
 	<!--/ content-->
 	</div>
+<script src="http://msg.yunhuatong.com/im_auto.js" id="chuanhaisoft_im_script" para_add_friend="100.1;" para_view_type="2" para_jsjq="0" para_isgroup="0" pic_upload_url="http://www.chuanhaisoft.com/system/upload/Upload_im/"></script>
 	<?php \Pub\Yaf::display('footer'); ?>
-
-<script src="http://msg.yunhuatong.com/im_auto.js" id="chuanhaisoft_im_script" para_jsjq="0" para_add_friend="100.1;" pic_upload_url="http://www.chuanhaisoft.com/system/upload/Upload_im/"></script>
 </body>
 </html>

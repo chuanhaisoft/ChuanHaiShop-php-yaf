@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 </head>
-<body class="ext-gecko x-border-layout-ct">
+<body>
 
 <?php echo $html; ?>
 

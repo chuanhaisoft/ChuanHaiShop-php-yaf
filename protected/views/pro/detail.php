@@ -5,12 +5,14 @@
 <meta name="Keywords" content="" />
 <meta name="Description" content="" />
 <title><?php echo $pro['NAME']?>-<?php echo \Pub\SysPara::SiteName?></title>
+<link href="/js/pro/detail_pic/lanrenzhijia.css" rel="stylesheet" type="text/css" />
 <link href="/css/layout.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/stickUp.min.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript" src="/js/detail.js"></script>
+<script type="text/javascript" src="/js/pro/detail_pic/jquery.jqzoom.js"></script>
 <!-- <script src="https://msg.yunhuatong.com/im.js" id="chuanhaisoft_im_script" data="jsjq=0" upload_back="http://xxxxxxx.cn/shopm/Im_url"></script> -->
 </head>
 <body>
@@ -186,39 +188,36 @@ $(document).ready(function(){
 
 		<div class="pro-detail clearfix">
 			<div class="p-photo fl">
-				<div class="pimgbox">
-					<div class="banner">
-						<div class="banner-btn">
-							<a href="javascript:;" class="prevBtn"><i></i></a> <a
-								href="javascript:;" class="nextBtn"><i></i></a>
-						</div>
-						<ul class="banner-img">
-							<?php
-							    if(!$pro['desc']['PIC1'] && !$pro['desc']['PIC2'] && !$pro['desc']['PIC3'] && !$pro['desc']['PIC4'] && !$pro['desc']['PIC5'])
-							        $pro['desc']['PIC1']=$pro['PIC'];
-								for ($i=1; $i<5; $i++) :
-									if ($pro['desc']['PIC'.$i]) :
-							?>
-							<li><img src="<?php echo Pub\Fram::Img_Url($pro['desc']['PIC'.$i]); ?>" /></li>
-							<?php
-									endif;
-								endfor;
-							?>
-						</ul>
-					</div>
-					<ul class="banner-circle">
-						<?php
-							for ($i=1; $i<5; $i++) :
-								if ($pro['desc']['PIC'.$i]) :
-						?>
-						<li<?php if ($i == 1) echo ' class="selected"';?>><a href="javascript:void(0);"><img src="<?php echo Pub\Fram::Img_Url($pro['desc']['PIC'.$i]); ?>" height="80" width="80"/></a></li>
-						<?php
-								endif;
-							endfor;
-						?>
-					</ul>
-				</div>
-				<script>
+				<div class="lanrenzhijia">
+<?php
+if(!$pro['desc']['PIC1'] && !$pro['desc']['PIC2'] && !$pro['desc']['PIC3'] && !$pro['desc']['PIC4'] && !$pro['desc']['PIC5'])
+	$pro['desc']['PIC1']=$pro['PIC'];
+
+?>
+<div id="preview" class="spec-preview"> 
+	<span class="jqzoom"><img style="max-width:500px;max-height:500px;" jqimg="<?php echo Pub\Fram::Img_Url($pro['desc']['PIC1']); ?>" src="<?php echo Pub\Fram::Img_Url($pro['desc']['PIC1']); ?>" /></span> 
+</div>
+
+
+<div class="spec-scroll"> <a class="prev">&lt;</a> <a class="next">&gt;</a>
+  <div class="items">
+    <ul>
+<?php
+	for ($i=1; $i<5; $i++) :
+		if ($pro['desc']['PIC'.$i]) :
+?>
+<li><img bimg="<?php echo Pub\Fram::Img_Url($pro['desc']['PIC'.$i]); ?>" src="<?php echo Pub\Fram::Img_Url($pro['desc']['PIC'.$i]); ?>" onmousemove="preview(this);"></li>
+<?php
+		endif;
+	endfor;
+?>
+    </ul>
+  </div>
+</div>
+
+</div>
+<script type="text/javascript" src="/js/pro/detail_pic/lanrenzhijia.js"></script>
+<script>
 				$(function() {
 					var $banner = $('.index-box1 .banner');
 					var $banner_ul = $('.index-box1 .banner-img');
@@ -747,6 +746,6 @@ $(document).ready(function(){
 	</div>
 	<!--/ content-->
 	<?php \Pub\Yaf::display('footer'); ?>
-	<script src="http://msg.yunhuatong.com/im_auto.js" id="chuanhaisoft_im_script" para_jsjq="0" pic_upload_url="http://www.chuanhaisoft.com/system/upload/Upload_im/"></script>
+	<script src="http://msg.yunhuatong.com/im_auto.js" id="chuanhaisoft_im_script" para_view_type="2" para_jsjq="0" pic_upload_url="http://www.chuanhaisoft.com/system/upload/Upload_im/"></script>
 </body>
 </html>

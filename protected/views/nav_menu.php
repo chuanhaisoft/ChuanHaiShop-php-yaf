@@ -3,7 +3,7 @@
     <a href="<?php echo Pub\SysPara::site_url()?>"><?php echo Pub\SysPara::SiteName;?></a>
 </h1>
 <!--/ logo-->
-<div>
+<div style="color:red">
  <A href="http://demo.chuanhaisoft.com/chuanhai/" target="_blank">后台演示：http://demo.chuanhaisoft.com/chuanhai/</A> 用户名:admin  密码:chuanhaisoft  
 <script type="text/javascript">
 document.writeln("<a href=\'https://github.com/chuanhaisoft/ChuanHaiShop-php-yaf\' target=\'_blank\'>下载ChuanHaiShop</a>");

@@ -218,7 +218,7 @@ class File
         $array = array(Fram::Date("Y"),Fram::Date("m"),Fram::Date("d"),Fram::Date("H"),Fram::Date("i"),Fram::Date("s"));
         $ToFileName .= implode("/",$array);
         //文件名部分
-        $ToFileName .= "/".floor(microtime()*1000000).self::getRandNumber();
+        $ToFileName .= "/".floor(intval(microtime())*1000000).self::getRandNumber();
 		$ToFileName .= ".".$names[count($names)-1];
         
         return $ToFileName;

@@ -1398,7 +1398,7 @@ dl.m-progress dt b{display:block;filter:progid: DXImageTransform.Microsoft.Gradi
 
 .pro-sort-tab .ps-cont			{padding:20px 20px;min-height:300px;height:auto !important;height:300px;overflow:visible;}
 .mess {letter-spacing:2px;font-size:16px; line-height:30px}
-.mess img{display:block;margin: 0 auto; padding-bottom:10px; padding-top:10px;}
+.mess img{display:block;margin: 0 auto; padding-bottom:10px; padding-top:10px; width:100%}
 .pro-sort-tab .stith			{color:#333;background:#FFF;height:30px;position:relative;border-bottom:2px solid #1d7ad9;z-index:1;}
 .pro-sort-tab .stith .tith		{color:#333;font-weight:bold;font-size:16px;border-bottom:2px solid #3e3e3e;height:30px;position:absolute;top:0;left:0;background:#FFF;padding-right:1px;}
 .pro-sort-tab .stith .more		{color:#666;font-family:"宋体";position:absolute;top:4px;right:0;}

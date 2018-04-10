@@ -816,7 +816,7 @@ a.uline								{text-decoration:underline;}
 .pro-list-span4 li dt .img-h{width:220px;height:220px;}
 .pro-list-span4 li dt img{max-width:218px;max-height:218px;}
 .pro-list-span4 li dd{padding:8px 8px 5px 8px;}
-.pro-list-span4 li dd .name{font-weight: normal;font-size: 14px;line-height: 24px;overflow: hidden;}
+.pro-list-span4 li dd .name{font-weight: normal;font-size: 14px;line-height: 24px;white-space:nowrap;text-overflow:ellipsis;overflow: hidden;}
 .pro-list-span4 .price-sc	{margin-right:10px;height:30px;line-height: 30px;}
 .pro-list-span4 .price-sc i	{font-size:18px;}
 .pro-list-span4 .price-sc b	{font-size:20px;}

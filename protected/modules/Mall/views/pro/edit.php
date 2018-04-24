@@ -326,7 +326,7 @@ function SetDrop()
 				<td class="gui_ge_row_td" align="center">规格：<span class='kong' name="row_guige_1"></span><span class='kong' name="row_guige_2"></span><span class='kong' name="row_guige_3"></span><span class='kong' name="row_guige_4"></span><span class='kong' name="row_guige_5"></span></td>
 				<td align="center">价格：<input type="text" id="tmp_price" name="tmp_price" style="width:80px" onchange="SetPointValue(_tmp_id_)" /> </td>
 				<td align="center" style="display:none;" >余额额度：<input type="text" id="tmp_can_use_yu_e" name="tmp_can_use_yu_e" value="0" style="width:80px" /> </td>
-				<td align="center" style="display:none">供应商价格：<input type="text" id="tmp_cost" name="tmp_cost" style="width:80px"/> </td>
+				<td align="center" style="display:none">供应商价格：<input type="text" id="tmp_cost" value="0.00" name="tmp_cost" style="width:80px"/> </td>
 				<td align="center">积分抵扣：<input type="text" id="tmp_hui_dian" name="tmp_hui_dian" value="0" style="width:70px" /> </td>
 				<td align="center">库存：<input type="text" name="tmp_ku_cun" style="width:80px" /></td>
 				<td align="center">可获积分：<input type="text" id="tmp_point" name="tmp_point" style="width:70px" class="typepoint" /> </td>
@@ -570,7 +570,7 @@ function CheckForm()
 				alert(":余额额度不可高于售价，请重新输入");
 				return false;
 			}
-
+/**
             if(value1 && (item_cost=="" || item_cost == undefined || item_cost == null || isNaN(item_cost) ))
             {
 				$("input[name='"+inArr[i].value+"_cost']").focus();
@@ -583,7 +583,7 @@ function CheckForm()
 				alert(":供应商价格不可高于售价，请重新输入");
 				return false;
 			}
-
+**/
             if(value1 && (item_hui_dian=="" || item_hui_dian == undefined || item_hui_dian == null || isNaN(item_hui_dian) ))
             {
 				$("input[name='"+inArr[i].value+"_hui_dian']").focus();

@@ -34,49 +34,33 @@ class CaiWu
         {
             switch($m->ModuleId())
             {
-                case \Bll\M::Chong_Zhi():
-                    $r = $r && \Bll\User::Billing_Do_MessageCount($m->UserId(), $m->Money(),"充值成功，兑枫叶:".$m->Money().'个',$Conn,false,\Bll\M::Chong_Zhi());
-                    $r = $r && \Bll\User::DealMoneyPayTotal($m->UserId(), $m->Money(), $Conn);
+                case \Bll\M::Mall_Yuer_Bu_Zu():
+                    if($JinEr>=$m->Money() && Fram::CheckNum($m->MessId()))
+                    {
+                        $mallorder=\Bll\OrderMall::Model($m->MessId());if(!$mallorder)$mallorder=new \Model\OrderMall();
+                        //"(MONEY>='{$mallorder->PayMoney()}' and HUI_DIAN>='{$mallorder->PayHuiDian()}')",'-'.$mallorder->PayHuiDian()
+                        $r = $r && \Bll\User::Billing_Do_Money($m->UserId(), '-'.$mallorder->PayMoney(),"商城订单充值({$ID})成功,金额{$JinEr},另商城订单{$m->MessId()}完成扣款",$Conn,false,\Bll\M::Mall(),true,true,$m->MessId(),$ID);
+                        if($mallorder->PayHuiDian()>0)
+                        {
+                            $r = $r && \Bll\User::Billing_Do_Point($m->UserId(), '-'.$mallorder->PayHuiDian(),"商城订单充值({$ID})成功,金额{$JinEr},另商城订单{$m->MessId()}完成扣积分",$Conn,false,\Bll\M::Mall(),true,true,$m->MessId(),$ID);
+                        }
+                        $mallorder=new \Model\OrderMall();
+                        $mallorder->Id($m->MessId());
+                        $mallorder->PayTime(Fram::Date());
+                        $mallorder->PayChongZhiOrderNum($ID);
+                        $mallorder->State(1);
+                        $r = $r && \Bll\OrderMall::Update($mallorder,"(STATE='0.1' or STATE='-1.1')",$Conn);
+                        $r = $r && \Bll\OrderMall::OrderDetailFenPei($mallorder->Id(),$Conn);
+                        $r = $r && \Pub\Data::RunCommend("update order_mall_detail set STATE2='0' where ORDER_ID='".$m->MessId()."'",$Conn);
+                    }
+                    else
+                    {
+                        $r = $r && \Bll\User::Billing_Do_Money($m->UserId(), $m->Money(),"商城订单({$m->MessId()})充值({$ID})成功，加款:".$m->Money(),$Conn,null,\Bll\M::Chong_Zhi(),true,true,$m->MessId(),$ID);
+                    }
                     break;
-                case \Bll\M::Chong_Zhi_Month():
-                    if($m->Mess2()==1)
-                    {
-                        $up=new \Model\TravelDuanZu();
-                        $up->Id($m->MessId());
-                        $up->AdType(2);
-                        $up->AdState(1);
-                        $up->AdStartTime(Fram::Date());
-                        $up->AdEndTime(Fram::Data_Add_Day(30));
-                        $r = $r && $up->Update(null,null,true);
-                        $Mess="充值{$JinEr}消费于短租信息{$m->Mess()}包月费用";
-                    }
-                    if($m->Mess2()==2)
-                    {
-                        $up=new \Model\XiuXian();
-                        $up->Id($m->MessId());
-                        $up->AdType(2);
-                        $up->AdState(1);
-                        $up->AdStartTime(Fram::Date());
-                        $up->AdEndTime(Fram::Data_Add_Day(30));
-                        $r = $r && $up->Update(null,null,true);
-                        $Mess="充值{$JinEr}消费于休闲信息{$m->Mess()}包月费用";
-                    }
-                    if($m->Mess2()==3)
-                    {
-                        $up=new \Model\TravelGongLue();
-                        $up->Id($m->MessId());
-                        $up->AdType(2);
-                        $up->AdState(1);
-                        $up->AdStartTime(Fram::Date());
-                        $up->AdEndTime(Fram::Data_Add_Day(30));
-                        $r = $r && $up->Update(null,null,true);
-                        $Mess="充值{$JinEr}消费于景点信息{$m->Mess()}包月费用";
-                    }
-                    $r = $r && \Bll\MoneyLog::DoLog($m->UserId(), $JinEr,$Mess,\Bll\M::Chong_Zhi_Month(),$Conn,0,0,$m->MessId(),$ID,0);
-                    break;
-                default:
-                    $r = $r && \Bll\User::Billing_Do_MessageCount($m->UserId(), $m->Money(),"充值成功，兑枫叶:".$m->Money().'个',$Conn,false,\Bll\M::Chong_Zhi());
-                    $r = $r && \Bll\User::DealMoneyPayTotal($m->UserId(), $m->Money(), $Conn);
+                //default:
+                //    $r = $r && \Bll\User::Billing_Do_MessageCount($m->UserId(), $m->Money(),"充值成功，兑枫叶:".$m->Money().'个',$Conn,false,\Bll\M::Chong_Zhi());
+                //    $r = $r && \Bll\User::DealMoneyPayTotal($m->UserId(), $m->Money(), $Conn);
             }
              
         }

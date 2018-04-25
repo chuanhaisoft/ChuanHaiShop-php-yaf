@@ -2,7 +2,7 @@
 ini_set('date.timezone','Asia/Shanghai');
 //error_reporting(E_ERROR);
 
-require_once  $_SERVER['DOCUMENT_ROOT'] .'/m/weixin/lib/WxPay.Api.php';;
+require_once  $_SERVER['DOCUMENT_ROOT'] .'/m/weixin/lib/WxPay.Api.php';
 require_once  $_SERVER['DOCUMENT_ROOT'] .'/m/weixin/lib/WxPay.Notify.php';
 require_once  $_SERVER['DOCUMENT_ROOT'] .'/m/weixin/example/log.php';
 
@@ -46,7 +46,7 @@ class PayNotifyCallBack extends WxPayNotify
 			return false;
 		}
 		Log::DEBUG("start_user_do_state:");
-		$Do=\Bll\CaiWu::Update_Chong_State($data["out_trade_no"],\Pub\Number::Chu($data["total_fee"], 100,0));
+		$Do=\Bll\CaiWu::Update_Chong_State($data["out_trade_no"],\Pub\Number::Chu($data["total_fee"], 100,2));
 		Log::DEBUG("user_do_state:{$Do}:");
 		if($Do)
 		{

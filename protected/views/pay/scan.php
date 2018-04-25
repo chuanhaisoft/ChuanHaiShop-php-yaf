@@ -1,4 +1,5 @@
 <?php
+use Pub\SysPara;
 ini_set('date.timezone','Asia/Shanghai');
 //error_reporting(E_ERROR);
 
@@ -45,7 +46,7 @@ $input->SetTotal_fee($caiwu->Money()*100);
 $input->SetTime_start(date("YmdHis"));
 $input->SetTime_expire(date("YmdHis", time() + 600));
 $input->SetGoods_tag("test");
-$input->SetNotify_url("http://shop.yunhuatong.com/pay/notify.html");
+$input->SetNotify_url("http://{$_SERVER['HTTP_HOST']}/pay/notify.html");
 $input->SetTrade_type("NATIVE");
 $input->SetProduct_id("123456789");
 $result = $notify->GetPayUrl($input);

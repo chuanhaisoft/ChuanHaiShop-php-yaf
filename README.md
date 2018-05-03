@@ -24,7 +24,13 @@ ChuanHaiShop为b2c版本，但表结构已经设计为多商户，使用者可�
 4.shell服务：php -f /web路径/cmd.php request_uri=/cmd/order/do
 
 
-前端演示：http://shop.chuanhaisoft.com/
+移动端vue版本预览：http://shop.chuanhaisoft.com/mobile/index.html
+
+手机端扫码：
+
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile.png" >
+
+浏览器版本预览:   http://shop.chuanhaisoft.com
 
 
 后台演示：http://demo.chuanhaisoft.com/chuanhai/
@@ -63,6 +69,20 @@ handle:<br/>
     
 <img src="http://shop.chuanhaisoft.com/images/shows/shop1.jpg" >
 <img src="http://shop.chuanhaisoft.com/images/shows/shop2.jpg" >
+
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile1.png?a=1" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile2.png?a=1" width="300px" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile3.png?a=1" width="300px" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile4.png?a=1" width="300px" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile5.png?a=1" width="300px" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile6.png?a=1" width="300px" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile7.png"  width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile8.png"  width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile9.png" width="300px" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile10.png"  width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile11.png" width="300px" >
+
+
 <img src="http://shop.chuanhaisoft.com/images/shows/houtai1.jpg" >
 <img src="http://shop.chuanhaisoft.com/images/shows/houtai2.jpg" >
 <img src="http://shop.chuanhaisoft.com/images/shows/houtai3.jpg" >

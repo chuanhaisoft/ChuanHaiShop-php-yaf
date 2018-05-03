@@ -75,6 +75,12 @@ handle:<br/>
 <img src="http://shop.chuanhaisoft.com/images/shows/mobile3.png" >
 <img src="http://shop.chuanhaisoft.com/images/shows/mobile4.png" >
 <img src="http://shop.chuanhaisoft.com/images/shows/mobile5.png" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile6.png" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile7.png" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile8.png" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile9.png" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile10.png" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile11.png" >
 
 
 <img src="http://shop.chuanhaisoft.com/images/shows/houtai1.jpg" >

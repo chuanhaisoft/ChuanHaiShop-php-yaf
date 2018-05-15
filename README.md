@@ -23,6 +23,7 @@ ChuanHaiShop为b2c版本，但表结构已经设计为多商户，使用者可�
 
 4.shell服务：php -f /web路径/cmd.php request_uri=/cmd/order/do
 
+<a href="http://www.chuanhaisoft.com">川海软件</a>
 
 移动端vue版本预览：http://shop.chuanhaisoft.com/mobile/index.html
 

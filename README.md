@@ -74,11 +74,12 @@ handle:<br/>
 app端：
 
 
-<img src="http://shop.chuanhaisoft.com/images/shows/app1.gif?a=1" width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/app2.gif?a=1" width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/app3.gif?a=1" width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/app4.gif?a=1" width="300px">
-
+<img src="http://shop.chuanhaisoft.com/images/shows/app1.gif" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/app2.gif" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/app3.gif" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/app4.gif" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/app5.gif" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/app6.gif" width="300px">
 移动web端:
 
 

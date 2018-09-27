@@ -99,9 +99,9 @@ app端：
 管理端：
 
 
-<img src="http://shop.chuanhaisoft.com/images/shows/houtai1.png" >
-<img src="http://shop.chuanhaisoft.com/images/shows/houtai2.png" >
-<img src="http://shop.chuanhaisoft.com/images/shows/houtai3.png" >
+<img src="http://shop.chuanhaisoft.com/images/shows/houtai1.png?a=1" >
+<img src="http://shop.chuanhaisoft.com/images/shows/houtai2.png?a=1" >
+<img src="http://shop.chuanhaisoft.com/images/shows/houtai3.png?a=1" >
 <br/>川海app：
 <img src="http://shop.chuanhaisoft.com/upload/auto/2018/01/08/15/36/59/36615079672.jpg" >
 <br/>客服桌面端截图：

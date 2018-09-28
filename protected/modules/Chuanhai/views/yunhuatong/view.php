@@ -19,7 +19,7 @@ else
 ?>
 <table width="481" class="mytable">
   <tr>
-    <td width="128"><div align="right">余额:</div></td>
+    <td width="128"><div align="right">云话通余额:</div></td>
     <td width="346"><?php echo $YuE; ?>元<?php echo $Mess; ?></td>
   </tr>
   <tr>

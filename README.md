@@ -23,6 +23,7 @@ ChuanHaiShop为b2c版本，但表结构已经设计为多商户，使用者可�
 
 4.shell服务：php -f /web路径/cmd.php request_uri=/cmd/order/do
 
+<a href="http://www.chuanhaisoft.com">川海软件</a>
 
 移动端vue版本预览：http://shop.chuanhaisoft.com/mobile/index.html
 
@@ -70,6 +71,18 @@ handle:<br/>
 <img src="http://shop.chuanhaisoft.com/images/shows/shop1.jpg" >
 <img src="http://shop.chuanhaisoft.com/images/shows/shop2.jpg" >
 
+app端：
+
+
+<img src="http://shop.chuanhaisoft.com/images/shows/app1.gif" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/app2.gif" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/app3.gif" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/app4.gif" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/app5.gif" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/app6.gif" width="300px">
+移动web端:
+
+
 <img src="http://shop.chuanhaisoft.com/images/shows/mobile1.png?a=1" width="300px">
 <img src="http://shop.chuanhaisoft.com/images/shows/mobile2.png?a=1" width="300px" >
 <img src="http://shop.chuanhaisoft.com/images/shows/mobile3.png?a=1" width="300px" >
@@ -83,9 +96,12 @@ handle:<br/>
 <img src="http://shop.chuanhaisoft.com/images/shows/mobile11.png" width="300px" >
 
 
-<img src="http://shop.chuanhaisoft.com/images/shows/houtai1.jpg" >
-<img src="http://shop.chuanhaisoft.com/images/shows/houtai2.jpg" >
-<img src="http://shop.chuanhaisoft.com/images/shows/houtai3.jpg" >
+管理端：
+
+
+<img src="http://shop.chuanhaisoft.com/images/shows/houtai1.png?a=1" >
+<img src="http://shop.chuanhaisoft.com/images/shows/houtai2.png?a=1" >
+<img src="http://shop.chuanhaisoft.com/images/shows/houtai3.png?a=1" >
 <br/>川海app：
 <img src="http://shop.chuanhaisoft.com/upload/auto/2018/01/08/15/36/59/36615079672.jpg" >
 <br/>客服桌面端截图：

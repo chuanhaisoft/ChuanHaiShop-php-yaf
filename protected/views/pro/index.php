@@ -8,8 +8,9 @@
 <link href="/css/layout.css" rel="stylesheet" type="text/css" />
 <link href="/js/jquery-nivo-slider/nivo-slider.css" rel="stylesheet" type="text/css"  />
 <link href="/js/jquery-nivo-slider/themes/default/default.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.8.2/jquery.min.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
+<script src="/js/layui/layui.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <script src="/js/jquery-nivo-slider/jquery.nivo.slider.pack.js"></script>
 <script type="text/javascript" src="/js/Common.js"></script>

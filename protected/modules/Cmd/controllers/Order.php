@@ -23,7 +23,7 @@ class OrderController extends \Base\ControllerCmd
              Bll\OrderMall::UpdateWhere($order, [$order->_State->w('=',0.1),$order->_AddTime->w_and('<',$CurrTime)]);
              
              //7天未发货退款
-             //self::ChaoQi_TuiKuan();
+             self::ChaoQi_TuiKuan();
              
              //退货申请3天未处理自动同意
              //self::ChaoQi_TongYiTuiHuo();
@@ -32,7 +32,7 @@ class OrderController extends \Base\ControllerCmd
              //self::ChaoQi_UserFaHuo();
              
              //退货发货15天未收货自动收货
-             //self::ChaoQi_MaiJiaShouHuo();
+             self::ChaoQi_MaiJiaShouHuo();
              
              //商家同意退货，会员发货后，x天商家自动收货
              //$CurrTime=Fram::Data_Add_Day(-3);

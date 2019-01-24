@@ -104,12 +104,13 @@ class File
         //echo realpath($aimUrl);
         //die("dddd");
         $file = fopen(realpath($aimUrl), "w") or die("Can't open file");
-		if(!fwrite($file, $data))
-		{
-			echo "Error writing to file";
-		}
+        $r=fwrite($file, $data);
+		//if(!fwrite($file, $data))
+		//{
+		//	echo "Error writing to file";
+		//}
 		fclose($file);
-        return true;
+        return $r;
     }
     
     public static function File_Mess($f)

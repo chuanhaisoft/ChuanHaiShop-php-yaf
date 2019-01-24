@@ -15,7 +15,7 @@ ChuanHaiShop为b2c版本，但表结构已经设计为多商户，使用者可�
 
 配置：
 
-1.数据库信息修改：protected\config\application.ini
+1.安装:http://domain/install/index.php
 
 2.环境要求：php>=5.4 (支持php7) yaf最新版即可,开启yaf命名空间
 

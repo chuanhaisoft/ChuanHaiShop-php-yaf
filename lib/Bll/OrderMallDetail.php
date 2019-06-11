@@ -74,7 +74,7 @@ class OrderMallDetail
 		$_Fields=SysFram::SqlCheck($_Fields);
 		if(!is_array($_Where) && Fram::IsNotEmpty($_Where))
 		{
-			$_Where="where {$_Where}";
+			//$_Where="where {$_Where}";
 		}
 		
 		if(!$_OrderBy)
@@ -87,7 +87,7 @@ class OrderMallDetail
 		}
 		if(!is_array($_Where))
 		{
-		    $_Where=['',null];
+		    $_Where=[$_Where,null];
 		}
 		if(is_array($_Where))
 		{
@@ -96,7 +96,7 @@ class OrderMallDetail
 		      $_Where[0]="where {$_Where[0]}";
 		    $_RecordCount=\Pub\Data::Execute_Column("select count(1) from order_mall_detail a left join order_mall b on a.ORDER_ID=b.ID $_Where[0]",$_Where[1],$Conn);
 			$Sql="select $_Fields from order_mall_detail a left join order_mall b on a.ORDER_ID=b.ID {$_Where[0]} {$_OrderBy} limit ".$_PageNum*$_PageSize.",{$_PageSize}";
-		    return \Pub\Data::Execute_FetchAll($Sql,$_Where[1],$Conn);
+			return \Pub\Data::Execute_FetchAll($Sql,$_Where[1],$Conn);
 		}
 		
     }

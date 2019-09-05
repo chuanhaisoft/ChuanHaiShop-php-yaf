@@ -8,7 +8,7 @@
 <link href="/css/layout.css" rel="stylesheet" type="text/css" />
 <link href="/js/jquery-nivo-slider/nivo-slider.css" rel="stylesheet" type="text/css"  />
 <link href="/js/jquery-nivo-slider/themes/default/default.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
 <script src="/js/layui/layui.js"></script>
 <script type="text/javascript" src="/js/layer/layer.js"></script>
@@ -76,7 +76,7 @@ foreach ($ad as $x): ?>
 						<dd>欢迎会员登录:!</dd>
 					</dl>
 					<div class="user-btn">
-					<a href="/order/list.html" class="btn-s1 mr" >会员中心</a>
+					<a href="/user/index.html" class="btn-s1 mr" >会员中心</a>
 					
 					<a href="javascript:return;" onclick="DoLoginOut();" class="btn-s2 mr">退出</a>
 						</div>
@@ -295,7 +295,7 @@ foreach ($ad as $x): ?>
 	
 	<!--/ content-->
 	</div>
-<script src="http://msg.yunhuatong.com/im_auto.js" id="chuanhaisoft_im_script" para_add_friend="100.1;" para_view_type="2" para_jsjq="0" para_isgroup="0" pic_upload_url="http://www.chuanhaisoft.com/system/upload/Upload_im/"></script>
+<script src="http://msg.yunhuatong.com/im_auto.js" id="chuanhaisoft_im_script" para_add_friend="100.1;1.2" para_view_type="2" para_jsjq="0" para_isgroup="0" pic_upload_url="http://shop.chuanhaisoft.com/system/upload/Upload_im/"></script>
 	<?php \Pub\Yaf::display('footer'); ?>
 </body>
 </html>

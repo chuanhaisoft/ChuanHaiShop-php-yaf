@@ -18,14 +18,14 @@
 					<li <?php if($num==1){echo $FirstClass;} ?>>
 						<dl>
 							<dt class="photo">
-								<a href="<?php echo Pub\SysPara::Pro_Detail_Url(array('id'=>$v['ID']));?>" target="_blank" class="img-h"><img src="<?php echo Pub\Fram::Img_Url(Pub\Fram::GetSuoLue($v['PIC'])); ?>" alt="" /></a>
+								<a href="<?php echo Pub\SysPara::Pro_Detail_Url(array('id'=>$v['ID']));?>" target="_blank" class="img-h"><img src="<?php echo Pub\Fram::Img_Url(Pub\Fram::GetSuoLue($v['PIC'])); ?>" title="<?php echo $v['NAME']?>" /></a>
 								<?php if ($youhui) :?>
 								<span class="tag c1">优惠</span>
 								<?php endif; ?>
 							</dt>
 							<dd class="info">
 								<h3 class="name">
-									<a href="<?php echo Pub\SysPara::Pro_Detail_Url(array('id'=>$v['ID']));?>" target="_blank"><?php echo $v['NAME']?></a>
+									<a href="<?php echo Pub\SysPara::Pro_Detail_Url(array('id'=>$v['ID']));?>" target="_blank" title="<?php echo $v['NAME']?>"><?php echo $v['NAME']?></a>
 								</h3>
 								<div class="price-box">
 									<span class="price-sc bk"><i>¥</i><b><?php echo $v['PRICE']?></b></span>

@@ -448,8 +448,21 @@ if(!$pro['desc']['PIC1'] && !$pro['desc']['PIC2'] && !$pro['desc']['PIC3'] && !$
 						<?php if ($pro['HUI_DIAN']): ?>
 						<span class="u-price">可积分抵扣：<i class="bk"></i><b id="hui_dian"><?php echo $pro['HUI_DIAN']?></b></span>
 						<?php endif; ?>
+
 					</dd>
 				</dl>
+<?php 
+foreach ($Promotioms as $v){
+?>
+<dl class="mod-unit clearfix">
+<dt>满减优惠</dt>
+<dd>
+    <span class="u-price"><?php echo $v['NAME']; ?></span>
+</dd>
+</dl>
+<?php 
+}
+?>
 				<!-- <dl class="mod-unit clearfix">
 					<dt>编号</dt>
 					<dd>2365865</dd>
@@ -746,6 +759,6 @@ if(!$pro['desc']['PIC1'] && !$pro['desc']['PIC2'] && !$pro['desc']['PIC3'] && !$
 	</div>
 	<!--/ content-->
 	<?php \Pub\Yaf::display('footer'); ?>
-	<script src="http://msg.yunhuatong.com/im_auto.js" id="chuanhaisoft_im_script" para_view_type="2" para_jsjq="0" pic_upload_url="http://www.chuanhaisoft.com/system/upload/Upload_im/"></script>
+	<script src="http://msg.yunhuatong.com/im_auto.js" id="chuanhaisoft_im_script" para_view_type="2" para_jsjq="0" pic_upload_url="http://shop.chuanhaisoft.com/system/upload/Upload_im/"></script>
 </body>
 </html>

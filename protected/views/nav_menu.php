@@ -38,6 +38,8 @@ document.writeln("<a href=\'https://github.com/chuanhaisoft/ChuanHaiShop-php-yaf
     <div class="fl" style="padding-top: 20px;font-size: 14px;"> 
     &nbsp;&nbsp;
     <A href="javascript:return;">授权购买:</A>  
-	<a target=blank href=http://wpa.qq.com/msgrd?V=3&uin=276556803&Site=川海软件&Menu=yes><img border="0" SRC=http://wpa.qq.com/pa?p=1:276556803:1 alt="点击这里给我发消息"></a>
-    </div>
+	<a target=blank href=http://wpa.qq.com/msgrd?V=3&uin=276556803&Site=川海软件&Menu=yes><img border="0" SRC=http://wpa.qq.com/pa?p=1:276556803:1 alt="点击这里给我发消息"></a><span style="color:red">&nbsp;&nbsp;vue版本:</span>
+
+    </div> 
+	 <img src="http://shop.chuanhaisoft.com/images/shows/scan.png" style="width:55px;">
  

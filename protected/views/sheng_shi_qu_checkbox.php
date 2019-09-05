@@ -1,6 +1,6 @@
 <script src="/js/xiala/js/comm.js"></script>
 <script src="/js/xiala/js/linkagesel-min.js"></script>
-<script type="text/javascript" src="/upload/cache/s_s_q_x.js"></script>
+<script type="text/javascript" src="/upload/cache/s_s_q_x2.js"></script>
 
 <div  id="sheng_checkbox_box">
 

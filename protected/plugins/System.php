@@ -15,9 +15,9 @@ class SystemPlugin extends Yaf\Plugin_Abstract
         if(substr($str, -1)!='/' && substr($str, -4)!='.html' && substr($str, -4)!='.shtml')
             $str.='/';
 
-        if($str=='/chuanhai/')
+        if($str=='/chuanhai/' || $str=='/chuanhai/index.php/')//
             $str='/chuanhai/index/login/';
-        
+
         if(stripos($str,'.shtml'))
         {
             $str=str_replace('.shtml', '', $str);
@@ -33,4 +33,12 @@ class SystemPlugin extends Yaf\Plugin_Abstract
         $str=str_replace('_..', '', $str);
         $request->setRequestUri($str.($_SERVER['QUERY_STRING']?'?'.$_SERVER['QUERY_STRING']:''));
     }
+    /**
+    public function routerShutdown(Yaf\Request_Abstract $request, Yaf\Response_Abstract $response) 
+    {print_r($request);
+        //$uri=$request->getRequestUri();
+        //$uri=substr($uri, 1);print_r($request->controller);
+        //$request->controller=$uri;
+    }
+    **/
 }

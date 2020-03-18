@@ -129,7 +129,12 @@ class UploadController extends yaf\Controller_Abstract
 				//die($FileName);
 				File::CreateFile2($FileName,"");
 				move_uploaded_file($_FILES['Filedata']['tmp_name'],realpath($FileName));
-				File::SuoLuoTu(realpath($FileName), str_replace('.', "_250x250.", realpath($FileName)), 250, 250);
+				
+				$ext=explode(".", realpath($FileName));
+				$ext[count($ext)-2]=$ext[count($ext)-2]."_250x250";
+				$ext=implode('.',$ext);
+				
+				File::SuoLuoTu(realpath($FileName), $ext, 250, 250);
 				if($FileType==999999999)
 				{
 				    //File::SuoLuoTu(realpath($FileName), str_replace('.', "_800.", realpath($FileName)), 800, 800);

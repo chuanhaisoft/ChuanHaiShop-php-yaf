@@ -29,7 +29,7 @@ ChuanHaiShop为b2c版本，但表结构已经设计为多商户，使用者可�
 
 手机端扫码：
 
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile.png" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile.png?a=2" >
 
 浏览器版本预览:   http://shop.chuanhaisoft.com
 
@@ -68,42 +68,42 @@ version: 1<br/>
 handle:<br/>
     - rewrite: if(!is_dir() && !is_file() && path ~ "^(.*)$" ) goto "/index.php"<br/>
     
-<img src="http://shop.chuanhaisoft.com/images/shows/shop1.jpg" >
-<img src="http://shop.chuanhaisoft.com/images/shows/shop2.jpg" >
+<img src="http://shop.chuanhaisoft.com/images/shows/shop1.jpg?a=2" >
+<img src="http://shop.chuanhaisoft.com/images/shows/shop2.jpg?a=2" >
 
 app端：
 
 
-<img src="http://shop.chuanhaisoft.com/images/shows/app1.gif" width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/app2.gif" width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/app3.gif" width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/app4.gif" width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/app5.gif" width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/app6.gif" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/app1.gif?a=2" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/app2.gif?a=2" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/app3.gif?a=2" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/app4.gif?a=2" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/app5.gif?a=2" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/app6.gif?a=2" width="300px">
 移动web端:
 
 
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile1.png?a=1" width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile2.png?a=1" width="300px" >
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile3.png?a=1" width="300px" >
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile4.png?a=1" width="300px" >
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile5.png?a=1" width="300px" >
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile6.png?a=1" width="300px" >
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile7.png"  width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile8.png"  width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile9.png" width="300px" >
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile10.png"  width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile11.png" width="300px" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile1.png?a=2" width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile2.png?a=2" width="300px" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile3.png?a=2" width="300px" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile4.png?a=2" width="300px" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile5.png?a=2" width="300px" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile6.png?a=2" width="300px" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile7.png?a=2"  width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile8.png?a=2"  width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile9.png?a=2" width="300px" >
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile10.png?a=2"  width="300px">
+<img src="http://shop.chuanhaisoft.com/images/shows/mobile11.png?a=2" width="300px" >
 
 
 管理端：
 
 
-<img src="http://shop.chuanhaisoft.com/images/shows/houtai1.png?a=1" >
-<img src="http://shop.chuanhaisoft.com/images/shows/houtai2.png?a=1" >
-<img src="http://shop.chuanhaisoft.com/images/shows/houtai3.png?a=1" >
+<img src="http://shop.chuanhaisoft.com/images/shows/houtai1.png?a=2" >
+<img src="http://shop.chuanhaisoft.com/images/shows/houtai2.png?a=2" >
+<img src="http://shop.chuanhaisoft.com/images/shows/houtai3.png?a=2" >
 <br/>川海app：
-<img src="http://shop.chuanhaisoft.com/upload/auto/2018/01/08/15/36/59/36615079672.jpg" >
+<img src="http://shop.chuanhaisoft.com/upload/auto/2018/01/08/15/36/59/36615079672.jpg?a=2" >
 <br/>客服桌面端截图：
 <br/>
-<img src="http://shop.chuanhaisoft.com/images/shows/ChuanHaiIm.jpg" >
+<img src="http://shop.chuanhaisoft.com/images/shows/ChuanHaiIm.jpg?a=2" >

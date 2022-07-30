@@ -25,7 +25,7 @@ ChuanHaiShop为b2c版本，但表结构已经设计为多商户，使用者可�
 
 <a href="http://soft.yunhuatong.com/">川海软件</a>
 
-移动端vue版本预览：http://soft.yunhuatong.com/mobile/index.html
+移动端vue版本预览：http://shop.yunhuatong.com/mobile/index.html
 
 手机端扫码：
 

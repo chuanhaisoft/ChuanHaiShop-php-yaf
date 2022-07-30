@@ -23,18 +23,18 @@ ChuanHaiShop为b2c版本，但表结构已经设计为多商户，使用者可�
 
 4.shell服务：php -f /web路径/cmd.php request_uri=/cmd/order/do
 
-<a href="http://www.chuanhaisoft.com">川海软件</a>
+<a href="http://soft.yunhuatong.com/">川海软件</a>
 
-移动端vue版本预览：http://shop.chuanhaisoft.com/mobile/index.html
+移动端vue版本预览：http://soft.yunhuatong.com/mobile/index.html
 
 手机端扫码：
 
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile.png?a=2" >
+<img src="http://shop.yunhuatong.com/images/shows/mobile.png?a=2" >
 
-浏览器版本预览:   http://shop.chuanhaisoft.com
+浏览器版本预览:   http://shop.yunhuatong.com
 
 
-后台演示：http://demo.chuanhaisoft.com/chuanhai/
+后台演示：http://demoshop.yunhuatong.com/chuanhai/
 用户名:admin 密码:chuanhaisoft
 
 川海即时通讯插件助您整合咨询系统，商家可使用桌面版与用户的web版在线交流，提高订单成交。（websocket通讯，并做了ie低版本兼容）
@@ -68,41 +68,41 @@ version: 1<br/>
 handle:<br/>
     - rewrite: if(!is_dir() && !is_file() && path ~ "^(.*)$" ) goto "/index.php"<br/>
     
-<img src="http://shop.chuanhaisoft.com/images/shows/shop1.jpg?a=2" >
-<img src="http://shop.chuanhaisoft.com/images/shows/shop2.jpg?a=2" >
+<img src="http://shop.yunhuatong.com/images/shows/shop1.jpg?a=2" >
+<img src="http://shop.yunhuatong.com/images/shows/shop2.jpg?a=2" >
 
 app端：
 
 
-<img src="http://shop.chuanhaisoft.com/images/shows/app1.gif?a=3" width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/app2.gif?a=3" width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/app3.jpg?a=3" width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/app4.jpg?a=3" width="300px">
+<img src="http://shop.yunhuatong.com/images/shows/app1.gif?a=3" width="300px">
+<img src="http://shop.yunhuatong.com/images/shows/app2.gif?a=3" width="300px">
+<img src="http://shop.yunhuatong.com/images/shows/app3.jpg?a=3" width="300px">
+<img src="http://shop.yunhuatong.com/images/shows/app4.jpg?a=3" width="300px">
 
 移动web端:
 
 
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile1.png?a=2" width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile2.png?a=2" width="300px" >
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile3.png?a=2" width="300px" >
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile4.png?a=2" width="300px" >
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile5.png?a=2" width="300px" >
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile6.png?a=2" width="300px" >
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile7.png?a=2"  width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile8.png?a=2"  width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile9.png?a=2" width="300px" >
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile10.png?a=2"  width="300px">
-<img src="http://shop.chuanhaisoft.com/images/shows/mobile11.png?a=2" width="300px" >
+<img src="http://shop.yunhuatong.com/images/shows/mobile1.png?a=2" width="300px">
+<img src="http://shop.yunhuatong.com/images/shows/mobile2.png?a=2" width="300px" >
+<img src="http://shop.yunhuatong.com/images/shows/mobile3.png?a=2" width="300px" >
+<img src="http://shop.yunhuatong.com/images/shows/mobile4.png?a=2" width="300px" >
+<img src="http://shop.yunhuatong.com/images/shows/mobile5.png?a=2" width="300px" >
+<img src="http://shop.yunhuatong.com/images/shows/mobile6.png?a=2" width="300px" >
+<img src="http://shop.yunhuatong.com/images/shows/mobile7.png?a=2"  width="300px">
+<img src="http://shop.yunhuatong.com/images/shows/mobile8.png?a=2"  width="300px">
+<img src="http://shop.yunhuatong.com/images/shows/mobile9.png?a=2" width="300px" >
+<img src="http://shop.yunhuatong.com/images/shows/mobile10.png?a=2"  width="300px">
+<img src="http://shop.yunhuatong.com/images/shows/mobile11.png?a=2" width="300px" >
 
 
 管理端：
 
 
-<img src="http://shop.chuanhaisoft.com/images/shows/houtai1.png?a=2" >
-<img src="http://shop.chuanhaisoft.com/images/shows/houtai2.png?a=2" >
-<img src="http://shop.chuanhaisoft.com/images/shows/houtai3.png?a=2" >
+<img src="http://shop.yunhuatong.com/images/shows/houtai1.png?a=2" >
+<img src="http://shop.yunhuatong.com/images/shows/houtai2.png?a=2" >
+<img src="http://shop.yunhuatong.com/images/shows/houtai3.png?a=2" >
 <br/>川海app：
 <img src="http://shop.chuanhaisoft.com/upload/auto/2018/01/08/15/36/59/36615079672.jpg?a=2" >
 <br/>客服桌面端截图：
 <br/>
-<img src="http://shop.chuanhaisoft.com/images/shows/ChuanHaiIm.jpg?a=2" >
+<img src="http://shop.yunhuatong.com/images/shows/ChuanHaiIm.jpg?a=2" >

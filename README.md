@@ -34,7 +34,7 @@ ChuanHaiShop为b2c版本，但表结构已经设计为多商户，使用者可�
 浏览器版本预览:   http://shop.yunhuatong.com
 
 
-后台演示：http://demoshop.yunhuatong.com/chuanhai/
+后台演示：http://demoshop.yunhuatong.com/chuanhai
 用户名:admin 密码:chuanhaisoft
 
 川海即时通讯插件助您整合咨询系统，商家可使用桌面版与用户的web版在线交流，提高订单成交。（websocket通讯，并做了ie低版本兼容）

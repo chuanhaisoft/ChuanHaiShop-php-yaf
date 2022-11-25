@@ -25,19 +25,13 @@ ChuanHaiShop为b2c版本，但表结构已经设计为多商户，使用者可�
 
 <a href="http://soft.yunhuatong.com/">川海软件</a>
 
-移动端vue版本预览：http://shop.yunhuatong.com/mobile/index.html
-
-手机端扫码：
-
-<img src="http://shop.yunhuatong.com/images/shows/mobile.png?a=2" >
-
-浏览器版本预览:   http://shop.yunhuatong.com
 
 
-后台演示：http://demoshop.yunhuatong.com/chuanhai
+
+后台地址：http://xxx.xxx.com/chuanhai
 用户名:admin 密码:chuanhaisoft
 
-川海即时通讯插件助您整合咨询系统，商家可使用桌面版与用户的web版在线交流，提高订单成交。（websocket通讯，并做了ie低版本兼容）
+川海即时通讯插件助您整合咨询系统，商家可使用桌面版与用户的web版在线交流，提高订单成交。
 
 apache配置：<br/>
 apache使用.htaccess即可
